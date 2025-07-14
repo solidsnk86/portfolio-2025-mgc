@@ -26,10 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
         <Image src="/header-gradient.svg" width={600} height={80} className="absolute top-0 left-0 w-full" alt="Gradient BG" priority />
         {children}
+        <Image src="/footer-gradient.svg" width={600} height={80} className="absolute bottom-0 left-0 w-full" alt="Gradient BG" priority />
       </body>
     </html>
   );

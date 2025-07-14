@@ -76,7 +76,7 @@ export const Projects = () => {
             <h3 className="text-center font-bold">{name}</h3>
             <small className="text-center">{year}</small>
             <article
-              className={`absolute top-0 left-0 hidden group-hover:flex bg-zinc-800/10 mx-auto backdrop-blur-xl w-full h-full transition-colors duration-300 ${styles.project}`}
+              className={`absolute top-0 left-0 hidden group-hover:flex bg-zinc-800/10 mx-auto backdrop-blur-2xl w-full h-full transition-colors duration-300 ${styles.project}`}
             >
               <div className="flex flex-col mx-auto">
                 <h3 className="text-center font-semibold">{name}</h3>

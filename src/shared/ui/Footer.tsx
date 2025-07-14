@@ -46,7 +46,7 @@ return (
         </small>
         <small className="flex items-center mx-auto gap-2">
             <span className="w-2 h-2 rounded-full bg-blue-500 animate-ping duration-2000" />
-            {location?.city.name || "No disponible"}, {location?.country.name || "No disponible"}
+            {location?.city.name || "No disponible"}, {location?.country.name || "No disponible"} {location?.country.emojiFlag || "No disponible"}
         </small>
     </footer>
 );
