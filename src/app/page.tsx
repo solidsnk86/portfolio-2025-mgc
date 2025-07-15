@@ -1,3 +1,4 @@
+import { ContactForm } from "@/shared/ui/Contact";
 import { Noise } from "@/shared/ui/effects/Noise";
 import { Footer } from "@/shared/ui/Footer";
 import { Header } from "@/shared/ui/Header";
@@ -11,6 +12,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Projects />
+      <ContactForm />
       <Footer />
     </div>
   );

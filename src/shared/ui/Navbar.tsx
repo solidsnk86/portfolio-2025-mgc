@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const links = [
   { name: "acerca", url: "/about" },
-  { name: "contaco", url: "/contact" },
+  { name: "contaco", url: "#contact" },
   { name: "proyectos", url: "/projects" },
 ];
 
@@ -14,7 +14,7 @@ export const Navbar = () => {
         <span key={name}>
           <Link
             href={url}
-            className="font-semibold hover:brightness-125 dark:text-zinc-300"
+            className="font-semibold hover:brightness-125 dark:text-zinc-300 capitalize"
           >
             {name}
           </Link>

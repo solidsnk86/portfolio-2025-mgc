@@ -7,7 +7,7 @@
     animation: fadeIn 0.6s ease-in-out;
   }
 
-  & svg {
+  & span {
     animation: slideBottom 0.6s ease-in-out;
   }
 }

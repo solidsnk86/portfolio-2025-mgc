@@ -40,9 +40,9 @@ export const Footer = () => {
     getCurrentIP();
   }, []);
 return (
-    <footer className="grid justify-center mx-auto py-10">
-        <small className="text-[var(--mutted-color)] font-semibold">
-            &copy;2025 - solidSnk86 ✦ calcagni gabriel{" "}
+    <footer className="grid justify-center mx-auto py-10 space-y-3">
+        <small className="text-[var(--mutted-color)] flex gap-1 font-semibold items-center">
+            &copy;2025 - solidSnk86 <span className="text-[10px]">✦</span> calcagni gabriel{" "}
         </small>
         <small className="flex items-center mx-auto gap-2">
             <span className="w-2 h-2 rounded-full bg-blue-500 animate-ping duration-2000" />

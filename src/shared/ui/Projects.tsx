@@ -36,7 +36,7 @@ const projects = [
     name: "Project-5",
     url: "https://github.com/solidsnk86/neo-wifi",
     imgUrl: "/vercel.svg",
-    description: "A mobile app for managing WiFi connections.",
+    description: "An app for managing WiFi connections.",
     year: 2024,
   },
   {
@@ -71,19 +71,21 @@ export const Projects = () => {
               width={120}
               height={90}
               alt={name}
-              className=""
+              className="group-hover:scale-90 group-hover:translate-y-3 transition-transform duration-300"
             />
             <h3 className="text-center font-bold">{name}</h3>
             <small className="text-center">{year}</small>
             <article
-              className={`absolute top-0 left-0 hidden group-hover:flex bg-zinc-800/10 mx-auto backdrop-blur-2xl w-full h-full transition-colors duration-300 ${styles.project}`}
+              className={`absolute top-0 left-0 hidden group-hover:flex dark:bg-zinc-500/10 mx-auto backdrop-blur-lg w-full h-full transition-all duration-300 ${styles.project}`}
             >
               <div className="flex flex-col mx-auto">
                 <h3 className="text-center font-semibold">{name}</h3>
                 <p className="text-center text-pretty text-[var(--mutted-color)]">
                   {description}
                 </p>
-                <ArrowUpRightFromSquareIcon className="flex mx-auto" size={14} />
+                <span className="p-1 rounded bg-zinc-200 dark:bg-zinc-900/50 w-fit flex mx-auto mt-2">
+                <ArrowUpRightFromSquareIcon size={14} />
+                </span>
               </div>
             </article>
           </Link>
