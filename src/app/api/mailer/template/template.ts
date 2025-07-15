@@ -17,7 +17,7 @@ export const template = ({ name, email, challenge }: { name: string; email: stri
         <p>Hola <strong>${name}</strong>,</p>
         <p>Gracias por escribirme desde mi portafolio web.</p>
         <p>
-          Si querés enviarme los detalles, he adjuntado tu mensaje para Whatsapp! No dudes en escribirme directamente
+          Si querés enviarme los detalles, he adjuntado tu mensaje para Whatsapp o Gmail! No dudes en escribirme directamente
           por esta misma vía, o también podés contactarme por alguno de los
           siguientes medios:
         </p>
@@ -26,7 +26,7 @@ export const template = ({ name, email, challenge }: { name: string; email: stri
           <span style="color: #ccc;">•</span>
           <a href="https://www.linkedin.com/in/gabriel-calcagni/" target="_blank" style="margin: 0 6px; text-decoration: none; color: #3498db; font-size: 14px; transition: color 0.3s;">LinkedIn</a>
           <span style="color: #ccc;">•</span>
-          <a href="mailto:${email}" style="margin: 0 6px; text-decoration: none; color: #3498db; font-size: 14px; transition: color 0.3s;">Email</a>
+          <a href="mailto:${email}?subject=${encodeURIComponent("Necesito tus servicios")}&body=${encodeURIComponent(challenge || message)}" style="margin: 0 6px; text-decoration: none; color: #3498db; font-size: 14px; transition: color 0.3s;">Email</a>
         </div>
 
         <p style="margin-top: 24px">
