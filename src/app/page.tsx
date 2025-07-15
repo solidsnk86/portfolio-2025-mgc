@@ -1,4 +1,5 @@
 import { ContactForm } from "@/shared/ui/Contact";
+import { Marquee } from "@/shared/ui/effects/Marquee";
 import { Noise } from "@/shared/ui/effects/Noise";
 import { Footer } from "@/shared/ui/Footer";
 import { Header } from "@/shared/ui/Header";
@@ -11,6 +12,7 @@ export default function Home() {
       <Noise />
       <Header />
       <Hero />
+      <Marquee />
       <Projects />
       <ContactForm />
       <Footer />

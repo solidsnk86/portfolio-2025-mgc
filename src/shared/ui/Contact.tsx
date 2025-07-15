@@ -25,6 +25,7 @@ export const ContactForm = () => {
   const stateCleanner = () => {
     setNameValue("");
     setEmailValue("");
+    setMessageValue("")
     setIsLoading(false);
   };
 
