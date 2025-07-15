@@ -2,7 +2,15 @@ const number = "+5492665290020";
 const message =
   "👋 ¡Hola, Gabriel! Me interesa conocer más sobre tus servicios. ¿Podrías contactarme para ayudarme con mi proyecto? 😊...Gracias!";
 
-export const template = ({ name, email, challenge }: { name: string; email: string, challenge: string }) => `
+export const template = ({
+  name,
+  email,
+  challenge,
+}: {
+  name: string;
+  email: string;
+  challenge: string;
+}) => `
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -22,11 +30,17 @@ export const template = ({ name, email, challenge }: { name: string; email: stri
           siguientes medios:
         </p>
         <div style="text-align: center; margin-top: 20px;">
-          <a href="https://wa.me/${number}?text=${encodeURIComponent(challenge || message)}" target="_blank" style="margin: 0 6px; text-decoration: none; color: #3498db; font-size: 14px; transition: color 0.3s;">WhatsApp</a>
+          <a href="https://wa.me/${number}?text=${encodeURIComponent(
+  challenge || message
+)}" target="_blank" style="margin: 0 6px; text-decoration: none; color: #3498db; font-size: 14px; transition: color 0.3s;">WhatsApp</a>
           <span style="color: #ccc;">•</span>
           <a href="https://www.linkedin.com/in/gabriel-calcagni/" target="_blank" style="margin: 0 6px; text-decoration: none; color: #3498db; font-size: 14px; transition: color 0.3s;">LinkedIn</a>
           <span style="color: #ccc;">•</span>
-          <a href="mailto:${email}?subject=${encodeURIComponent("Necesito tus servicios")}&body=${encodeURIComponent(challenge || message)}" style="margin: 0 6px; text-decoration: none; color: #3498db; font-size: 14px; transition: color 0.3s;">Email</a>
+          <a href="mailto:${email}?subject=${encodeURIComponent(
+  "Necesito tus servicios"
+)}&body=${encodeURIComponent(
+  challenge || message
+)}" style="margin: 0 6px; text-decoration: none; color: #3498db; font-size: 14px; transition: color 0.3s;">Email</a>
         </div>
 
         <p style="margin-top: 24px">
