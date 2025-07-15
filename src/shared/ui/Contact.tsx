@@ -32,12 +32,12 @@ export const ContactForm = () => {
     event.preventDefault();
     setIsLoading(true);
     if (!namevalue) {
-      setError("El nombre es requerido");
+      setError("* El nombre es requerido");
       setIsLoading(false);
       return;
     }
     if (!emailValue) {
-      setError("El email es requerido");
+      setError("* El email es requerido");
       setIsLoading(false);
       return;
     }

@@ -1,0 +1,18 @@
+.footer {
+    & span {
+        animation: ping 1.3s linear infinite;
+        filter: drop-shadow(0 0 6px rgb(65, 65, 231));
+        border: 2px solid rgb(65, 65, 231);
+    }
+}
+
+@keyframes ping {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}

@@ -2,6 +2,7 @@
 
 import { GetLocation } from "@/lib/locationClient";
 import { useEffect, useState } from "react";
+import styles from "@/shared/styles/footer.module.css"
 
 interface LocationProps {
   ip: string;
@@ -40,13 +41,13 @@ export const Footer = () => {
     getCurrentIP();
   }, []);
 return (
-    <footer className="grid justify-center mx-auto py-10 space-y-3">
-        <small className="text-[var(--mutted-color)] flex gap-1 font-semibold items-center">
-            &copy;2025 - solidSnk86 <span className="text-[10px]">✦</span> calcagni gabriel{" "}
-        </small>
+    <footer className={`grid justify-center mx-auto py-10 space-y-3 ${styles.footer}`}>
+        <p className="text-[var(--mutted-color)] flex gap-1 font-semibold items-center text-sm">
+            &copy;2025 - SolidSnk86 <small className="text-[10px]">✦</small> Calcagni Gabriel{" "}
+        </p>
         <small className="flex items-center mx-auto gap-2">
-            <span className="w-2 h-2 rounded-full bg-blue-500 animate-ping duration-2000" />
-            {location?.city.name || "No disponible"}, {location?.country.name || "No disponible"} {location?.country.emojiFlag || "No disponible"}
+            <span className="w-[9px] h-[9px] rounded-full bg-blue-500" />
+            {location?.city.name || "No disponible"}, {location?.country.name || "No disponible"} {location?.country.emojiFlag || "No disponible"} - De tu dispositivo
         </small>
     </footer>
 );

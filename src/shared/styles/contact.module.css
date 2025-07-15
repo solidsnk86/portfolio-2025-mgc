@@ -1,0 +1,7 @@
+.form {
+  & textarea {
+    resize: vertical;
+    field-sizing:vertical;
+    min-height: 4em;
+  }
+}
