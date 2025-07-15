@@ -5,6 +5,7 @@ import { showDialog } from "../utils/dialog";
 import { Loader } from "lucide-react";
 import { Fraunces } from "next/font/google";
 import Image from "next/image";
+import { validateEmailWithDomain } from "../utils/validateMail";
 
 const fraunces = Fraunces({
   weight: ["700"],
@@ -42,6 +43,11 @@ export const ContactForm = () => {
       setError("* El email es requerido");
       setIsLoading(false);
       return;
+    }
+    if (!validateEmailWithDomain(emailValue)) {
+      setError("Escribe un dominio de email válido")
+      setIsLoading(false)
+      return
     }
     try {
       const response = await fetch("/api/mailer", {
@@ -94,13 +100,13 @@ export const ContactForm = () => {
     <>
       <h3
         id="contact"
-        className={`font-semibold text-3xl ${fraunces.className} text-center my-12`}
+        className={`font-semibold xl:text-3xl text-2xl px-4 ${fraunces.className} text-center my-12`}
       >
         Acepto desafíos… ¿cuál es el tuyo?
       </h3>
       <form
         onSubmit={sendFormData}
-        className="z-10 flex flex-col justify-center mx-auto gap-3"
+        className="z-10 flex flex-col justify-center mx-auto gap-3 w-[360px]"
       >
         <div>
           <input
@@ -110,7 +116,7 @@ export const ContactForm = () => {
               setError("");
               setNameValue(e.target.value);
             }}
-            className="border border-zinc-300/70 dark:border-zinc-700 rounded p-2"
+            className="border border-zinc-300/70 dark:border-zinc-700 rounded p-2 w-full"
             placeholder="Tú nombre"
           />
         </div>
@@ -122,7 +128,7 @@ export const ContactForm = () => {
               setError("");
               setEmailValue(e.target.value);
             }}
-            className="border border-zinc-300/70 dark:border-zinc-700 rounded p-2"
+            className="border border-zinc-300/70 dark:border-zinc-700 rounded p-2 w-full"
             placeholder="Tú Email"
           />
         </div>

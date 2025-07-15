@@ -5,7 +5,7 @@ import styles from "@/shared/styles/projects.module.css";
 
 const projects = [
   {
-    name: "Project-1",
+    name: "Neo-WiFi App",
     url: "https://github.com/solidsnk86/neo-wifi",
     imgUrl: "/vercel.svg",
     description: "A WiFi management tool for seamless connectivity.",
@@ -50,7 +50,7 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <section className="p-4 max-w-3xl z-10">
+    <section className="grid p-4 max-w-3xl z-10">
       <div className="flex justify-between items-center p-1">
         <h3 className="text-[var(--mutted-color)] text-sm font-semibold">
           PROYECTOS ACTUALES

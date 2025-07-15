@@ -9,7 +9,7 @@ const fraunces = Fraunces({
 });
 
 const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500"],
+  weight: ["100", "200", "300"],
   subsets: ["latin"],
 });
 

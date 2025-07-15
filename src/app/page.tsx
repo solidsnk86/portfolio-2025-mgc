@@ -8,7 +8,7 @@ import { Projects } from "@/shared/ui/Projects";
 
 export default function Home() {
   return (
-    <div className="flex flex-col max-w-3xl mx-auto justify-center">
+    <div className="flex flex-col md:max-w-3xl mx-auto">
       <Noise />
       <Header />
       <Hero />
