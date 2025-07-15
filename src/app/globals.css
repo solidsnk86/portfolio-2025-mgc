@@ -143,3 +143,25 @@ dialog {
     opacity: 0;
   }
 }
+
+.felix {
+  filter: drop-shadow(0 0 9px #000);
+  z-index: -1;
+}
+
+@keyframes sliderIn {
+  from {
+    transform: translateX(50%) scale(0.4);
+  }
+  to {
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes sliderOut {
+  from {
+    transform: translateX(0) scale(1);
+  }
+  to {
+    transform: translateX(50%) scale(0.4);
+  }
+}

@@ -1,5 +1,5 @@
 .marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 10s linear infinite;
   display: flex;
   min-width: max-content;
 }

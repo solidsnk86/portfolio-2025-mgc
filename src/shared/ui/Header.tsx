@@ -8,8 +8,8 @@ export const Header = () => {
   const isDarkMode = useMatchMedia("(prefers-color-scheme: dark)", true);
   
   return (
-    <header className="rounded-full max-w-3xl mt-6 bg-zinc-100/30 backdrop-blur-xl dark:bg-zinc-800/50 h-[74px] m-3">
-      <div className="flex items-center justify-between h-full px-5">
+    <header className="rounded-full max-w-3xl mt-6 bg-zinc-100/50 backdrop-blur-xl dark:bg-zinc-800/50 h-[74px] m-3">
+      <div className="flex items-center justify-between h-full px-6">
         {isDarkMode ? (
           <Image
             src="/assets/solid-dark-mode.png"

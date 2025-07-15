@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { showDialog } from "../utils/dialog";
 import { Loader } from "lucide-react";
 import { Fraunces } from "next/font/google";
+import Image from "next/image";
 
 const fraunces = Fraunces({
   weight: ["700"],
@@ -25,7 +26,7 @@ export const ContactForm = () => {
   const stateCleanner = () => {
     setNameValue("");
     setEmailValue("");
-    setMessageValue("")
+    setMessageValue("");
     setIsLoading(false);
   };
 
@@ -55,7 +56,7 @@ export const ContactForm = () => {
           content: (
             <div className="p-6 flex flex-col gap-3 items-center justify-center">
               <h3 className="font-semibold text-lg">
-                Ey gracias por contactarme!
+                Ey {namevalue}, gracias por contactarme!
               </h3>
               {data.message}
             </div>
@@ -81,8 +82,8 @@ export const ContactForm = () => {
 
   useEffect(() => {
     const textarea = document.querySelector("textarea")!;
-    textarea.style.height = "auto"
-    textarea.style.height = textarea.scrollHeight + "px"
+    textarea.style.height = "auto";
+    textarea.style.height = textarea.scrollHeight + "px";
   }, [messageValue]);
 
   return (
@@ -129,12 +130,29 @@ export const ContactForm = () => {
               setMessageValue(e.target.value);
             }}
             className="border border-zinc-300/70 dark:border-zinc-700 rounded p-2 w-full"
-            placeholder="Mensaje"
+            placeholder="Desafío.."
           />
         </div>
+        <div className="relative justify-center group">
+        <Image
+          id="felix"
+          src={"/assets/felix.png"}
+          className="absolute -top-[6px] -left-[39px] hidden group-hover:flex felix"
+          width={52}
+          height={52}
+          alt="FelixTheCat86"
+        />
         <button
           type="submit"
-          className="border border-zinc-300/70 dark:border-zinc-700 rounded-md p-3 w-full cursor-pointer hover:border-blue-500"
+          className="bg-zinc-200 dark:bg-zinc-800 border border-zinc-300/70 dark:border-zinc-700 rounded-md px-3 py-[10px] w-full cursor-pointer hover:brightness-125 hover:shadow-2xl z-50"
+          onMouseEnter={() => {
+            const felix = document.getElementById("felix")!;
+            felix.style.animation = "sliderIn 0.6s ease-out";
+          }}
+          onMouseLeave={() => {
+            const felix = document.getElementById("felix")!;
+            felix.style.animation = "sliderOut 0.6s ease-out";
+          }}
         >
           {isLoading ? (
             <span className="flex justify-center gap-2 mx-auto items-center">
@@ -145,6 +163,7 @@ export const ContactForm = () => {
             <span>Enviar</span>
           )}
         </button>
+        </div>
         {error && <small className="text-red-400 ml-1">{error}</small>}
       </form>
     </>

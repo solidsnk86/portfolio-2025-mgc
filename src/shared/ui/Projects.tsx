@@ -64,7 +64,7 @@ export const Projects = () => {
           <Link
             key={name}
             href={url}
-            className="p-4 rounded-xl bg-zinc-100 dark:bg-zinc-800/50 grid mx-auto w-full justify-center space-y-3 relative overflow-hidden group"
+            className="p-4 rounded-xl bg-zinc-200/25 dark:bg-zinc-800/50 grid mx-auto w-full justify-center space-y-3 relative overflow-hidden group"
           >
             <Image
               src={imgUrl}
