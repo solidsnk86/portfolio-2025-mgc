@@ -144,7 +144,7 @@ export const ContactForm = () => {
         />
         <button
           type="submit"
-          className="bg-zinc-200 dark:bg-zinc-800 border border-zinc-300/70 dark:border-zinc-700 rounded-md px-3 py-[10px] w-full cursor-pointer hover:brightness-125 hover:shadow-2xl z-50"
+          className="bg-zinc-200 dark:bg-zinc-800 border border-zinc-300/70 dark:border-zinc-700 rounded-md px-3 py-[10px] w-full cursor-pointer hover:shadow-2xl z-50"
           onMouseEnter={() => {
             const felix = document.getElementById("felix")!;
             felix.style.animation = "sliderIn 0.6s ease-out";
