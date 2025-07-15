@@ -17,7 +17,7 @@ export const template = ({ name, email, challenge }: { name: string; email: stri
         <p>Hola <strong>${name}</strong>,</p>
         <p>Gracias por escribirme desde mi portafolio web.</p>
         <p>
-          Si querés enviarme los detalles, no dudes en escribirme directamente
+          Si querés enviarme los detalles, he adjuntado tu mensaje para Whatsapp! No dudes en escribirme directamente
           por esta misma vía, o también podés contactarme por alguno de los
           siguientes medios:
         </p>
