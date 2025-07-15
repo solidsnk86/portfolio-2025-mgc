@@ -46,7 +46,11 @@ export const ContactForm = () => {
     try {
       const response = await fetch("/api/mailer", {
         method: "POST",
-        body: JSON.stringify({ name: namevalue, email: emailValue }),
+        body: JSON.stringify({
+          name: namevalue,
+          email: emailValue,
+          challenge: messageValue,
+        }),
       });
 
       const data: ApiMailerResponse = await response.json();
@@ -107,7 +111,7 @@ export const ContactForm = () => {
               setNameValue(e.target.value);
             }}
             className="border border-zinc-300/70 dark:border-zinc-700 rounded p-2"
-            placeholder="Nombre"
+            placeholder="Tú nombre"
           />
         </div>
         <div>
@@ -119,7 +123,7 @@ export const ContactForm = () => {
               setEmailValue(e.target.value);
             }}
             className="border border-zinc-300/70 dark:border-zinc-700 rounded p-2"
-            placeholder="Email"
+            placeholder="Tú Email"
           />
         </div>
         <div>
@@ -130,39 +134,39 @@ export const ContactForm = () => {
               setMessageValue(e.target.value);
             }}
             className="border border-zinc-300/70 dark:border-zinc-700 rounded p-2 w-full"
-            placeholder="Desafío.."
+            placeholder="Tú próximo desafío.."
           />
         </div>
         <div className="relative justify-center group">
-        <Image
-          id="felix"
-          src={"/assets/felix.png"}
-          className="absolute -top-[6px] -left-[39px] hidden group-hover:flex felix"
-          width={52}
-          height={52}
-          alt="FelixTheCat86"
-        />
-        <button
-          type="submit"
-          className="bg-zinc-200 dark:bg-zinc-800 border border-zinc-300/70 dark:border-zinc-700 rounded-md px-3 py-[10px] w-full cursor-pointer hover:shadow-2xl z-50"
-          onMouseEnter={() => {
-            const felix = document.getElementById("felix")!;
-            felix.style.animation = "sliderIn 0.6s ease-out";
-          }}
-          onMouseLeave={() => {
-            const felix = document.getElementById("felix")!;
-            felix.style.animation = "sliderOut 0.6s ease-out";
-          }}
-        >
-          {isLoading ? (
-            <span className="flex justify-center gap-2 mx-auto items-center">
-              Enviando
-              <Loader size={18} className="animate-spin" />
-            </span>
-          ) : (
-            <span>Enviar</span>
-          )}
-        </button>
+          <Image
+            id="felix"
+            src={"/assets/felix.png"}
+            className="absolute -top-[6px] -left-[39px] hidden group-hover:flex felix"
+            width={52}
+            height={52}
+            alt="FelixTheCat86"
+          />
+          <button
+            type="submit"
+            className="bg-zinc-200 dark:bg-zinc-800 border border-zinc-300/70 dark:border-zinc-700 rounded-md px-3 py-[10px] w-full cursor-pointer hover:shadow-2xl z-50"
+            onMouseEnter={() => {
+              const felix = document.getElementById("felix")!;
+              felix.style.animation = "sliderIn 0.6s ease-out";
+            }}
+            onMouseLeave={() => {
+              const felix = document.getElementById("felix")!;
+              felix.style.animation = "sliderOut 0.6s ease-out";
+            }}
+          >
+            {isLoading ? (
+              <span className="flex justify-center gap-2 mx-auto items-center">
+                Enviando
+                <Loader size={18} className="animate-spin" />
+              </span>
+            ) : (
+              <span>Enviar</span>
+            )}
+          </button>
         </div>
         {error && <small className="text-red-400 ml-1">{error}</small>}
       </form>

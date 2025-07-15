@@ -3,7 +3,7 @@ import { template } from "./template/template";
 
 export async function POST(req: Request) {
   try {
-    const { name, email } = await req.json();
+    const { name, email, challenge } = await req.json();
 
     if (!name && !email)
       return Response.json(
@@ -29,13 +29,13 @@ export async function POST(req: Request) {
       from: gmail,
       to: email,
       subject: "Gracias por contactarme",
-      html: template({ name: name, email: gmail }),
+      html: template({ name: name, email: gmail, challenge }),
     };
 
     await transporter.sendMail(mailOptions);
     return Response.json({
       success: true,
-      message: `Se ha enviado un correo a ${email}. No olvides revisar tu bandeja de entrada y, si no lo ves, échale un vistazo a la carpeta de SPAM.`,
+      message: `Te he enviado un correo a ${email}. No olvides revisar tu bandeja de entrada y, si no lo ves 👀, échale un vistazo a la carpeta de SPAM.`,
       status: 200,
     });
   } catch (error) {
