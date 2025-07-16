@@ -8,42 +8,42 @@ const projects = [
     name: "Neo-WiFi App",
     url: "https://github.com/solidsnk86/neo-wifi",
     imgUrl: "/vercel.svg",
-    description: "A WiFi management tool for seamless connectivity.",
+    description: "Automatiza la configuración CPEs y routers TP-Link.",
     year: 2025,
   },
   {
-    name: "Project-2",
+    name: "Neo-WiFi Web",
     url: "https://github.com/solidsnk86/neo-wifi",
     imgUrl: "/vercel.svg",
-    description: "An innovative solution for network monitoring.",
+    description: "Localización Inteligente de Antenas WiFi",
+    year: 2025,
+  },
+  {
+    name: "Geolocation API",
+    url: "https://github.com/solidsnk86/neo-wifi",
+    imgUrl: "/vercel.svg",
+    description: "API de geolocalización por IP o coordenandas",
     year: 2024,
   },
   {
-    name: "Project-3",
-    url: "https://github.com/solidsnk86/neo-wifi",
-    imgUrl: "/vercel.svg",
-    description: "A user-friendly interface for WiFi settings.",
-    year: 2024,
-  },
-  {
-    name: "Project-4",
+    name: "Chat GPT Local",
     url: "https://github.com/solidsnk86/neo-wifi",
     imgUrl: "/vercel.svg",
     description: "Advanced analytics for WiFi performance.",
+    year: 2025,
+  },
+  {
+    name: "Editable Portfolio",
+    url: "https://github.com/solidsnk86/neo-wifi",
+    imgUrl: "/vercel.svg",
+    description: "Currículum Vitae editable desde Google Sheets",
     year: 2024,
   },
   {
-    name: "Project-5",
+    name: "Readme Notes",
     url: "https://github.com/solidsnk86/neo-wifi",
     imgUrl: "/vercel.svg",
-    description: "An app for managing WiFi connections.",
-    year: 2024,
-  },
-  {
-    name: "Project-6",
-    url: "https://github.com/solidsnk86/neo-wifi",
-    imgUrl: "/vercel.svg",
-    description: "Integration with smart home devices.",
+    description: "Bloc de notas hecho en QT y C++",
     year: 2024,
   },
 ];
@@ -64,7 +64,7 @@ export const Projects = () => {
           <Link
             key={name}
             href={url}
-            className="p-4 rounded-xl bg-zinc-200/25 dark:bg-zinc-800/60 grid mx-auto w-full justify-center space-y-3 relative overflow-hidden group"
+            className="p-4 rounded-xl bg-zinc-100 dark:bg-zinc-800/60 grid mx-auto w-full justify-center space-y-3 relative overflow-hidden group"
           >
             <Image
               src={imgUrl}
@@ -79,8 +79,8 @@ export const Projects = () => {
               className={`absolute top-0 left-0 hidden group-hover:flex dark:bg-zinc-900/10 mx-auto backdrop-blur-xl w-full h-full transition-all duration-300 ${styles.project}`}
             >
               <div className="flex flex-col mx-auto">
-                <h3 className="text-center font-semibold">{name}</h3>
-                <p className="text-center text-pretty text-zinc-400">
+                <h3 className="text-center font-semibold text-lg">{name}</h3>
+                <p className="text-center text-pretty text-zinc-300">
                   {description}
                 </p>
                 <time className="text-center text-sm">{year}</time>

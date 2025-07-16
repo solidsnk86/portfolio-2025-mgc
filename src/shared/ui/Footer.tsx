@@ -48,11 +48,11 @@ export const Footer = () => {
     <footer
       className={`grid justify-center mx-auto py-10 space-y-3 ${styles.footer}`}
     >
+      <Image src="/dividier.svg" width={300} height={0} alt="" />
       <p className="text-[var(--mutted-color)] flex gap-1 font-semibold items-center text-sm text-center mx-auto">
         &copy;2025 - SolidSnk86 <small className="text-[10px]">✦</small>{" "}
         Calcagni Gabriel{" "}
       </p>
-      <Image src="/dividier.svg" width={300} height={0} alt="" />
       {isLoading ? (
         <small className="text-center font-semibold">Cargando...</small>
       ) : (
