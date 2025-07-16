@@ -26,12 +26,16 @@ export function ThemeProvider({
   storageKey = "solidsnk86-theme",
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-  );
+  const [theme, setTheme] = useState<Theme>("system");
 
   useEffect(() => {
     const root = window.document.documentElement;
+    const storedTheme = localStorage.getItem(storageKey);
+    if (storedTheme) {
+      setTheme(storedTheme as Theme);
+    } else {
+      setTheme(defaultTheme);
+    }
 
     root.classList.remove("light", "dark");
 
@@ -46,7 +50,7 @@ export function ThemeProvider({
     }
 
     root.classList.add(theme);
-  }, [theme]);
+  }, [theme, storageKey, defaultTheme]);
 
   const value = {
     theme,

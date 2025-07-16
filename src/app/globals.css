@@ -1,60 +1,61 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --dialog-bg: #f5f5f5;
-  --text-primary-color: #111;
-  --color-border: #eee;
-  --social-link-primary-hover: #575757;
-  --mutted-color: #666;
-  --sunset-2: linear-gradient(
-    90deg,
-    #f06844 0%,
-    #ee4c54 25%,
-    #d45e95 50%,
-    #9c6ca6 75%,
-    #6583c1 100%
-  );
-  --rainbow-1: linear-gradient(
-    90deg,
-    #00daf4 0%,
-    #5edc99 10%,
-    #3861bc 20%,
-    #5606ef 30%,
-    #d400a5 40%,
-    #ee4c54 50%,
-    #ff7800 60%,
-    #ffaf00 70%,
-    #ffc800 80%,
-    #bada6d 100%
-  );
-
-  --retro-2: linear-gradient(
-    90.42deg,
-    #4ab1f1 0.58%,
-    #566cec 37.22%,
-    #d749af 73.87%,
-    #ff7c51 112.26%
-  );
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --header-bg-color: rgba(255,255,255,0.5);
+    --dialog-bg: #f5f5f5;
+    --text-primary-color: #111;
+    --color-border: #eee;
+    --social-link-primary-hover: #575757;
+    --mutted-color: #666;
+    --card-project-color: #f4f4f5;
+    --hover-color: #f2f2f2bf;
+    --button-bg-color-solid: #f4f4f5;
+    --sunset-2: linear-gradient(
+      90deg,
+      #f06844 0%,
+      #ee4c54 25%,
+      #d45e95 50%,
+      #9c6ca6 75%,
+      #6583c1 100%
+    );
+    --rainbow-1: linear-gradient(
+      90deg,
+      #00daf4 0%,
+      #5edc99 10%,
+      #3861bc 20%,
+      #5606ef 30%,
+      #d400a5 40%,
+      #ee4c54 50%,
+      #ff7800 60%,
+      #ffaf00 70%,
+      #ffc800 80%,
+      #bada6d 100%
+    );
+
+    --retro-2: linear-gradient(
+      90.42deg,
+      #4ab1f1 0.58%,
+      #566cec 37.22%,
+      #d749af 73.87%,
+      #ff7c51 112.26%
+    );
+  }
+
+  .dark {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --header-bg-color: #27272a94;
     --dialog-bg: #333;
     --text-primary-color: #fff;
     --color-border: #444;
     --social-link-primary-hover: #f5f5f5;
     --mutted-color: #666;
+    --card-project-color: #27272a94;
+    --hover-color: #27272a;
+    --button-bg-color-solid: #27272a;
   }
 }
 
@@ -121,6 +122,56 @@ dialog {
     border: 1px solid #ddd;
   }
 }
+
+.gradient-left,
+.gradient-right {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 6rem;
+  z-index: 50;
+  filter: blur(4px);
+  background-image: linear-gradient(
+    to right,
+    rgba(253, 253, 253, 0.9),
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+}
+
+.gradient-right {
+  right: -0.5rem;
+  background-image: linear-gradient(
+    to left,
+    rgba(253, 253, 253, 0.9),
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+}
+
+.gradient-left {
+  left: -0.5rem;
+}
+
+.dark .gradient-left {
+  background-image: linear-gradient(
+    to right,
+    rgba(28, 28, 28, 0.9),
+    rgba(28, 28, 28, 0.8),
+    transparent
+  );
+}
+
+.dark .gradient-right {
+  background-image: linear-gradient(
+    to left,
+    rgba(28, 28, 28, 0.9),
+    rgba(28, 28, 28, 0.8),
+    transparent
+  );
+}
+
 
 @keyframes slideEffect {
   from {

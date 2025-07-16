@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { Menu, MoonStar, Sun, X } from "lucide-react";
 import { useMatchMedia } from "@/hooks/useMatchMedia";
+import { useTheme } from "@/provider/theme-provider";
 
 const links = [
   { name: "acerca", url: "/about" },
@@ -13,10 +14,12 @@ const links = [
 ];
 
 export const Header = () => {
-  const isDarkMode = useMatchMedia("(prefers-color-scheme: dark)", true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const { theme, setTheme } = useTheme();
+  const preferesDark = useMatchMedia("(prefers-color-scheme: dark)", true);
 
+  const isDarkMode = theme === "dark" || (theme === "system" && preferesDark);
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
@@ -27,7 +30,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="rounded-full w-full mt-6 bg-[rgba(255,255,255,0.5)] backdrop-blur-xl dark:bg-zinc-800/50 h-[74px] mx-auto">
+      <header className="rounded-full w-full mt-6 bg-[var(--header-bg-color)] backdrop-blur-xl h-[74px] mx-auto">
         <div className="flex items-center justify-between h-full px-6">
           {isDarkMode ? (
             <Image
@@ -35,7 +38,7 @@ export const Header = () => {
               width={105}
               height={55}
               alt="SolidSnk86"
-              className="rotate-3"
+              className="rotate-3 translate-y-1"
             />
           ) : (
             <Image
@@ -43,25 +46,35 @@ export const Header = () => {
               width={105}
               height={55}
               alt="SolidSnk86"
-              className="rotate-3"
+              className="rotate-3 translate-y-1"
             />
           )}
           {/* Links del menú */}
-         <aside className="flex items-center">
-         <nav className="md:flex hidden items-center gap-3 p-6">
-            {links.map(({ name, url }) => (
-              <Link
-                key={name}
-                href={url}
-                onClick={closeMenu}
-                className="font-semibold hover:opacity-80 capitalize"
-              >
-                {name}
-              </Link>
-            ))}
-          </nav>
-          {isDarkMode ? <Sun className="md:flex hidden" /> : <MoonStar className="md:flex hidden" />}
-         </aside>
+          <aside className="flex items-center">
+            <nav className="md:flex hidden items-center gap-3 p-6">
+              {links.map(({ name, url }) => (
+                <Link
+                  key={name}
+                  href={url}
+                  onClick={closeMenu}
+                  className="font-semibold hover:opacity-80 capitalize"
+                >
+                  {name}
+                </Link>
+              ))}
+            </nav>
+            <button
+              onClick={() => setTheme(isDarkMode ? "light" : "dark")}
+              className="p-2 rounded-lg hover:bg-[var(--hover-color)] transition-colors duration-200 hidden md:inline-flex"
+              aria-label="Toggle theme"
+            >
+              {isDarkMode ? (
+                <Sun className="h-6 w-6 text-zinc-500 dark:text-zinc-300" />
+              ) : (
+                <MoonStar className="h-6 w-6 text-zinc-500" />
+              )}
+            </button>
+          </aside>
           <button
             onClick={openMenu}
             className="p-2 rounded-lg md:hidden hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200"
@@ -87,13 +100,14 @@ export const Header = () => {
               </h2>
               <div className="flex items-center gap-2">
                 <button
+                  onClick={() => setTheme(isDarkMode ? "light" : "dark")}
                   className="p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200"
                   aria-label="Toggle theme"
                 >
                   {isDarkMode ? (
-                    <Sun className="h-5 w-5 text-zinc-500 dark:text-zinc-300" />
+                    <Sun className="h-6 w-6 text-zinc-500 dark:text-zinc-300" />
                   ) : (
-                    <MoonStar className="h-5 w-5 text-zinc-500" />
+                    <MoonStar className="h-6 w-6 text-zinc-500" />
                   )}
                 </button>
                 <button
