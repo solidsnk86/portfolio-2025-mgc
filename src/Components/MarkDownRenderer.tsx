@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import "highlight.js/styles/an-old-hope.css";
@@ -6,6 +5,7 @@ import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeRaw from "rehype-raw";
+import remarkGfm from "remark-gfm"
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { useRef } from "react";
 
@@ -19,6 +19,7 @@ export default function MarkdownRenderer({ content }: { content: string }) {
         rehypeHighlight,
         rehypeSlug,
         rehypeAutolinkHeadings,
+        remarkGfm
       ]}
       components={{
         h1: ({ children }) => (
@@ -48,13 +49,6 @@ export default function MarkdownRenderer({ content }: { content: string }) {
           <a href={children as string} target="_blank">
             {children}
           </a>
-        ),
-        img: ({ src, alt }) => (
-          <img
-            src={src as string}
-            alt={alt as string}
-            className="rounded-lg my-4 mx-auto h-full w-full"
-          />
         ),
         hr: () => <hr className="my-4 border-2 border-[var(--mutted-color)]" />,
       }}

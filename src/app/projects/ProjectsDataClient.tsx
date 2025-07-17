@@ -24,6 +24,8 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
           },
         }
       );
+      if (!response.ok) throw new Error(response.statusText)
+      
       const data = await response.json();
       const decoded = Buffer.from(data.content, "base64").toString("utf-8");
       setIsLoading(false);
@@ -33,9 +35,11 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
     }
   }, [repo]);
 
+
   useEffect(() => {
     getDataProject();
   }, [getDataProject]);
+  
 
   return (
     <section className="flex flex-col justify-center mx-auto max-w-3xl p-6 bg-[var(--header-bg-color)] relative z-50">
@@ -47,7 +51,7 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
         <span>Volver</span>
       </Link>
       {isLoading ? (
-        <div className="flex justify-center items-center h-96">
+        <div className="flex justify-center items-center h-[1000px]">
           <Loader className="animate-spin" />
         </div>
       ) : (
