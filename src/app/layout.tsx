@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "solidSnk86 ✦ desarrollador front end",
   description:
-    "Técnico Universitario en Programación | Desarrollo Fron End, Diseño UI, Desarrollo de software",
+    "Técnico Universitario en Programación | Desarrollo Front End, Diseño UI/UX, Desarrollo de software",
 };
 
 export default function RootLayout({
@@ -31,7 +31,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
-
           <Image
             src="/header-gradient.svg"
             width={600}

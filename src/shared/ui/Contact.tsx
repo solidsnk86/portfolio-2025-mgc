@@ -116,7 +116,7 @@ export const ContactForm = () => {
               setError("");
               setNameValue(e.target.value);
             }}
-            className="border border-zinc-300/70 dark:border-zinc-700 rounded p-2 w-full"
+            className="border border-[var(--border-color)] rounded p-2 w-full"
             placeholder="Tú nombre"
           />
         </div>
@@ -128,7 +128,7 @@ export const ContactForm = () => {
               setError("");
               setEmailValue(e.target.value);
             }}
-            className="border border-zinc-300/70 dark:border-zinc-700 rounded p-2 w-full"
+            className="border border-[var(--border-color)] rounded p-2 w-full"
             placeholder="Tú Email"
           />
         </div>
@@ -139,7 +139,7 @@ export const ContactForm = () => {
               setError("");
               setMessageValue(e.target.value);
             }}
-            className="border border-zinc-300/70 dark:border-zinc-700 rounded p-2 w-full"
+            className="border border-[var(--border-color)] rounded p-2 w-full"
             placeholder="Tú próximo desafío.."
           />
         </div>
@@ -154,7 +154,7 @@ export const ContactForm = () => {
           />
           <button
             type="submit"
-            className="bg-[var(--button-bg-color-solid)] border border-zinc-300/70 dark:border-zinc-700 rounded-md px-3 py-[10px] w-full cursor-pointer hover:shadow-2xl z-50"
+            className="bg-[var(--button-bg-color-solid)] border border-[var(--border-color)] rounded-md px-3 py-[10px] w-full cursor-pointer hover:shadow-2xl z-50"
             onMouseEnter={() => {
               const felix = document.getElementById("felix")!;
               felix.style.animation = "sliderIn 0.6s ease-out";

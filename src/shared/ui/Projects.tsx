@@ -6,42 +6,42 @@ import styles from "@/shared/styles/projects.module.css";
 const projects = [
   {
     name: "Neo-WiFi App",
-    url: "https://github.com/solidsnk86/neo-wifi",
+    url: "/neo-wifi",
     imgUrl: "/vercel.svg",
     description: "Automatiza la configuración CPEs y routers TP-Link.",
     year: 2025,
   },
   {
     name: "Neo-WiFi Web",
-    url: "https://github.com/solidsnk86/neo-wifi",
+    url: "/new-wifi",
     imgUrl: "/vercel.svg",
     description: "Localización Inteligente de Antenas WiFi",
     year: 2025,
   },
   {
     name: "Geolocation API",
-    url: "https://solid-geolocation.vercel.app/",
+    url: "/geo_api",
     imgUrl: "/vercel.svg",
     description: "API de geolocalización por IP o coordenandas",
     year: 2024,
   },
   {
     name: "Chat GPT Local",
-    url: "https://github.com/solidsnk86/proyecto_python",
+    url: "/proyecto_python",
     imgUrl: "/vercel.svg",
     description: "Chat GPT local con login de usuarios en PgAdmin",
     year: 2025,
   },
   {
-    name: "Editable Portfolio",
-    url: "https://cv-gec.vercel.app/",
+    name: "Portfolio Editable",
+    url: "/CV_GEC",
     imgUrl: "/vercel.svg",
     description: "Currículum Vitae editable desde Google Sheets",
     year: 2024,
   },
   {
-    name: "Readme Notes",
-    url: "https://github.com/solidsnk86/bloc-de-notas",
+    name: "Bloc de Notas",
+    url: "/bloc-de-notas",
     imgUrl: "/vercel.svg",
     description: "Bloc de notas hecho en QT y C++",
     year: 2024,
@@ -50,7 +50,7 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <section className="grid p-4 max-w-3xl z-10">
+    <section className="grid p-4 max-w-3xl z-10" id="projects">
       <div className="flex justify-between items-center p-1">
         <h3 className="text-[var(--mutted-color)] text-sm font-semibold">
           PROYECTOS ACTUALES
@@ -63,7 +63,7 @@ export const Projects = () => {
         {projects.map(({ name, url, imgUrl, year, description }) => (
           <Link
             key={name}
-            href={url}
+            href={`/projects/${url}`}
             className="p-4 rounded-xl bg-[var(--card-project-color)] grid mx-auto w-full justify-center space-y-3 relative overflow-hidden group"
           >
             <Image
