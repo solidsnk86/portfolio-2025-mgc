@@ -80,11 +80,11 @@ export const Projects = () => {
             >
               <div className="flex flex-col mx-auto">
                 <h3 className="text-center font-semibold text-lg">{name}</h3>
-                <p className="text-center text-pretty text-zinc-300">
+                <p className="text-center text-pretty">
                   {description}
                 </p>
                 <time className="text-center text-sm">{year}</time>
-                <span className="p-1 rounded bg-zinc-200 dark:bg-zinc-900/50 w-fit flex mx-auto mt-2">
+                <span className="p-1 rounded bg-[var(--header-bg-color)] w-fit flex mx-auto mt-2">
                 <ArrowUpRightFromSquareIcon size={14} />
                 </span>
               </div>

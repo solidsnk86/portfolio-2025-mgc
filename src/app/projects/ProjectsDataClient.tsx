@@ -51,7 +51,7 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
         <span>Volver</span>
       </Link>
       {isLoading ? (
-        <div className="flex justify-center items-center h-[1000px]">
+        <div className="flex justify-center items-center h-[600px]">
           <Loader className="animate-spin" />
         </div>
       ) : (
