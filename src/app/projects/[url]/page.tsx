@@ -6,15 +6,16 @@ import { Footer } from "@/shared/ui/Footer";
 export default async function ProjectsPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ url: string }>;
 }) {
-  const projectName = (await params).slug;
+  const name = (await params).url;
+
   return (
-    <div className="flex flex-col md:max-w-3xl mx-auto">
-    <Header />
-    <Noise />
-    <ProjectDataClient repo={projectName} />
-    <Footer />
+    <div className="flex flex-col md:max-w-3xl mx-auto px-3">
+      <Header />
+      <Noise />
+      <ProjectDataClient repo={name} />
+      <Footer />
     </div>
   );
 }

@@ -7,7 +7,7 @@ const projects = [
   {
     name: "Neo-WiFi App",
     url: "/neo-wifi",
-    imgUrl: "/vercel.svg",
+    imgUrl: "/assets/neo-wifi-3d.png",
     description: "Automatiza la configuración CPEs y routers TP-Link.",
     year: 2025,
   },
@@ -21,7 +21,7 @@ const projects = [
   {
     name: "Geolocation API",
     url: "/geo_api",
-    imgUrl: "/vercel.svg",
+    imgUrl: "/assets/solid-geolocation-3d.png",
     description: "API de geolocalización por IP o coordenandas",
     year: 2024,
   },

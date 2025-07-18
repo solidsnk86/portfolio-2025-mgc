@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Menu, MoonStar, Sun, X } from "lucide-react";
 import { useMatchMedia } from "@/hooks/useMatchMedia";
 import { useTheme } from "@/provider/theme-provider";
@@ -20,21 +20,13 @@ export const Header = () => {
   const preferesDark = useMatchMedia("(prefers-color-scheme: dark)", true);
 
   const isDarkMode = theme === "dark" || (theme === "system" && preferesDark);
-  
-  const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen);
-  }
 
-  useEffect(() => {
-    if (menuRef.current) {
-      menuRef.current.addEventListener("click", (event) => {
-        if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-          console.log("Me clickio afuera el perro")
-          setIsMenuOpen(false)
-        }
-      })
-    }
-  }, [])
+  const openMenu = () => {
+    setIsMenuOpen(true);
+  };
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <>
@@ -64,7 +56,7 @@ export const Header = () => {
                 <Link
                   key={name}
                   href={url}
-                  onClick={handleMenuClick}
+                  onClick={closeMenu}
                   className="font-semibold hover:opacity-80 capitalize"
                 >
                   {name}
@@ -84,7 +76,7 @@ export const Header = () => {
             </button>
           </aside>
           <button
-            onClick={handleMenuClick}
+            onClick={openMenu}
             className="p-2 rounded-lg md:hidden hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200"
             aria-label="Open menu"
           >
@@ -119,7 +111,7 @@ export const Header = () => {
                   )}
                 </button>
                 <button
-                  onClick={handleMenuClick}
+                  onClick={closeMenu}
                   className="p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200"
                   aria-label="Close menu"
                 >
@@ -134,7 +126,7 @@ export const Header = () => {
                 <Link
                   key={name}
                   href={url}
-                  onClick={handleMenuClick}
+                  onClick={closeMenu}
                   className="font-semibold text-lg text-zinc-700 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 capitalize py-4 border-b border-zinc-100 dark:border-zinc-800 last:border-b-0"
                 >
                   {name}
