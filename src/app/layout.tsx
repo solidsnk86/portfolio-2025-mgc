@@ -27,10 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <ThemeWrapper>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
-      >
+      <ThemeWrapper>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
+        >
           <Image
             src="/header-gradient.svg"
             width={600}
@@ -48,7 +48,7 @@ export default function RootLayout({
             alt="Gradient BG"
             priority
           />
-      </body>
+        </body>
       </ThemeWrapper>
     </html>
   );
