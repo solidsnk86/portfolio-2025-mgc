@@ -8,7 +8,7 @@ import { useMatchMedia } from "@/hooks/useMatchMedia";
 import { useTheme } from "@/provider/theme-provider";
 
 const links = [
-  { name: "acerca", url: "/about" },
+  { name: "acerca", url: "/about/me" },
   { name: "contacto", url: "/#contact" },
   { name: "proyectos", url: "/#projects" },
 ];

@@ -14,9 +14,9 @@ interface GitHubApiProps {
 }
 
 const fraunces = Fraunces({
-    weight: ["400"],
-    subsets: ["latin"],
-    });
+  weight: ["400"],
+  subsets: ["latin"],
+});
 
 export const ALlProjectsClient = () => {
   const [repos, setRepos] = useState<GitHubApiProps[]>([]);
@@ -81,7 +81,7 @@ export const ALlProjectsClient = () => {
                   "Carniceria-Nievas",
                   "double-commit",
                   "node-js-class",
-                  "Electron-ServiciosElectricos"
+                  "Electron-ServiciosElectricos",
                 ];
                 return !excluded.includes(repo.name);
               })
@@ -91,12 +91,14 @@ export const ALlProjectsClient = () => {
                   key={repo.id}
                   className="flex flex-col mb-2 relative py-5 px-3"
                 >
-                  <div className="absolute top-0 left-0 w-full h-full rounded-2xl project-item" />  
+                  <div className="absolute top-0 left-0 w-full h-full rounded-2xl project-item" />
                   <div className="flex gap-4 text-[var(--mutted-color)]">
-                  <time>{Format.date({ dateTime: repo.created_at })}</time>
-                  <strong>{repo.name}</strong>
+                    <time>{Format.date({ dateTime: repo.created_at })}</time>
+                    <strong>{repo.name}</strong>
                   </div>
-                 <h3 className={`${fraunces.className} text-xl font-semibold`}>{repo.description}</h3>
+                  <h3 className={`${fraunces.className} text-xl font-semibold`}>
+                    {repo.description}
+                  </h3>
                 </Link>
               ))}
           </div>

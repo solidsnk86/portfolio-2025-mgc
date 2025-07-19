@@ -64,7 +64,7 @@ export const Footer = () => {
       setIsLoading(false);
     };
     getCurrentIP();
-  }, []);
+  }, [path]);
   return (
     <footer
       className={`grid justify-center mx-auto py-10 space-y-3 ${styles.footer}`}
