@@ -2,7 +2,7 @@
 
 Este es mi portafolio personal, construido con tecnologías modernas para presentar mis proyectos, experiencia y conocimientos en desarrollo web.
 
-Incluye un diseño responsivo, limpio y funcional, integrando íconos 3D y soporte para contenidos en Markdown enriquecidos.
+Incluye un diseño responsivo, limpio, funcional y muy elegante, integrando íconos 3D y soporte para contenidos en Markdown enriquecidos.
 
 ---
 
