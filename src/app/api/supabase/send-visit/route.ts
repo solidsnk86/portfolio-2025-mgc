@@ -3,7 +3,7 @@ import { suapabase } from "@/lib/supabaseClient";
 export async function POST(req: Request) {
   const { ip, city, country, page } = await req.json();
 
-  if (!ip || !city || !country) {
+  if (!ip || !city || !country || !page) {
     return Response.json(
       { message: "El cuerpo es necesario" },
       { status: 400 }
