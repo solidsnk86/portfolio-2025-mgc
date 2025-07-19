@@ -3,6 +3,8 @@ import { Footer } from "@/shared/ui/Footer";
 import { Header } from "@/shared/ui/Header";
 import Image from "next/image";
 import { Fraunces, Poppins } from "next/font/google";
+import { SocialLinks } from "@/shared/ui/SocialLinks";
+import { Card } from "@/shared/ui/Card";
 
 const fraunces = Fraunces({
   weight: ["400"],
@@ -16,7 +18,7 @@ const poppins = Poppins({
 
 export default function MePage() {
   return (
-    <div className="flex flex-col md:max-w-3xl mx-auto px-3">
+    <div className="flex flex-col md:max-w-3xl mx-auto px-3 relative z-40">
       <Noise />
       <Header />
       <section className={`flex flex-col`}>
@@ -53,6 +55,10 @@ export default function MePage() {
         </h4>
         </article>
       </section>
+      <div className="my-10" />
+      <Card title="" text="Conéctate Conmigo">
+        <SocialLinks />
+      </Card>
       <Footer />
     </div>
   );

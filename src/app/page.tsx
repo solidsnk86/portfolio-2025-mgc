@@ -7,12 +7,13 @@ import { Noise } from "@/shared/ui/effects/Noise";
 import { Footer } from "@/shared/ui/Footer";
 import { Header } from "@/shared/ui/Header";
 import { Hero } from "@/shared/ui/Hero";
-import { MindCard } from "@/shared/ui/MindCard";
+import { StarShipIcon } from "@/shared/ui/Icons";
+import { Card } from "@/shared/ui/Card";
 import { Projects } from "@/shared/ui/Projects";
 
 export default function Home() {
   return (
-      <div className="flex flex-col md:max-w-3xl mx-auto">
+    <div className="flex flex-col md:max-w-3xl mx-auto">
       <Noise />
       <Header />
       <Hero />
@@ -20,7 +21,12 @@ export default function Home() {
       <Dots className="flex justify-center mx-auto my-16" />
       <Projects />
       <Dots className="flex justify-center mx-auto my-16" />
-      <MindCard />
+      <Card
+        title="Tienes algo en mente?"
+        text="Podríamos hacerlo realidad.."
+      >
+        <StarShipIcon width={40} height={40} fill="#fff" />
+      </Card>
       <Dots className="flex justify-center mx-auto my-16" />
       <ContactForm />
       <Footer />
