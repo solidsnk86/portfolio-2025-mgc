@@ -59,4 +59,4 @@ http://localhost:3000
 
 
 📝 Licencia
-Este proyecto es de uso personal y educativo. Los íconos 3D utilizados son propiedad de [3dicons.co](https://3dicons.co).
+Este proyecto es de uso personal y educativo. Los íconos 3D utilizados son propiedad de 3dicons.co
