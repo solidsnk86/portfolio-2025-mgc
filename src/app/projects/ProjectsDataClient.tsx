@@ -2,7 +2,7 @@
 
 import MarkdownRenderer from "@/Components/MarkDownRenderer";
 import { Format } from "@/shared/utils/Format";
-import { Loader, MoveLeft } from "lucide-react";
+import { Loader2, MoveLeft } from "lucide-react";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
@@ -105,7 +105,7 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
       </Link>
       {isLoading ? (
         <div className="flex justify-center items-center py-20">
-          <Loader className="animate-spin h-[400px]" />
+          <Loader2 className="animate-spin h-[400px]" />
         </div>
       ) : (
         <>
