@@ -1,7 +1,7 @@
 import { suapabase } from "@/lib/supabaseClient";
 
 export async function POST(req: Request) {
-  const { ip, city, country } = await req.json();
+  const { ip, city, country, page } = await req.json();
 
   if (!ip || !city || !country) {
     return Response.json(
@@ -16,6 +16,7 @@ export async function POST(req: Request) {
         ip,
         city_name: city,
         country_name: country,
+        page
       },
     ]);
     if (error) throw new Error(error.message);

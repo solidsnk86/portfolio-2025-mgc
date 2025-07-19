@@ -25,7 +25,6 @@ export const Footer = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const path = usePathname();
 
-
   useEffect(() => {
     const getCurrentIP = async () => {
       setIsLoading(true);
