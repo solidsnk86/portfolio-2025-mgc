@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Fraunces, Poppins } from "next/font/google";
 import { SocialLinks } from "@/shared/ui/SocialLinks";
 import { Card } from "@/shared/ui/Card";
+import { Dots } from "@/shared/ui/Dots";
 
 const fraunces = Fraunces({
   weight: ["400"],
@@ -55,7 +56,7 @@ export default function MePage() {
         </h4>
         </article>
       </section>
-      <div className="my-10" />
+      <Dots className="flex justify-center mx-auto my-10" />
       <Card title="" text="Conéctate Conmigo">
         <SocialLinks />
       </Card>
