@@ -1,6 +1,7 @@
 "use client";
 
 import { ContactForm } from "@/shared/ui/Contact";
+import { Dots } from "@/shared/ui/Dots";
 import { Marquee } from "@/shared/ui/effects/Marquee";
 import { Noise } from "@/shared/ui/effects/Noise";
 import { Footer } from "@/shared/ui/Footer";
@@ -15,7 +16,9 @@ export default function Home() {
       <Header />
       <Hero />
       <Marquee />
+      <Dots className="flex justify-center mx-auto my-16" />
       <Projects />
+      <Dots className="flex justify-center mx-auto my-16" />
       <ContactForm />
       <Footer />
     </div>

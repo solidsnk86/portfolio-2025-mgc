@@ -7,42 +7,42 @@ const projects = [
   {
     name: "Neo-WiFi App",
     url: "/neo-wifi",
-    imgUrl: "/assets/neo-wifi-3d.png",
+    imgUrl: "/assets/3dicons-tools-dynamic-gradient.png",
     description: "Automatiza la configuración CPEs y routers TP-Link.",
     year: 2025,
   },
   {
     name: "Neo-WiFi Web",
-    url: "/new-wifi",
-    imgUrl: "/vercel.svg",
+    url: "/neo-wifi",
+    imgUrl: "/assets/3dicons-wifi-dynamic-gradient.png",
     description: "Localización Inteligente de Antenas WiFi",
     year: 2025,
   },
   {
     name: "Geolocation API",
     url: "/geo_api",
-    imgUrl: "/assets/solid-geolocation-3d.png",
+    imgUrl: "/assets/3dicons-map-pin-dynamic-gradient.png",
     description: "API de geolocalización por IP o coordenandas",
     year: 2024,
   },
   {
     name: "Chat GPT Local",
     url: "/proyecto_python",
-    imgUrl: "/vercel.svg",
+    imgUrl: "/assets/3dicons-chat-bubble-dynamic-gradient.png",
     description: "Chat GPT local con login de usuarios en PgAdmin",
     year: 2025,
   },
   {
     name: "Portfolio Editable",
     url: "/CV_GEC",
-    imgUrl: "/vercel.svg",
+    imgUrl: "/assets/3dicons-folder-fav-dynamic-gradient.png",
     description: "Currículum Vitae editable desde Google Sheets",
     year: 2024,
   },
   {
     name: "Bloc de Notas",
     url: "/bloc-de-notas",
-    imgUrl: "/vercel.svg",
+    imgUrl: "/assets/3dicons-notebook-dynamic-gradient.png",
     description: "Bloc de notas hecho en QT y C++",
     year: 2024,
   },
@@ -64,19 +64,20 @@ export const Projects = () => {
           <Link
             key={name}
             href={`/projects/${url}`}
-            className="p-4 rounded-xl bg-[var(--card-project-color)] grid mx-auto w-full justify-center space-y-3 relative overflow-hidden group"
+            className="p-4 rounded-xl bg-[var(--card-project-color)] grid mx-auto w-full justify-center space-y-3 relative overflow-hidden group hover:scale-105 transition-transform duration-300 hover:shadow-2xl"
           >
+            <span className="p-1 rounded-xl bg-[var(--icon-bg)] group-hover:scale-90 group-hover:translate-y-3 transition-transform duration-300">
             <Image
               src={imgUrl}
               width={120}
               height={90}
               alt={name}
-              className="group-hover:scale-90 group-hover:translate-y-3 transition-transform duration-300"
             />
+            </span>
             <h3 className="text-center font-bold">{name}</h3>
             <small className="text-center">{year}</small>
             <article
-              className={`absolute top-0 left-0 hidden group-hover:flex dark:bg-zinc-900/10 mx-auto backdrop-blur-xl w-full h-full transition-all duration-300 ${styles.project}`}
+              className={`absolute top-0 left-0 hidden group-hover:flex dark:bg-zinc-900/10 mx-auto backdrop-blur-md w-full h-full transition-all duration-300 ${styles.project}`}
             >
               <div className="flex flex-col mx-auto">
                 <h3 className="text-center font-semibold text-lg">{name}</h3>

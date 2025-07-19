@@ -14,8 +14,7 @@ export async function POST(req: Request) {
         { status: 400 }
       );
 
-    const gmail =
-      process.env.GAMIL_APP_USER || "calcagni.gabriel86@gmail.com";
+    const gmail = process.env.GAMIL_APP_USER || "calcagni.gabriel86@gmail.com";
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -40,7 +39,7 @@ export async function POST(req: Request) {
     });
   } catch (error) {
     return Response.json(
-      { message: "Error en el servidor" + " " + error },
+      { message: "Error en el servidor" + " " + error, success: false },
       { status: 500 }
     );
   }

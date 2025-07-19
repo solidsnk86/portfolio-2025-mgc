@@ -33,12 +33,12 @@ export const Hero = () => {
       </h2>
 
       <p className="xl:text-3xl text-2xl font-semibold">
-        Técnico Universitario en Programación & amante del desarrollo de
+        Técnico Universitario en Programación & entusiasta del desarrollo de
         software.
       </p>
       <SocialLinks />
-      <p className={`font-semibold xl:text-lg my-4 ${poppins.className}`}>
-        Con más de 2 años de experiencia en proyectos propios, sigo explorando
+      <p className={`font-semibold xl:text-lg my-4 text-pretty ${poppins.className}`}>
+        Con más de 2 años de experiencia en proyectos personales, sigo explorando
         la magia <span className="text-xl">✨</span> del código y el diseño
         mientras completo mi formación en la UTN-FRSR, donde curso el último
         año.

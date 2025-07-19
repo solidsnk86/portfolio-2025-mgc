@@ -1,9 +1,10 @@
 "use client";
 
-import { GetLocation } from "@/lib/locationClient";
+import { GetLocation } from "@/lib/GetLocation";
 import { useEffect, useState } from "react";
 import styles from "@/shared/styles/footer.module.css";
 import Image from "next/image";
+import { Dots } from "./Dots";
 
 interface LocationProps {
   ip: string;
@@ -23,7 +24,7 @@ export const Footer = () => {
 
   useEffect(() => {
     const getCurrentIP = async () => {
-      setIsLoading(true)
+      setIsLoading(true);
       const currentIP = await GetLocation.ip();
       const currentCity = await GetLocation.city();
       const currentCountry = await GetLocation.country();
@@ -40,7 +41,15 @@ export const Footer = () => {
           system: currentOS,
         },
       });
-      setIsLoading(false)
+      const lastVisitResponse = await fetch("/api/supabase/get-visit", {
+        method: "GET"
+      }).then((res) => res.json())
+      console.log(lastVisitResponse)
+      await fetch("/api/supabase/send-visit", {
+        method: "POST",
+        body: JSON.stringify({ ip: currentIP, city: currentCity, country: currentCountry })
+      }).catch((error) => console.log(error))
+      setIsLoading(false);
     };
     getCurrentIP();
   }, []);
@@ -50,7 +59,8 @@ export const Footer = () => {
     >
       <Image src="/dividier.svg" width={300} height={0} alt="" />
       <p className="text-[var(--mutted-color)] flex gap-1 font-semibold items-center text-sm text-center mx-auto">
-        &copy;2025 - SolidSnk86 <small className="text-[10px]">✦</small>{" "}
+        &copy;2025 SolidSnk86{" "}
+        <Dots className="mx-2" />{" "}
         Calcagni Gabriel{" "}
       </p>
       {isLoading ? (

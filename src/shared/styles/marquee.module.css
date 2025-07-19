@@ -1,5 +1,5 @@
 .marquee {
-  animation: marquee 10s linear infinite;
+  animation: marquee 14s linear infinite;
   display: flex;
   min-width: max-content;
 }
@@ -9,6 +9,6 @@
     transform: translateX(0%);
   }
   to {
-    transform: translateX(-28%);
+    transform: translateX(-38%);
   }
 }

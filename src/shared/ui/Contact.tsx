@@ -100,7 +100,7 @@ export const ContactForm = () => {
     <>
       <h3
         id="contact"
-        className={`font-semibold xl:text-3xl text-2xl px-4 ${fraunces.className} text-center my-12`}
+        className={`font-semibold xl:text-3xl text-2xl px-4 ${fraunces.className} text-center mb-16`}
       >
         Acepto desafíos… ¿cuál es el tuyo?
       </h3>
@@ -129,7 +129,7 @@ export const ContactForm = () => {
               setEmailValue(e.target.value);
             }}
             className="border border-[var(--border-color)] rounded p-2 w-full"
-            placeholder="Tú Email"
+            placeholder="Tú email"
           />
         </div>
         <div>
@@ -165,12 +165,12 @@ export const ContactForm = () => {
             }}
           >
             {isLoading ? (
-              <span className="flex justify-center gap-2 mx-auto items-center">
+              <span className="flex justify-center gap-2 mx-auto items-center font-semibold">
                 Enviando
                 <Loader size={18} className="animate-spin" />
               </span>
             ) : (
-              <span>Enviar</span>
+              <span className="font-semibold">Enviar</span>
             )}
           </button>
         </div>

@@ -9,6 +9,7 @@ import { useTheme } from "@/provider/theme-provider";
 
 const links = [
   { name: "acerca", url: "/about" },
+  { name: "blog", url: "/blog" },
   { name: "contacto", url: "/#contact" },
   { name: "proyectos", url: "/#projects" },
 ];
@@ -23,9 +24,11 @@ export const Header = () => {
 
   const openMenu = () => {
     setIsMenuOpen(true);
+    document.body.style.overflow = "hidden"
   };
   const closeMenu = () => {
     setIsMenuOpen(false);
+    document.body.style.overflow = "auto"
   };
 
   return (
@@ -63,10 +66,12 @@ export const Header = () => {
                 </Link>
               ))}
             </nav>
+            <span className="text-zinc-500 hidden md:flex">|</span>
             <button
               onClick={() => setTheme(isDarkMode ? "light" : "dark")}
-              className="p-2 rounded-lg hover:bg-[var(--hover-color)] transition-colors duration-200 hidden md:inline-flex"
-              aria-label="Toggle theme"
+              className="p-2 rounded-lg hidden md:inline-flex"
+              aria-label="Cambiar tema"
+              title="Cambiar tema"
             >
               {isDarkMode ? (
                 <Sun className="h-6 w-6 text-zinc-500 dark:text-zinc-300" />

@@ -4,7 +4,7 @@ import { Poppins } from "next/font/google";
 import styles from "@/shared/styles/social-links.module.css";
 
 const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "800"],
+  weight: ["300", "400", "500", "600", "800"],
   subsets: ["latin"],
 });
 

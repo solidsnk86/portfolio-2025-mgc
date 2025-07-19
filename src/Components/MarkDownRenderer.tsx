@@ -46,7 +46,7 @@ export default function MarkdownRenderer({ content }: { content: string }) {
           <li className="mb-2 list-disc list-inside">{children}</li>
         ),
         a: ({ children }) => (
-          <a href={children as string} target="_blank">
+          <a href={children as string} target="_blank" className="text-blue-400 hover:underline">
             {children}
           </a>
         ),

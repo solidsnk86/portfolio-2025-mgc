@@ -75,15 +75,16 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
       ) : (
         <>
           <header className="mt-4 flex flex-col">
-            <time>Creado el {Format.date({ dateTime: repoData.created_at })}</time>
-            <div className="flex gap-3">
+            <time>
+              Creado el {Format.date({ dateTime: repoData.created_at })}
+            </time>
+            <div className="flex gap-3 w-full overflow-x-auto">
               {repoData.topics.map((topic, index) => (
-                <small
-                  key={`${topic}-${index}`}
-                  className="px-2 uppercase bg-zinc-200/30 rounded-full my-1 text-blue-400 font-semibold"
-                >
-                  {topic}
-                </small>
+                <span key={`${topic}-${index}`} className="px-2 rounded-xl bg-[var(--icon-bg)] mt-3">
+                  <small className="uppercase sunset-gradient font-semibold">
+                    {topic}
+                  </small>
+                </span>
               ))}
             </div>
           </header>
