@@ -43,7 +43,7 @@ export default function MePage() {
           Mis proyectos personales son más que ejercicios: los considero
           espacios de aprendizaje continuo, donde experimento, pruebo ideas
           nuevas y busco soluciones a problemas reales. Me interesa
-          particularmente escribir código limpio (no todas las veces 😅) y bien estructurado, pensando
+          particularmente escribir código limpio, (no todas las veces 😅) y bien estructurado, pensando
           siempre en la mantenibilidad y la escalabilidad.
         </p>
         <h4>

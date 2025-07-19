@@ -23,11 +23,11 @@ export const Header = () => {
 
   const openMenu = () => {
     setIsMenuOpen(true);
-    document.body.style.overflow = "hidden"
+    document.body.style.overflow = "hidden";
   };
   const closeMenu = () => {
     setIsMenuOpen(false);
-    document.body.style.overflow = "auto"
+    document.body.style.overflow = "auto";
   };
 
   return (
@@ -35,21 +35,25 @@ export const Header = () => {
       <header className="rounded-full w-full mt-6 bg-[var(--header-bg-color)] backdrop-blur-xl h-[74px] mx-auto relative z-50">
         <div className="flex items-center justify-between h-full px-6">
           {isDarkMode ? (
-            <Image
-              src="/assets/solid-dark-mode.png"
-              width={105}
-              height={55}
-              alt="SolidSnk86"
-              className="rotate-3 translate-y-1"
-            />
+            <Link href="/">
+              <Image
+                src="/assets/solid-dark-mode.png"
+                width={105}
+                height={55}
+                alt="SolidSnk86"
+                className="rotate-3 translate-y-1"
+              />
+            </Link>
           ) : (
-            <Image
-              src="/assets/solid-light-mode.png"
-              width={105}
-              height={55}
-              alt="SolidSnk86"
-              className="rotate-3 translate-y-1"
-            />
+            <Link href="/">
+              <Image
+                src="/assets/solid-light-mode.png"
+                width={105}
+                height={55}
+                alt="SolidSnk86"
+                className="rotate-3 translate-y-1"
+              />
+            </Link>
           )}
           {/* Links del menú */}
           <aside className="flex items-center">
@@ -99,9 +103,7 @@ export const Header = () => {
           >
             {/* Header del menú */}
             <div className="flex justify-between items-center p-6 border-b border-[var(--color-border)] text-[var(--foreground)]">
-              <h2 className="text-lg font-semibold">
-                Menú
-              </h2>
+              <h2 className="text-lg font-semibold">Menú</h2>
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setTheme(isDarkMode ? "light" : "dark")}
