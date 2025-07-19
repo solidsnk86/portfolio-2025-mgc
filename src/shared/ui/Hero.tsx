@@ -24,7 +24,7 @@ export const Hero = () => {
         <span className="inline-flex gap-2 items-center whitespace-nowrap">
           Soy
           <img
-            src="/assets/mgc.png"
+            src="/assets/mgc.jfif"
             alt="Gabriel avatar"
             className="rounded-full w-[1em] md:w-[1.2em] xl:w-[1.4em] h-auto align-middle"
           />
