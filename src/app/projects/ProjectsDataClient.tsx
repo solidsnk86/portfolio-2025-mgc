@@ -98,9 +98,9 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
     <section className="flex flex-col justify-center mx-auto md:max-w-3xl w-full p-6 bg-[var(--header-bg-color)] relative z-0 rounded-xl my-10">
       <Link
         href="/#projects"
-        className="flex gap-2 items-center text-[var(--mutted-color)] hover:brightness-125"
+        className="flex gap-2 items-center text-[var(--mutted-color)] hover:brightness-125 group"
       >
-        <MoveLeft />
+        <MoveLeft className="group-hover:-translate-x-1 transition-transform duration-300" />
         <span>Volver</span>
       </Link>
       {isLoading ? (

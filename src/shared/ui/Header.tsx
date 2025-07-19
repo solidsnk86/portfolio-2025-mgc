@@ -74,7 +74,7 @@ export const Header = () => {
               title="Cambiar tema"
             >
               {isDarkMode ? (
-                <Sun className="h-6 w-6 text-zinc-500 dark:text-zinc-300" />
+                <Sun className="h-6 w-6 text-zinc-500" />
               ) : (
                 <MoonStar className="h-6 w-6 text-zinc-500" />
               )}
@@ -85,42 +85,42 @@ export const Header = () => {
             className="p-2 rounded-lg md:hidden hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200"
             aria-label="Open menu"
           >
-            <Menu className="h-6 w-6 text-zinc-500 dark:text-zinc-300" />
+            <Menu className="h-6 w-6 text-zinc-500" />
           </button>
         </div>
       </header>
 
       {isMenuOpen && (
-        <div className="absolute top-0 left-0 inset-0 z-50 bg-opacity-50 backdrop-blur-sm">
+        <div className="absolute top-0 left-0 inset-0 z-50 bg-opacity-50 backdrop-blur-[4px]">
           <div
             ref={menuRef}
-            className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white dark:bg-zinc-900 shadow-xl transform transition-transform duration-300 ease-in-out ${
+            className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-[var(--dialog-bg)] shadow-xl transform transition-transform duration-300 ease-in-out ${
               isMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
             {/* Header del menú */}
-            <div className="flex justify-between items-center p-6 border-b border-zinc-200 dark:border-zinc-700">
-              <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+            <div className="flex justify-between items-center p-6 border-b border-[var(--color-border)] text-[var(--foreground)]">
+              <h2 className="text-lg font-semibold">
                 Menú
               </h2>
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setTheme(isDarkMode ? "light" : "dark")}
-                  className="p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200"
+                  className="p-2 rounded-lg hover:bg-[var(--hover-color)] transition-colors duration-200"
                   aria-label="Toggle theme"
                 >
                   {isDarkMode ? (
-                    <Sun className="h-6 w-6 text-zinc-500 dark:text-zinc-300" />
+                    <Sun className="h-6 w-6" />
                   ) : (
-                    <MoonStar className="h-6 w-6 text-zinc-500" />
+                    <MoonStar className="h-6 w-6" />
                   )}
                 </button>
                 <button
                   onClick={closeMenu}
-                  className="p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200"
+                  className="p-2 rounded-lg hover:bg-[var(--hover-color)] transition-colors duration-200"
                   aria-label="Close menu"
                 >
-                  <X className="h-5 w-5 text-zinc-500 dark:text-zinc-300" />
+                  <X className="h-5 w-5" />
                 </button>
               </div>
             </div>
@@ -132,7 +132,7 @@ export const Header = () => {
                   key={name}
                   href={url}
                   onClick={closeMenu}
-                  className="font-semibold text-lg text-zinc-700 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 capitalize py-4 border-b border-zinc-100 dark:border-zinc-800 last:border-b-0"
+                  className="font-semibold text-lg transition-colors duration-200 capitalize py-4 border-b border-[var(--border-color)] last:border-b-0"
                 >
                   {name}
                 </Link>
