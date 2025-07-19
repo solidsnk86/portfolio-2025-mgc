@@ -1,4 +1,4 @@
-# 📁 Portafolio de Gabriel Calcagni
+# 📁Portfolio web
 
 Este es mi portafolio personal, construido con tecnologías modernas para presentar mis proyectos, experiencia y conocimientos en desarrollo web.
 
@@ -54,8 +54,7 @@ pnpm install
 npm run dev
 ```
 
-El proyecto estará disponible en:
-http://localhost:3000
+- El proyecto estará disponible en: http://localhost:3000
 
 
 📝 Licencia
