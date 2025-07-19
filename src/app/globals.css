@@ -15,6 +15,7 @@
     --button-bg-color-solid: #f4f4f5;
     --border-color: #ddd;
     --icon-bg: #eee;
+    --colder: linear-gradient(45deg, #ac88ee, #7d95ea);
     --sunset-2: linear-gradient(
       45deg,
       #f06844 0%,
@@ -60,6 +61,7 @@
     --button-bg-color-solid: #27272a;
     --border-color: #333;
     --icon-bg: #1c1c1ec8;
+    --colder: linear-gradient(45deg, #0d0222, #01071c);
   }
 }
 
@@ -72,6 +74,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   transition: background 300ms;
+  overflow-x: hidden;
 }
 
 .sunset-gradient {
@@ -194,6 +197,10 @@ dialog {
 .project-icon {
   background: var(--header-bg-color);
   filter: drop-shadow(3px 6px 9px #111);
+}
+
+.colder {
+  background: var(--colder);
 }
 
 .felix {

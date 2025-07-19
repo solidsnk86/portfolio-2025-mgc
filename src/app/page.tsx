@@ -7,6 +7,7 @@ import { Noise } from "@/shared/ui/effects/Noise";
 import { Footer } from "@/shared/ui/Footer";
 import { Header } from "@/shared/ui/Header";
 import { Hero } from "@/shared/ui/Hero";
+import { MindCard } from "@/shared/ui/MindCard";
 import { Projects } from "@/shared/ui/Projects";
 
 export default function Home() {
@@ -18,6 +19,8 @@ export default function Home() {
       <Marquee />
       <Dots className="flex justify-center mx-auto my-16" />
       <Projects />
+      <Dots className="flex justify-center mx-auto my-16" />
+      <MindCard />
       <Dots className="flex justify-center mx-auto my-16" />
       <ContactForm />
       <Footer />

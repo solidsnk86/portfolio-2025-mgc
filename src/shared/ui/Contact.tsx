@@ -45,9 +45,9 @@ export const ContactForm = () => {
       return;
     }
     if (!validateEmailWithDomain(emailValue)) {
-      setError("Escribe un dominio de email válido")
-      setIsLoading(false)
-      return
+      setError("Escribe un dominio de email válido");
+      setIsLoading(false);
+      return;
     }
     try {
       const response = await fetch("/api/mailer", {

@@ -6,7 +6,7 @@ import styles from "@/shared/styles/projects.module.css";
 const projects = [
   {
     name: "Neo-WiFi App",
-    url: "/neo-wifi",
+    url: "/neo-wifi-desktop",
     imgUrl: "/assets/3dicons-tools-dynamic-gradient.png",
     description: "Automatiza la configuración CPEs y routers TP-Link.",
     year: 2025,
@@ -52,7 +52,7 @@ export const Projects = () => {
   return (
     <section className="grid p-4 max-w-3xl z-10" id="projects">
       <div className="flex justify-between items-center p-1">
-        <h3 className="text-[var(--mutted-color)] text-sm font-semibold">
+        <h3 className="text-[var(--mutted-color)] text-sm font-semibold tracking-[0.15em]">
           PROYECTOS ACTUALES
         </h3>
         <Link href="/works" className="retro-gradient text-sm font-semibold">

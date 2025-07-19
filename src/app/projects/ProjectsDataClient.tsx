@@ -8,7 +8,22 @@ import { useCallback, useEffect, useState } from "react";
 
 const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
 
-interface GithubApiProps {
+interface ReleaseAPI {
+  release?: {
+    htmlURL: string;
+    appName: string;
+    appVersion: string;
+    fileName: string;
+    fileSize: string;
+    createdAt: string;
+    updatedAt: string;
+    downloadURL: string;
+    downloadCount: number;
+    appInfo: string;
+  };
+}
+
+interface GithubApiProps extends ReleaseAPI {
   id: string;
   created_at: string;
   topics: string[];
@@ -22,6 +37,22 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
     topics: [],
   });
   const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const getDataDesktopProject = useCallback(async () => {
+    setIsLoading(true)
+    try {
+      const response = await fetch("https://neo-wifi.vercel.app/api/releases", {
+        method: "GET",
+      });
+      if (!response.ok) throw new Error(response.statusText);
+      const data = await response.json();
+      setIsLoading(false)
+      setProjectData(data.release.appInfo);
+    } catch (error) {
+      setIsLoading(false)
+      console.log(error);
+    }
+  }, []);
 
   const getDataProject = useCallback(async () => {
     try {
@@ -56,8 +87,12 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
   }, [repo]);
 
   useEffect(() => {
-    getDataProject();
-  }, [getDataProject]);
+    if (repo !== "neo-wifi-desktop") {
+      getDataProject()
+    } else {
+      getDataDesktopProject()
+    }
+  }, [repo, getDataProject, getDataDesktopProject]);
 
   return (
     <section className="flex flex-col justify-center mx-auto md:max-w-3xl w-full p-6 bg-[var(--header-bg-color)] relative z-0 rounded-xl my-10">
@@ -76,11 +111,14 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
         <>
           <header className="mt-4 flex flex-col">
             <time>
-              Creado el {Format.date({ dateTime: repoData.created_at })}
+              Creado el {Format.date({ dateTime: repoData.created_at || "2025-02-26T08:33:15Z" })}
             </time>
             <div className="flex gap-3 w-full overflow-x-auto">
               {repoData.topics.map((topic, index) => (
-                <span key={`${topic}-${index}`} className="px-2 rounded-xl bg-[var(--icon-bg)] mt-3">
+                <span
+                  key={`${topic}-${index}`}
+                  className="px-2 rounded-xl bg-[var(--icon-bg)] mt-3"
+                >
                   <small className="uppercase sunset-gradient font-semibold">
                     {topic}
                   </small>
