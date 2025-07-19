@@ -117,7 +117,7 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
               {repoData.topics.map((topic, index) => (
                 <span
                   key={`${topic}-${index}`}
-                  className="px-2 rounded-xl bg-[var(--icon-bg)] mt-3"
+                  className="px-2 rounded-xl bg-[var(--icon-bg)] mt-3 text-ellipsis whitespace-nowrap overflow-hidden text-sm flex items-center justify-center h-8"
                 >
                   <small className="uppercase sunset-gradient font-semibold">
                     {topic}
