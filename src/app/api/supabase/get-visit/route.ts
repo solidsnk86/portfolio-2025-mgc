@@ -5,8 +5,8 @@ export async function GET() {
     const { data, error } = await suapabase
       .from("solidsnk_visitors")
       .select("*")
-      .order("created_at", { ascending: false })
-      .limit(1);
+      .order("visits_count", { ascending: false })
+      .limit(1)
     if (error) throw new Error(error.message)
     return Response.json({ data, success: true });
   } catch (error) {
