@@ -16,6 +16,7 @@
     --border-color: #ddd;
     --icon-bg: #eee;
     --colder: linear-gradient(45deg, #ac88ee, #7d95ea);
+    --warm: linear-gradient(45deg, #f3bfd742, #cfbbf544, #b9c6f540);
     --sunset-2: linear-gradient(
       45deg,
       #f06844 0%,
@@ -62,6 +63,7 @@
     --border-color: #333;
     --icon-bg: #1c1c1ec8;
     --colder: linear-gradient(45deg, #0d0222, #01071c);
+    --warm: linear-gradient(45deg, #2305582e, #13043037, #3203082c);
   }
 }
 
@@ -201,6 +203,21 @@ dialog {
 
 .colder {
   background: var(--colder);
+}
+
+.project-item:hover {
+  background: var(--warm);
+  transition: background 300ms ease-in-out;
+  animation: scaleIn 300ms ease-in-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.94);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 .felix {

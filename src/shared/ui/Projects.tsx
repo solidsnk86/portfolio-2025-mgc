@@ -55,7 +55,7 @@ export const Projects = () => {
         <h3 className="text-[var(--mutted-color)] text-sm font-semibold tracking-[0.15em]">
           PROYECTOS ACTUALES
         </h3>
-        <Link href="/works" className="retro-gradient text-sm font-semibold">
+        <Link href="/all-projects" className="retro-gradient text-sm font-semibold">
           Todos los trabajos ▸
         </Link>
       </div>

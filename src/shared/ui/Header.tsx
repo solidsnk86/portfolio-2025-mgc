@@ -9,7 +9,6 @@ import { useTheme } from "@/provider/theme-provider";
 
 const links = [
   { name: "acerca", url: "/about" },
-  { name: "blog", url: "/blog" },
   { name: "contacto", url: "/#contact" },
   { name: "proyectos", url: "/#projects" },
 ];

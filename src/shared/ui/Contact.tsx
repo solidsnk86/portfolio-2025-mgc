@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { showDialog } from "../utils/dialog";
-import { Loader } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { Fraunces } from "next/font/google";
 import Image from "next/image";
 import { validateEmailWithDomain } from "../utils/validateMail";
@@ -167,7 +167,7 @@ export const ContactForm = () => {
             {isLoading ? (
               <span className="flex justify-center gap-2 mx-auto items-center font-semibold">
                 Enviando
-                <Loader size={18} className="animate-spin" />
+                <Loader2 size={18} className="animate-spin" />
               </span>
             ) : (
               <span className="font-semibold">Enviar</span>

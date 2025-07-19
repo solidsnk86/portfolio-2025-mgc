@@ -11,7 +11,7 @@ export default async function ProjectsPage({
   const name = (await params).url;
 
   return (
-    <div className="flex flex-col md:max-w-3xl mx-auto px-3">
+    <div className="flex flex-col md:max-w-3xl mx-auto px-3 relative">
       <Header />
       <Noise />
       <ProjectDataClient repo={name} />

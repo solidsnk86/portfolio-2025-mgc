@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import styles from "@/shared/styles/footer.module.css";
 import Image from "next/image";
 import { Dots } from "./Dots";
+import { usePathname } from "next/navigation";
+
 
 interface LocationProps {
   ip: string;
@@ -21,6 +23,8 @@ interface LocationProps {
 export const Footer = () => {
   const [location, setLocation] = useState<LocationProps>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const path = usePathname();
+
 
   useEffect(() => {
     const getCurrentIP = async () => {
@@ -53,6 +57,7 @@ export const Footer = () => {
             ip: currentIP,
             city: currentCity,
             country: currentCountry,
+            page: path
           }),
         }).catch((error) => console.log(error));
       }
