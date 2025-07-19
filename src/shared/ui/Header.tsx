@@ -82,8 +82,8 @@ export const Header = () => {
           </aside>
           <button
             onClick={openMenu}
-            className="p-2 rounded-lg md:hidden hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200"
-            aria-label="Open menu"
+            className="p-2 rounded-lg md:hidden hover:bg-[var(--hover-color)] transition-colors duration-200"
+            aria-label="Abrir menu"
           >
             <Menu className="h-6 w-6 text-zinc-500" />
           </button>
