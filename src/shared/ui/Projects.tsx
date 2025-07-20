@@ -56,7 +56,7 @@ export const Projects = () => {
           PROYECTOS ACTUALES
         </h3>
         <Link href="/all-projects" className="retro-gradient text-sm font-semibold">
-          Todos los trabajos ▸
+          Todos los proyectos ▸
         </Link>
       </div>
       <div className="grid grid-cols-[repeat(auto-fill,minmax(230px,1fr))] gap-4">

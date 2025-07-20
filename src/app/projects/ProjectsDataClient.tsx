@@ -3,7 +3,6 @@
 import MarkdownRenderer from "@/Components/MarkDownRenderer";
 import { Format } from "@/shared/utils/Format";
 import { Loader2, MoveLeft } from "lucide-react";
-import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
 const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
@@ -96,13 +95,13 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
 
   return (
     <section className="flex flex-col justify-center mx-auto md:max-w-3xl w-full p-6 bg-[var(--header-bg-color)] relative z-0 rounded-xl my-10">
-      <Link
-        href="/#projects"
-        className="flex gap-2 items-center text-[var(--mutted-color)] hover:brightness-125 group"
+      <button
+        onClick={() => window.history.back()}
+        className="flex gap-2 items-center text-[var(--mutted-color)] hover:brightness-125 group cursor-pointer"
       >
         <MoveLeft className="group-hover:-translate-x-1 transition-transform duration-300" />
         <span>Volver</span>
-      </Link>
+      </button>
       {isLoading ? (
         <div className="flex justify-center items-center py-20">
           <Loader2 className="animate-spin h-[400px]" />

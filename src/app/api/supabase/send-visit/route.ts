@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     ]);
     if (error) throw new Error(error.message);
     return Response.json(
-      { message: "Datos envidos correctamente", success: true },
+      { message: "Datos enviados correctamente", success: true },
       { status: 200 }
     );
   } catch (error) {

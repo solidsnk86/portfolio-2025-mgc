@@ -26,20 +26,35 @@ export const ALlProjectsClient = () => {
 
   const fetchRepos = useCallback(async () => {
     setIsLoading(true);
+    const allProjects = [];
+    let page = 1;
     try {
-      const response = await fetch(
-        "https://api.github.com/users/solidsnk86/repos",
-        {
-          headers: {
-            Authorization: `token ${GITHUB_TOKEN}`,
-            Accept: "application/vnd.github.v3+json",
-          },
+      while (true) {
+        const response = await fetch(
+          `https://api.github.com/users/solidsnk86/repos?page=${page}`,
+          {
+            headers: {
+              Authorization: `token ${GITHUB_TOKEN}`,
+              Accept: "application/vnd.github.v3+json",
+            },
+          }
+        );
+        const headerLink = response.headers.get("link")?.split(";")
+        if (!response.ok) throw new Error(response.statusText);
+        const allData = await response.json();
+        
+        for (const data of allData) {
+          allProjects.push(data)
         }
-      );
-      if (!response.ok) throw new Error(response.statusText);
-      const data = await response.json();
-      setIsLoading(false);
-      setRepos(data);
+
+        page++;
+        if (!headerLink?.[1].includes('rel="next"')) {
+          setIsLoading(false);
+          setRepos(allProjects);
+          break;
+        }
+        
+      }
     } catch (error) {
       console.error("Error fetching repositories:", error);
     }
@@ -48,7 +63,8 @@ export const ALlProjectsClient = () => {
   useEffect(() => {
     fetchRepos();
   }, [fetchRepos]);
-  return (
+ 
+  return (  
     <section className="flex flex-col justify-center mx-auto md:max-w-3xl w-full p-6 bg-[var(--header-bg-color)] relative z-10 rounded-xl my-10">
       <Link
         href="/"
@@ -68,6 +84,7 @@ export const ALlProjectsClient = () => {
             {repos
               .filter((repo) => {
                 const excluded = [
+                  "doubleCommit.ts",
                   "background-remover",
                   "curriculumweb",
                   "cdn-js",
@@ -90,10 +107,10 @@ export const ALlProjectsClient = () => {
                   new Date(b.created_at).getTime() -
                   new Date(a.created_at).getTime()
               )
-              .map((repo) => (
+              .map((repo, i) => (
                 <Link
                   href={`/projects/${repo.name}`}
-                  key={repo.id}
+                  key={`${repo.name}-${i}`}
                   className="flex flex-col mb-2 relative py-5 px-3"
                 >
                   <div className="absolute top-0 left-0 w-full h-full rounded-2xl project-item" />
