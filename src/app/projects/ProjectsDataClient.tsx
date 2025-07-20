@@ -5,8 +5,6 @@ import { Format } from "@/shared/utils/Format";
 import { Loader2, MoveLeft } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
-const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
-
 interface ReleaseAPI {
   release?: {
     htmlURL: string;
@@ -56,30 +54,12 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
   const getDataProject = useCallback(async () => {
     try {
       setIsLoading(true);
-      const [readmeResponse, repoData] = await Promise.all([
-        fetch(`https://api.github.com/repos/solidsnk86/${repo}/readme`, {
-          method: "GET",
-          headers: {
-            Authorization: `token ${GITHUB_TOKEN}`,
-            Accept: "application/vnd.github.v3+json",
-          },
-        }),
-        fetch(`https://api.github.com/repos/solidsnk86/${repo}`, {
-          method: "GET",
-          headers: {
-            Authorization: `token ${GITHUB_TOKEN}`,
-            Accept: "application/vnd.github.v3+json",
-          },
-        }),
-      ]);
-      if (!readmeResponse.ok) throw new Error(readmeResponse.statusText);
-      if (!repoData.ok) throw new Error(repoData.statusText);
-      const readme = await readmeResponse.json();
-      const data = await repoData.json();
-      const decoded = Buffer.from(readme.content, "base64").toString("utf-8");
+      await fetch(`/api/repo?name=${repo}`).then((res) => res.json()).then((rep) => {
+        setRepoData(rep.data)
+        setProjectData(rep.decoded)
+      })
       setIsLoading(false);
-      setRepoData(data);
-      setProjectData(decoded);
+      
     } catch (error) {
       console.log(error);
     }

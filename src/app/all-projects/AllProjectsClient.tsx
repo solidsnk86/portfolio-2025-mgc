@@ -22,48 +22,18 @@ export const ALlProjectsClient = () => {
   const [repos, setRepos] = useState<GitHubApiProps[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
-
   const fetchRepos = useCallback(async () => {
     setIsLoading(true);
-    const allProjects = [];
-    let page = 1;
-    try {
-      while (true) {
-        const response = await fetch(
-          `https://api.github.com/users/solidsnk86/repos?page=${page}`,
-          {
-            headers: {
-              Authorization: `token ${GITHUB_TOKEN}`,
-              Accept: "application/vnd.github.v3+json",
-            },
-          }
-        );
-        const headerLink = response.headers.get("link")?.split(";")
-        if (!response.ok) throw new Error(response.statusText);
-        const allData = await response.json();
-        
-        for (const data of allData) {
-          allProjects.push(data)
-        }
-
-        page++;
-        if (!headerLink?.[1].includes('rel="next"')) {
-          setIsLoading(false);
-          setRepos(allProjects);
-          break;
-        }
-        
-      }
-    } catch (error) {
-      console.error("Error fetching repositories:", error);
-    }
-  }, [GITHUB_TOKEN]);
+    await fetch("/api/repos", { method: "GET" }).then((res) => res.json()).then((repo) => {
+      setIsLoading(false)
+      setRepos(repo.allProjects)
+    }).catch((error) => console.log(error))
+  }, []);
 
   useEffect(() => {
     fetchRepos();
   }, [fetchRepos]);
- 
+  
   return (  
     <section className="flex flex-col justify-center mx-auto md:max-w-3xl w-full p-6 bg-[var(--header-bg-color)] relative z-10 rounded-xl my-10">
       <Link
@@ -81,8 +51,7 @@ export const ALlProjectsClient = () => {
         <>
           <h1 className="text-2xl font-semibold my-4">Todos los Proyectos</h1>
           <div className="flex flex-col space-y-3">
-            {repos
-              .filter((repo) => {
+            {repos?.filter((repo) => {
                 const excluded = [
                   "doubleCommit.ts",
                   "background-remover",

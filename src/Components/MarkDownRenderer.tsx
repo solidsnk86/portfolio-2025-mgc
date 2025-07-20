@@ -36,7 +36,7 @@ export default function MarkdownRenderer({ content }: { content: string }) {
           <h3 className="mt-4 mb-2 text-xl font-semibold">{children}</h3>
         ),
         pre: ({ children }) => (
-          <div className="my-3 code-block relative">
+          <div className="my-3 text-sm relative text-zinc-300">
             <pre className="p-2 bg-[#1C1D21] rounded-lg overflow-auto" ref={preRef}>
               {children}
             </pre>
