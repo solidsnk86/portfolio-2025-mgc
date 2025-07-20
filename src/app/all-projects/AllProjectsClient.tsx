@@ -99,6 +99,8 @@ export const ALlProjectsClient = () => {
                   "double-commit",
                   "node-js-class",
                   "Electron-ServiciosElectricos",
+                  "TP-Grupo-GitHub",
+                  "Tecnicatura_UTN"
                 ];
                 return !excluded.includes(repo.name);
               })

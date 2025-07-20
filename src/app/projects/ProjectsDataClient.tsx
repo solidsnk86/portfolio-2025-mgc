@@ -104,7 +104,7 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
       </button>
       {isLoading ? (
         <div className="flex justify-center items-center py-20">
-          <Loader2 className="animate-spin h-[400px]" />
+          <Loader2 className="animate-spin h-[500px]" />
         </div>
       ) : (
         <>

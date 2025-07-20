@@ -37,7 +37,7 @@ export default function MarkdownRenderer({ content }: { content: string }) {
         ),
         pre: ({ children }) => (
           <div className="my-3 code-block relative">
-            <pre className="p-2 bg-[#1C1D21] rounded-lg" ref={preRef}>
+            <pre className="p-2 bg-[#1C1D21] rounded-lg overflow-auto" ref={preRef}>
               {children}
             </pre>
           </div>
@@ -45,8 +45,8 @@ export default function MarkdownRenderer({ content }: { content: string }) {
         li: ({ children }) => (
           <li className="mb-2 list-disc list-inside">{children}</li>
         ),
-        a: ({ children }) => (
-          <a href={children as string} target="_blank" className="text-blue-400 hover:underline">
+        a: ({ href, children }) => (
+          <a href={href} target="_blank" className="text-blue-400 hover:underline">
             {children}
           </a>
         ),
