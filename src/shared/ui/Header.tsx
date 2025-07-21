@@ -30,6 +30,12 @@ export const Header = () => {
     document.body.style.overflow = "auto";
   };
 
+  const handleClick = () => {
+    const audio = new Audio('/assets/computer-click.mp3')
+    audio.volume = 0.5;
+    if (audio) audio.play().catch((error) => console.log(error))
+  }
+
   return (
     <>
       <header className="rounded-full w-full mt-6 bg-[var(--header-bg-color)] backdrop-blur-xl h-[74px] mx-auto relative z-50">
@@ -74,6 +80,7 @@ export const Header = () => {
             <span className="text-zinc-500 hidden md:flex">|</span>
             <button
               onClick={() => setTheme(isDarkMode ? "light" : "dark")}
+              onMouseDown={handleClick}
               className="p-2 rounded-lg hidden md:inline-flex"
               aria-label="Cambiar tema"
               title="Cambiar tema"
@@ -108,7 +115,8 @@ export const Header = () => {
               <h2 className="text-lg font-semibold">Menú</h2>
               <div className="flex items-center gap-2">
                 <button
-                  onClick={() => setTheme(isDarkMode ? "light" : "dark")}
+                  onClick={() => setTheme(isDarkMode ? "dark" : "light")}
+                  onMouseDown={handleClick}
                   className="p-2 rounded-lg hover:bg-[var(--hover-color)] transition-colors duration-200"
                   aria-label="Toggle theme"
                 >
