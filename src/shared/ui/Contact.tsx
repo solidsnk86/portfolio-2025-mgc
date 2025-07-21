@@ -24,6 +24,12 @@ export const ContactForm = () => {
   const [error, setError] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>();
 
+  const handleClick = () => {
+    const audio = new Audio("/assets/lighter-zippo-click.mp3")
+    audio.volume = 1
+    audio.play()
+  }
+
   const stateCleanner = () => {
     setNameValue("");
     setEmailValue("");
@@ -163,6 +169,7 @@ export const ContactForm = () => {
               const felix = document.getElementById("felix")!;
               felix.style.animation = "sliderOut 0.6s ease-out";
             }}
+            onMouseDown={handleClick}
           >
             {isLoading ? (
               <span className="flex justify-center gap-2 mx-auto items-center font-semibold">
