@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { Menu, MoonStar, Sun, X } from "lucide-react";
+import { AlignCenter, MoonStar, Sun, X } from "lucide-react";
 import { useMatchMedia } from "@/hooks/useMatchMedia";
 import { useTheme } from "@/provider/theme-provider";
 
@@ -97,7 +97,7 @@ export const Header = () => {
             className="p-2 rounded-lg md:hidden hover:bg-[var(--hover-color)] transition-colors duration-200"
             aria-label="Abrir menu"
           >
-            <Menu className="h-6 w-6 text-zinc-500" />
+            <AlignCenter className="h-6 w-6 text-zinc-500" />
           </button>
         </div>
       </header>
