@@ -5,14 +5,7 @@ export async function POST(req: Request) {
   try {
     const { name, email, challenge } = await req.json();
 
-    if (!name && !email)
-      return Response.json(
-        {
-          message:
-            "Faltan completar los campos requeridos: " + name + " " + email,
-        },
-        { status: 400 }
-      );
+    if (req.method !== "POST") return Response.json({ message: "Método no permitido" }, { status: 405 })
 
     const myGmail = process.env.GAMIL_APP_USER || "calcagni.gabriel86@gmail.com";
 
@@ -39,7 +32,7 @@ export async function POST(req: Request) {
     });
   } catch (error) {
     return Response.json(
-      { message: "Error en el servidor" + " " + error, success: false },
+      { message: "Server" + " " + error, success: false },
       { status: 500 }
     );
   }
