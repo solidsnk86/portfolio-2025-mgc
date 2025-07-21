@@ -21,7 +21,7 @@ export const Card = ({
         {children}
         {title}
       </h2>
-      <h3 className="font-semibold text-lg">{text}</h3>
+      <h3 className="font-semibold text-lg mt-2">{text}</h3>
     </div>
   );
 };
