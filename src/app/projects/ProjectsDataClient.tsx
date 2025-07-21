@@ -46,7 +46,7 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
       setIsLoading(false)
       setProjectData(data.release.appInfo);
     } catch (error) {
-      setIsLoading(false)
+      setIsLoading(false);
       console.log(error);
     }
   }, []);
@@ -59,8 +59,8 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
         setProjectData(rep.decoded)
       })
       setIsLoading(false);
-      
     } catch (error) {
+      setIsLoading(false);
       console.log(error);
     }
   }, [repo]);
