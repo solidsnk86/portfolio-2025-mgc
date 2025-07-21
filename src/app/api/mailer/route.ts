@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import { template } from "./template/template";
+import { HTMLTemplate } from "./template/HTMLTemplate";
 
 export async function POST(req: Request) {
   try {
@@ -14,21 +14,21 @@ export async function POST(req: Request) {
         { status: 400 }
       );
 
-    const gmail = process.env.GAMIL_APP_USER || "calcagni.gabriel86@gmail.com";
+    const myGmail = process.env.GAMIL_APP_USER || "calcagni.gabriel86@gmail.com";
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: gmail,
+        user: myGmail,
         pass: process.env.GMAIL_USER_PASSWORD,
       },
     });
 
     const mailOptions = {
-      from: gmail,
+      from: myGmail,
       to: email,
-      subject: "Gracias por contactarme",
-      html: template({ name: name, email: gmail, challenge }),
+      subject: name + " gracias por contactarme",
+      html: HTMLTemplate({ name: name, email: myGmail, challenge }),
     };
 
     await transporter.sendMail(mailOptions);

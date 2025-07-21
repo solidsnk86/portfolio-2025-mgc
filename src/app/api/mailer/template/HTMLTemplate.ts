@@ -2,7 +2,7 @@ const number = "+5492665290020";
 const message =
   "👋 ¡Hola, Gabriel! Me interesa conocer más sobre tus servicios. ¿Podrías contactarme para ayudarme con mi proyecto? 😊...Gracias!";
 
-export const template = ({
+export const HTMLTemplate = ({
   name,
   email,
   challenge,
@@ -30,9 +30,9 @@ export const template = ({
         </p>
         <div style="text-align: center; margin-top: 20px;">
           <a href="https://wa.me/${number}?text=${encodeURIComponent(challenge || message)}" target="_blank" style="margin: 0 6px; text-decoration: none; color: #3498db; font-size: 14px; transition: color 0.3s;">WhatsApp</a>
-          <span style="color: #ccc;">•</span>
+          <span style="color: #ccc;">✦</span>
           <a href="https://www.linkedin.com/in/gabriel-calcagni/" target="_blank" style="margin: 0 6px; text-decoration: none; color: #3498db; font-size: 14px; transition: color 0.3s;">LinkedIn</a>
-          <span style="color: #ccc;">•</span>
+          <span style="color: #ccc;">✦</span>
           <a href="mailto:${email}?subject=${encodeURIComponent("Necesito tus servicios")}&body=${encodeURIComponent(challenge || message)}" style="margin: 0 6px; text-decoration: none; color: #3498db; font-size: 14px; transition: color 0.3s;">Email</a>
         </div>
 
@@ -42,7 +42,7 @@ export const template = ({
         </p>
 
         <div style="text-align: center; margin: 20px 0;">
-          <a href="https://tusitio.com" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: #3498db; color: #fff; text-decoration: none; border-radius: 6px; font-size: 14px; transition: background-color 0.3s;">Ver portafolio</a>
+          <a href="https://calcagni-gabriel-dev.vercel.app/" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: #3498db; color: #fff; text-decoration: none; border-radius: 6px; font-size: 14px; transition: background-color 0.3s;">Ir al portafolio</a>
         </div>
 
         <p>Quedo atento a tu respuesta.</p>
@@ -50,7 +50,7 @@ export const template = ({
       </div>
 
       <div style="margin-top: 30px; text-align: center; font-size: 11px; color: #aaa;">
-        Este mensaje fue enviado desde mi portafolio web.
+        Este mensaje fue enviado desde mi portafolio web de manera automática.
       </div>
     </div>
   </body>

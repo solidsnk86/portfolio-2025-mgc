@@ -4,7 +4,13 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
 export async function GET(req: NextRequest) {
   const repo = req.nextUrl.searchParams.get("name");
-  if (!repo) return Response.json({ message: "Es necesario el parámetro" }, { status: 400 })
+
+  if (!repo)
+    return Response.json(
+      { message: "Es necesario el parámetro [name]" },
+      { status: 400 }
+    );
+
   try {
     const [readmeResponse, repoData] = await Promise.all([
       fetch(`https://api.github.com/repos/solidsnk86/${repo}/readme`, {
@@ -22,16 +28,17 @@ export async function GET(req: NextRequest) {
         },
       }),
     ]);
+
     if (!readmeResponse.ok) throw new Error(readmeResponse.statusText);
     if (!repoData.ok) throw new Error(repoData.statusText);
+
     const readme = await readmeResponse.json();
     const data = await repoData.json();
+
     const decoded = Buffer.from(readme.content, "base64").toString("utf-8");
+
     return Response.json({ data, decoded }, { status: 200 });
   } catch (error) {
-    return Response.json(
-      { message: "Server error: " + error },
-      { status: 500 }
-    );
+    return Response.json({ message: "Server " + error }, { status: 500 });
   }
 }
