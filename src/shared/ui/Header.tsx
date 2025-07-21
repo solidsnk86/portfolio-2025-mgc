@@ -41,6 +41,7 @@ export const Header = () => {
                 width={105}
                 height={55}
                 alt="SolidSnk86"
+                loading="eager"
                 className="rotate-3 translate-y-1"
               />
             </Link>
@@ -51,6 +52,7 @@ export const Header = () => {
                 width={105}
                 height={55}
                 alt="SolidSnk86"
+                loading="eager"
                 className="rotate-3 translate-y-1"
               />
             </Link>
