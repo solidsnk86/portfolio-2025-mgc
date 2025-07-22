@@ -6,6 +6,14 @@ Incluye un diseño responsivo, limpio, funcional y muy elegante, integrando íco
 
 ---
 
+## ✨ Íconos 3D
+
+Este portafolio hace uso de una serie de **íconos 3D** disponibles en el siguiente sitio: [3dicons](https://3dicons.co/).
+
+> Los íconos están bajo licencia gratuita y han sido cuidadosamente integrados para darle al sitio una apariencia moderna y atractiva.
+
+---
+
 ## 🚀 Tecnologías y dependencias
 
 El proyecto está desarrollado sobre **Next.js 15** y utiliza las siguientes principales dependencias:
@@ -13,9 +21,8 @@ El proyecto está desarrollado sobre **Next.js 15** y utiliza las siguientes pri
 - [Next.js](https://nextjs.org/) `15.3.5` — Framework de React para aplicaciones web.
 - [React](https://reactjs.org/) `19.0.0` — Biblioteca para construir interfaces de usuario.
 - [React DOM](https://react.dev/) `19.0.0` — Renderizado de React en el navegador.
-- [React Redux](https://react-redux.js.org/) `9.2.0` — Integración de Redux con React.
 - [Lucide React](https://lucide.dev/) `0.525.0` — Conjunto de íconos en SVG modernos para React.
-- [Supabase](https://supabase.com/) `2.46.1` — Backend como servicio para autenticación y base de datos.
+- [Supabase](https://supabase.com/) `2.46.1` — Backend como servicio para base de datos.
 - [Nodemailer](https://nodemailer.com/) `7.0.5` — Envío de correos electrónicos desde Node.js.
 - [React Markdown](https://github.com/remarkjs/react-markdown) `10.1.0` — Renderizado de contenido Markdown.
 - Plugins para mejorar el soporte Markdown:
@@ -24,16 +31,6 @@ El proyecto está desarrollado sobre **Next.js 15** y utiliza las siguientes pri
   - [`rehype-slug`](https://github.com/rehypejs/rehype-slug) `6.0.0`
   - [`rehype-highlight`](https://github.com/rehypejs/rehype-highlight) `7.0.2`
   - [`rehype-autolink-headings`](https://github.com/rehypejs/rehype-autolink-headings) `7.1.0`
-
----
-
-## ✨ Íconos 3D
-
-Este portafolio hace uso de una serie de **íconos 3D** creados por [Vijay Verma](https://twitter.com/realvjy), disponibles en su proyecto [3dicons](https://3dicons.co/).
-
-> Los íconos están bajo licencia gratuita y han sido cuidadosamente integrados para darle al sitio una apariencia moderna y atractiva.
-
----
 
 ## 📄 Instalación y ejecución
 
