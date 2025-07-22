@@ -1,8 +1,10 @@
 "use client";
 
 import MarkdownRenderer from "@/Components/MarkDownRenderer";
+import { GithubIcon } from "@/shared/ui/Icons";
 import { Format } from "@/shared/utils/Format";
 import { Loader2, MoveLeft } from "lucide-react";
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
 interface ReleaseAPI {
@@ -22,6 +24,7 @@ interface ReleaseAPI {
 
 interface GithubApiProps extends ReleaseAPI {
   id: string;
+  html_url: string;
   created_at: string;
   topics: string[];
 }
@@ -30,20 +33,21 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
   const [projectData, setProjectData] = useState<string>();
   const [repoData, setRepoData] = useState<GithubApiProps>({
     id: "",
+    html_url: "",
     created_at: "",
     topics: [],
   });
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const getDataDesktopProject = useCallback(async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
       const response = await fetch("https://neo-wifi.vercel.app/api/releases", {
         method: "GET",
       });
       if (!response.ok) throw new Error(response.statusText);
       const data = await response.json();
-      setIsLoading(false)
+      setIsLoading(false);
       setProjectData(data.release.appInfo);
     } catch (error) {
       setIsLoading(false);
@@ -54,10 +58,12 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
   const getDataProject = useCallback(async () => {
     try {
       setIsLoading(true);
-      await fetch(`/api/repo?name=${repo}`).then((res) => res.json()).then((rep) => {
-        setRepoData(rep.data)
-        setProjectData(rep.decoded)
-      })
+      await fetch(`/api/repo?name=${repo}`)
+        .then((res) => res.json())
+        .then((rep) => {
+          setRepoData(rep.data);
+          setProjectData(rep.decoded);
+        });
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
@@ -67,9 +73,9 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
 
   useEffect(() => {
     if (repo !== "neo-wifi-desktop") {
-      getDataProject()
+      getDataProject();
     } else {
-      getDataDesktopProject()
+      getDataDesktopProject();
     }
   }, [repo, getDataProject, getDataDesktopProject]);
 
@@ -90,7 +96,10 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
         <>
           <header className="mt-4 flex flex-col">
             <time>
-              Creado el {Format.date({ dateTime: repoData.created_at || "2025-02-26T08:33:15Z" })}
+              Creado el{" "}
+              {Format.date({
+                dateTime: repoData.created_at || "2025-02-26T08:33:15Z",
+              })}
             </time>
             <div className="flex gap-3 w-full overflow-x-auto">
               {repoData.topics.map((topic, index) => (
@@ -108,6 +117,17 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
           <MarkdownRenderer content={projectData || ""} />
         </>
       )}
+      <aside className="flex justify-center mx-auto mt-3">
+        <Link
+          href={repoData.html_url}
+          className="flex items-center gap-2 relative px-3 py-1 rounded-full border border-[var(--border-color)] outline-1 outline-offset-1 outline-[var(--border-color)]"
+          target="_blank"
+        >
+          <div className="absolute top-0 left-0 w-full h-full rounded-2xl project-item" />
+          <GithubIcon width={18} height={18} fill="currentColor" />
+          Ver el código
+        </Link>
+      </aside>
     </section>
   );
 };
