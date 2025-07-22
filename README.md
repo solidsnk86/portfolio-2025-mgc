@@ -44,8 +44,8 @@ Para poner en marcha el proyecto en tu entorno local, seguí estos pasos:
 1️⃣ **Clonar el repositorio:**
 
 ```bash
-git clone <url-del-repositorio>
-cd <nombre-del-repositorio>
+git clone https://github.com/solidsnk86/portfolio-2025-mgc.git
+cd portfolio-2025-mgc
 ```
 
 2️⃣ **Instalar las dependencias:**
