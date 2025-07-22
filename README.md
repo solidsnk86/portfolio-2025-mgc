@@ -23,7 +23,7 @@ Este proyecto fue desarrollado sobre **Next.js 15**, y hace uso de las siguiente
 - [React](https://reactjs.org/) `19.0.0` — Biblioteca para interfaces de usuario declarativas y componibles.
 - [React DOM](https://react.dev/) `19.0.0` — Manejador de renderizado para React en el navegador.
 - [Lucide React](https://lucide.dev/) `0.525.0` — Íconos SVG modernos y personalizables para React.
-- [Supabase](https://supabase.com/) `2.46.1` — Backend como servicio de base de datos.
+- [Supabase](https://supabase.com/) `2.46.1` — Backend como servicio, con base de datos.
 - [Nodemailer](https://nodemailer.com/) `7.0.5` — Envío de correos electrónicos mediante Node.js.
 
 También incluye soporte para contenido Markdown con los siguientes plugins:

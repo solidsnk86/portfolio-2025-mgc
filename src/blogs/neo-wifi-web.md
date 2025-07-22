@@ -60,10 +60,10 @@ La app está pensada para escalar y para ser mantenida con facilidad, con una ar
 
 ## 🌍 Pruébala en vivo
 
-Si querés probar Neo-WiFi y ver cómo puede ayudarte a encontrar WiFi gratuito cerca de vos, visitá la versión web:  
-👉 [https://neo-wifi.vercel.app/](https://neo-wifi.vercel.app/)
+Si querés probar Neo-WiFi y ver cómo puede ayudarte a encontrar WiFi gratuito cerca de vos,
+ podés visitar la versión web: [https://neo-wifi.vercel.app/](https://neo-wifi.vercel.app/)
 
-Y si preferís la versión de escritorio, no dudes en escribirme para más detalles.
+Y si preferís, también podés descargar la versión de escritorio desde la misma web. Me encantaría recibir tu retro alimentación al respecto, ya que todavía estoy afinando algunos modelos en las versiones beta. ¡Muchas gracias por llegar hasta aquí! 🙌
 
 ---
 
