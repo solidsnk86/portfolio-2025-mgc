@@ -29,7 +29,7 @@ export const Blogsito = () => {
   }, [getAllBlogs]);
 
   return (
-    <section className="flex flex-col p-4 max-w-3xl z-10" id="projects">
+    <section className="flex flex-col p-4 max-w-3xl z-10" id="blog">
       <div className="flex justify-between items-center p-1">
         <h3 className="text-[var(--mutted-color)] text-sm font-semibold tracking-[0.15em] pl-4">
           BLOG
