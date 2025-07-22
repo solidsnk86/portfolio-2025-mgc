@@ -4,7 +4,7 @@ import { GetLocation } from "@/lib/GetLocation";
 import { useEffect, useState } from "react";
 import styles from "@/shared/styles/footer.module.css";
 import Image from "next/image";
-import { Dots } from "./Dots";
+import { Dots } from "./effects/Dots";
 import { usePathname } from "next/navigation";
 
 

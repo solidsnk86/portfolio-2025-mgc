@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Fraunces, Poppins } from "next/font/google";
 import { SocialLinks } from "@/shared/ui/SocialLinks";
 import { Card } from "@/shared/ui/Card";
-import { Dots } from "@/shared/ui/Dots";
+import { Dots } from "@/shared/ui/effects/Dots";
 
 const fraunces = Fraunces({
   weight: ["400"],

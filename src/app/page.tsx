@@ -1,7 +1,7 @@
 "use client";
 
 import { ContactForm } from "@/shared/ui/Contact";
-import { Dots } from "@/shared/ui/Dots";
+import { Dots } from "@/shared/ui/effects/Dots";
 import { Marquee } from "@/shared/ui/effects/Marquee";
 import { Noise } from "@/shared/ui/effects/Noise";
 import { Footer } from "@/shared/ui/Footer";
@@ -10,6 +10,7 @@ import { Hero } from "@/shared/ui/Hero";
 import { StarShipIcon } from "@/shared/ui/Icons";
 import { Card } from "@/shared/ui/Card";
 import { Projects } from "@/shared/ui/Projects";
+import { Blogsito } from "@/shared/ui/Blogsito";
 
 export default function Home() {
   return (
@@ -20,6 +21,8 @@ export default function Home() {
       <Marquee />
       <Dots className="flex justify-center mx-auto my-16" />
       <Projects />
+      <Dots className="flex justify-center mx-auto my-16" />
+      <Blogsito />
       <Dots className="flex justify-center mx-auto my-16" />
       <Card
         title="Tienes algo en mente?"
