@@ -12,8 +12,8 @@ export async function GET() {
           path.join(process.cwd(), "src", "blogs", file),
           { encoding: "utf-8" }
         );
+        const titles = allBlogContent.split("\r\n")?.[2].replace("#", "");
         const dates = allBlogContent.split("\r\n")[0];
-        const titles = allBlogContent.split("\r\n")[2]
         const fileName = file.replace(".md", "");
         blogArray.push({ name: fileName, title: titles, date: dates });
       }
