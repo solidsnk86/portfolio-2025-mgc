@@ -1,6 +1,6 @@
 20 de Julio de 2025
 
-# 🚀 Creando Neo-WiFi: conectividad inteligente para todos
+# Creando Neo-WiFi: conectividad inteligente para todos
 
 En un mundo cada vez más conectado, encontrar acceso gratuito a Internet puede ser la clave para estudiar, trabajar o simplemente mantenerse en contacto.  
 Por eso decidí crear **Neo-WiFi**, una aplicación web pensada para localizar de manera precisa y sencilla los puntos de acceso WiFi públicos más cercanos en distintas ciudades de Argentina 🇦🇷 … y más allá.  

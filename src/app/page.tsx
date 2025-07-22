@@ -26,7 +26,7 @@ export default function Home() {
       <Dots className="flex justify-center mx-auto my-16" />
       <Card
         title="Tienes algo en mente?"
-        text="Podríamos hacerlo realidad.."
+        text="Lo hacemos realidad.."
       >
         <StarShipIcon width={40} height={40} fill="#fff" />
       </Card>

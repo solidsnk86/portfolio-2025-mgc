@@ -1,6 +1,6 @@
 22 de Julio de 2025
 
-# 🌐 Solid Geolocation: una API para ubicarte en el mundo
+# Solid Geolocation: una API para ubicarte en el mundo
 
 En el desarrollo web moderno, muchas veces nos olvidamos del enorme potencial que tiene la **geolocalización** para crear experiencias más personalizadas y útiles.  
 Por eso decidí crear **Solid Geolocation**, una API sencilla pero poderosa para obtener información de ubicación basada en tu dirección IP o en tus coordenadas GPS.  

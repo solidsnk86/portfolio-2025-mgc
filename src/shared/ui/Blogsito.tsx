@@ -29,16 +29,17 @@ export const Blogsito = () => {
   }, [getAllBlogs]);
 
   return (
-    <section className="flex flex-col justify-center mx-auto" id="blog">
-      <h3 className="text-[var(--mutted-color)] text-sm font-semibold tracking-[0.15em] mb-4 pl-4">
-        BLOG
-      </h3>
-      {allBlogs
-      .map((blog, i) => (
+    <section className="flex flex-col p-4 max-w-3xl z-10" id="projects">
+      <div className="flex justify-between items-center p-1">
+        <h3 className="text-[var(--mutted-color)] text-sm font-semibold tracking-[0.15em] pl-4">
+          BLOG
+        </h3>
+      </div>
+      {allBlogs.map((blog, i) => (
         <Link
           href={`/blog/${blog.name}`}
           key={`${blog.name}-${i}`}
-          className="flex flex-col mb-2 relative py-5 px-3"
+          className="flex flex-col mb-2 relative py-5 px-4"
         >
           <div className="absolute top-0 left-0 w-full h-full rounded-2xl project-item" />
           <div className="flex gap-4 text-[var(--mutted-color)]">

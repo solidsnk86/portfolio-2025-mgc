@@ -1,7 +1,10 @@
+"use client";
+
 /* eslint-disable @next/next/no-img-element */
 import styles from "@/shared/styles/hero.module.css";
 import { Fraunces, Poppins } from "next/font/google";
 import { SocialLinks } from "./SocialLinks";
+import { useEffect } from "react";
 
 const fraunces = Fraunces({
   weight: ["300"],
@@ -14,6 +17,18 @@ const poppins = Poppins({
 });
 
 export const Hero = () => {
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      const rotation = scrollY % 360;
+      const imgAvatar = document.getElementById("avatar-img");
+      if (imgAvatar) {
+        imgAvatar.style.transform = `rotateY(${rotation}deg)`;
+      }
+    });
+  }, []);
+
   return (
     <section
       className={`flex flex-col max-w-2xl text-wrap mt-16 justify-center mx-auto xl:p-0 md:p-0 p-4 ${styles.hero} ${fraunces.className}`}
@@ -24,6 +39,7 @@ export const Hero = () => {
         <span className="inline-flex gap-2 items-center whitespace-nowrap">
           Soy
           <img
+            id="avatar-img"
             src="/assets/mgc.jfif"
             alt="Gabriel avatar"
             className="rounded-full w-[1em] md:w-[1.2em] xl:w-[1.4em] h-auto align-middle"
@@ -37,14 +53,19 @@ export const Hero = () => {
         software.
       </p>
       <SocialLinks />
-      <p className={`font-semibold xl:text-lg my-4 text-pretty ${poppins.className}`}>
-        Con más de 2 años de experiencia en proyectos personales, sigo explorando
-        la magia <span className="text-xl">✨</span> del código y el diseño
-        mientras completo mi formación en la UTN-FRSR, donde curso el último
-        año.
+      <p
+        className={`font-semibold xl:text-lg my-4 text-pretty ${poppins.className}`}
+      >
+        Con más de 2 años de experiencia en proyectos personales, sigo
+        explorando la magia <span className="text-xl">✨</span> del código y el
+        diseño mientras completo mi formación en la UTN-FRSR, donde curso el
+        último año.
       </p>
       <p className={`font-semibold ${poppins.className} items-center z-10`}>
-        Actualmente trabajo en el proyecto <a href="https://neo-wifi.vercel.app/" className="retro-gradient">@neo-wifi</a>
+        Actualmente trabajo en el proyecto{" "}
+        <a href="https://neo-wifi.vercel.app/" className="retro-gradient">
+          @neo-wifi
+        </a>
       </p>
     </section>
   );

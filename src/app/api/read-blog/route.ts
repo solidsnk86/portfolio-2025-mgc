@@ -15,6 +15,7 @@ export async function GET(req: NextRequest) {
       { encoding: "utf-8" }
     );
     const blogTitle = blogContent.split("\r")[0];
+    
 
     return Response.json({ blogTitle, blogContent }, { status: 200 });
   } catch (error) {
