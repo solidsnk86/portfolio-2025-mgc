@@ -33,7 +33,8 @@ export const Blogsito = () => {
       <h3 className="text-[var(--mutted-color)] text-sm font-semibold tracking-[0.15em] mb-4 pl-4">
         BLOG
       </h3>
-      {allBlogs.map((blog, i) => (
+      {allBlogs
+      .map((blog, i) => (
         <Link
           href={`/blog/${blog.name}`}
           key={`${blog.name}-${i}`}
