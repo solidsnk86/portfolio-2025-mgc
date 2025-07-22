@@ -13,7 +13,7 @@ export async function GET() {
           { encoding: "utf-8" }
         );
         if (allBlogContent) {
-          const titles = allBlogContent.split("\r\n")[2].replace("#", "");
+          const titles = allBlogContent.split("\r\n")[2];
           const dates = allBlogContent.split("\r\n")[0];
           const fileName = file.replace(".md", "");
           blogArray.push({ name: fileName, title: titles, date: dates });
