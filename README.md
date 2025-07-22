@@ -1,58 +1,76 @@
-# 📁Portfolio web
+# 📁 Portfolio Web
 
-Este es mi portafolio personal, construido con tecnologías modernas para presentar mis proyectos, experiencia y conocimientos en desarrollo web.
+Bienvenido a mi **portafolio personal**. Este sitio fue creado para presentar mis proyectos, experiencia profesional y conocimientos en desarrollo web, utilizando tecnologías modernas y buenas prácticas.
 
-Incluye un diseño responsivo, limpio, funcional y muy elegante, integrando íconos 3D y soporte para contenidos en Markdown enriquecidos.
-
----
-
-## ✨ Íconos 3D
-
-Este portafolio hace uso de una serie de **íconos 3D** disponibles en el siguiente sitio: [3dicons](https://3dicons.co/).
-
-> Los íconos están bajo licencia gratuita y han sido cuidadosamente integrados para darle al sitio una apariencia moderna y atractiva.
+El diseño es completamente **responsivo**, limpio y funcional, con un toque elegante gracias a la integración de **íconos 3D** y soporte para contenido enriquecido en Markdown. Además, incluye un asistente con inteligencia artificial para ayudar a los visitantes a navegar y entender las funcionalidades.
 
 ---
 
-## 🚀 Tecnologías y dependencias
+## ✨ Características destacadas
 
-El proyecto está desarrollado sobre **Next.js 15** y utiliza las siguientes principales dependencias:
+- ✅ Diseño **responsivo**: Se adapta perfectamente a cualquier dispositivo, desde móviles hasta pantallas grandes.
+- ✅ Estilo **elegante y moderno**: Tipografías, colores y disposición pensados para una experiencia agradable.
+- ✅ **Íconos 3D**: Integración de gráficos 3D para dar un aspecto visual distintivo.
+- ✅ Contenido en **Markdown enriquecido**: Posibilidad de escribir contenidos dinámicos y bien formateados.
 
-- [Next.js](https://nextjs.org/) `15.3.5` — Framework de React para aplicaciones web.
-- [React](https://reactjs.org/) `19.0.0` — Biblioteca para construir interfaces de usuario.
-- [React DOM](https://react.dev/) `19.0.0` — Renderizado de React en el navegador.
-- [Lucide React](https://lucide.dev/) `0.525.0` — Conjunto de íconos en SVG modernos para React.
-- [Supabase](https://supabase.com/) `2.46.1` — Backend como servicio para base de datos.
-- [Nodemailer](https://nodemailer.com/) `7.0.5` — Envío de correos electrónicos desde Node.js.
-- [React Markdown](https://github.com/remarkjs/react-markdown) `10.1.0` — Renderizado de contenido Markdown.
-- Plugins para mejorar el soporte Markdown:
-  - [`remark-gfm`](https://github.com/remarkjs/remark-gfm) `4.0.1`
-  - [`rehype-raw`](https://github.com/rehypejs/rehype-raw) `7.0.0`
-  - [`rehype-slug`](https://github.com/rehypejs/rehype-slug) `6.0.0`
-  - [`rehype-highlight`](https://github.com/rehypejs/rehype-highlight) `7.0.2`
-  - [`rehype-autolink-headings`](https://github.com/rehypejs/rehype-autolink-headings) `7.1.0`
+---
+
+## 🚀 Tecnologías y dependencias principales
+
+Este proyecto fue desarrollado sobre **Next.js 15**, y hace uso de las siguientes herramientas y librerías clave:
+
+- [Next.js](https://nextjs.org/) `15.3.5` — Framework para construir aplicaciones React robustas y optimizadas.
+- [React](https://reactjs.org/) `19.0.0` — Biblioteca para interfaces de usuario declarativas y componibles.
+- [React DOM](https://react.dev/) `19.0.0` — Manejador de renderizado para React en el navegador.
+- [Lucide React](https://lucide.dev/) `0.525.0` — Íconos SVG modernos y personalizables para React.
+- [Supabase](https://supabase.com/) `2.46.1` — Backend como servicio, con base de datos y autenticación.
+- [Nodemailer](https://nodemailer.com/) `7.0.5` — Envío de correos electrónicos mediante Node.js.
+
+También incluye soporte para contenido Markdown con los siguientes plugins:
+
+- [`react-markdown`](https://github.com/remarkjs/react-markdown) `10.1.0`
+- [`remark-gfm`](https://github.com/remarkjs/remark-gfm) `4.0.1`
+- [`rehype-raw`](https://github.com/rehypejs/rehype-raw) `7.0.0`
+- [`rehype-slug`](https://github.com/rehypejs/rehype-slug) `6.0.0`
+- [`rehype-highlight`](https://github.com/rehypejs/rehype-highlight) `7.0.2`
+- [`rehype-autolink-headings`](https://github.com/rehypejs/rehype-autolink-headings) `7.1.0`
+
+---
 
 ## 📄 Instalación y ejecución
 
-1️⃣ Clona este repositorio:
+Para poner en marcha el proyecto en tu entorno local, seguí estos pasos:
+
+1️⃣ **Clonar el repositorio:**
+
 ```bash
 git clone <url-del-repositorio>
+cd <nombre-del-repositorio>
 ```
 
-2️⃣ Instala las dependencias (Uso pnpm como empaquetador):
+2️⃣ **Instalar las dependencias:**
+
+El proyecto utiliza pnpm como gestor de paquetes recomendado. Si no lo tenés instalado, podés instalarlo siguiendo la guía oficial: pnpm.io
 
 ```bash
 pnpm install
 ```
 
-3️⃣ Ejecuta el servidor de desarrollo:
+3️⃣ **Ejecutar el servidor de desarrollo:**
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
-- El proyecto estará disponible en: http://localhost:3000
+El proyecto quedará disponible en tu navegador en: <strong>http://localhost:3000</strong>
 
+## 📝 Licencia
 
-📝 Licencia
-Este proyecto es de uso personal y educativo. Los íconos 3D utilizados son propiedad de 3dicons.co
+Este proyecto es de uso personal y educativo.
+Los íconos 3D son cortesía de 3dicons bajo licencia gratuita y fueron cuidadosamente integrados para darle al sitio un aspecto moderno y atractivo.
+
+---
+
+<div align="center">
+@solidSnk86 - 2025
+</div>
