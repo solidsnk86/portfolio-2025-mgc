@@ -6,7 +6,7 @@ export class Format {
   public static date({ dateTime }: DateProps) {
     const formatDate = new Date(dateTime).toLocaleDateString(navigator.language, {
       year: "numeric",
-      month: "short",
+      month: "long",
       day: "numeric",
     });
     return formatDate;

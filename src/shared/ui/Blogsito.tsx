@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { Fraunces } from "next/font/google";
+import { Loader2 } from "lucide-react";
+import { Format } from "../utils/Format";
 
 const fraunces = Fraunces({
   weight: ["400"],
@@ -17,11 +19,13 @@ interface BlogsitoProps {
 
 export const Blogsito = () => {
   const [allBlogs, setAllBlogs] = useState<BlogsitoProps[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const getAllBlogs = useCallback(async () => {
+    setIsLoading(true);
     await fetch("api/all-blogs")
       .then((res) => res.json())
-      .then((data) => setAllBlogs(data.blog));
+      .then((data) => {setAllBlogs(data.blog); setIsLoading(false);});
   }, []);
 
   useEffect(() => {
@@ -35,22 +39,29 @@ export const Blogsito = () => {
           BLOG
         </h3>
       </div>
-      {allBlogs.map((blog, i) => (
-        <Link
-          href={`/blog/${blog.name}`}
-          key={`${blog.name}-${i}`}
-          className="flex flex-col mb-2 relative py-5 px-4"
-        >
-          <div className="absolute top-0 left-0 w-full h-full rounded-2xl project-item" />
-          <div className="flex gap-4 text-[var(--mutted-color)]">
-            <time>{blog.date}</time>
-            <strong>{blog.name}</strong>
-          </div>
-          <h3 className={`${fraunces.className} text-xl font-semibold`}>
-            {blog.title}
-          </h3>
-        </Link>
-      ))}
+      {isLoading ? (
+        <div className="flex justify-center items-center py-20">
+          <Loader2 className="animate-spin h-[250px]" />
+        </div>
+      ) : (
+        allBlogs.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+        .map((blog, i) => (
+          <Link
+            href={`/blog/${blog.name}`}
+            key={`${blog.name}-${i}`}
+            className="flex flex-col mb-2 relative py-5 px-4"
+          >
+            <div className="absolute top-0 left-0 w-full h-full rounded-2xl project-item" />
+            <div className="flex gap-4 text-[var(--mutted-color)]">
+              <time>{Format.date({ dateTime: blog.date })}</time>
+              <strong>{blog.name}</strong>
+            </div>
+            <h3 className={`${fraunces.className} text-xl font-semibold`}>
+              {blog.title}
+            </h3>
+          </Link>
+        ))
+      )}
     </section>
   );
 };

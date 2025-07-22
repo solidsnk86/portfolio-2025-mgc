@@ -1,4 +1,4 @@
-20 de Julio de 2025
+Julio 15, 2025
 
 # Creando Neo-WiFi: conectividad inteligente para todos
 

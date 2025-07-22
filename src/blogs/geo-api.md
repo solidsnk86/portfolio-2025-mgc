@@ -1,4 +1,4 @@
-22 de Julio de 2025
+Julio 12, 2025
 
 # Solid Geolocation: una API para ubicarte en el mundo
 
