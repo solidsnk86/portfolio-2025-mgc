@@ -11,7 +11,9 @@ El diseño es completamente **responsivo**, limpio y funcional, con un toque ele
 - ✅ Diseño **responsivo**: Se adapta perfectamente a cualquier dispositivo, desde móviles hasta pantallas grandes.
 - ✅ Estilo **elegante y moderno**: Tipografías, colores y disposición pensados para una experiencia agradable.
 - ✅ **Íconos 3D**: Integración de gráficos 3D para dar un aspecto visual distintivo.
-- ✅ Contenido en **Markdown enriquecido**: Posibilidad de escribir contenidos dinámicos como blogs y bien formateados.
+- ✅ Contenido en **Markdown enriquecido**: Los blogs se escriben en archivos `.md`, son leídos por la API implementada con `node:fs` y renderizados dinámicamente con un renderer de Markdown para una presentación bien formateada.
+- ✅ **Dark mode con React Context**: La aplicación incluye un modo oscuro configurable implementado mediante `createContext` de React para una mejor experiencia de usuario.
+- ✅ Envío automático de mails: Cuando alguien completa el formulario de contacto, se envía automáticamente un correo usando `nodemailer`.
 
 ---
 
