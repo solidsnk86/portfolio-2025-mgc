@@ -120,7 +120,7 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
       <aside className="flex justify-center mx-auto mt-3">
         <Link
           href={repoData.html_url}
-          className="flex items-center gap-2 relative px-3 py-1 rounded-full border border-[var(--border-color)] outline-1 outline-offset-1 outline-[var(--border-color)]"
+          className="flex items-center gap-2 relative px-3 py-1 rounded-full border border-[var(--border-color)] outline-1 outline-offset-1 outline-[var(--border-color)] hover:scale-102 transition-transform duration-300 hover:shadow-lg hover:bg-[var(--header-bg-color)] text-[var(--mutted-color)] font-semibold"
           target="_blank"
         >
           <div className="absolute top-0 left-0 w-full h-full rounded-2xl project-item" />
