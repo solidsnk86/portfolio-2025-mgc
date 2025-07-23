@@ -4,6 +4,7 @@
   :root {
     --background: #f4f4f4;
     --foreground: #171717;
+    --shadow-color: rgba(0, 0, 0, 0.556);
     --header-bg-color: rgba(255, 255, 255, 0.5);
     --dialog-bg: #f5f5f5;
     --text-primary-color: #111;
@@ -55,6 +56,7 @@
   .dark {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --shadow-color: rgba(0, 0, 0, 0.5);
     --header-bg-color: #27272a94;
     --dialog-bg: #333;
     --text-primary-color: #fff;
@@ -209,11 +211,6 @@ dialog {
     rgba(28, 28, 28, 0.8),
     transparent
   );
-}
-
-.project-icon {
-  background: var(--header-bg-color);
-  filter: drop-shadow(3px 6px 9px #111);
 }
 
 .zoom {

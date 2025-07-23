@@ -66,13 +66,13 @@ export const Projects = () => {
             href={`/projects/${url}`}
             className="p-4 rounded-xl bg-[var(--card-project-color)] grid mx-auto w-full justify-center space-y-3 relative overflow-hidden group hover:scale-102 transition-transform duration-300 hover:shadow-2xl"
           >
-            <span className="p-1 rounded-xl bg-[var(--icon-bg)] group-hover:scale-90 group-hover:translate-y-3 transition-transform duration-300">
+            <span className="p-1 relative bg-[var(--icon-bg)] shadow-xl rounded-xl group-hover:scale-90 group-hover:translate-y-3 transition-transform duration-300">
             <Image
               src={imgUrl}
               width={120}
               height={90}
               alt={name}
-              className="group-hover:contrast-200 opacity-85 group-hover:opacity-100 group-hover:grayscale-0 group-hover:hue-rotate-60 transition-all duration-300 mx-auto mb-2 rounded-lg shadow-md hover:shadow-lg aspect-square object-cover"
+              className="group-hover:contrast-200 opacity-85 group-hover:opacity-100 group-hover:hue-rotate-60 transition-all duration-300 mx-auto mb-2 rounded-lg aspect-square object-cover"
             />
             </span>
             <h3 className="text-center font-bold">{name}</h3>
