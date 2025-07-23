@@ -12,6 +12,7 @@ El diseño es completamente **responsivo**, limpio y funcional, con un toque ele
 - ✅ Estilo **elegante y moderno**: Tipografías, colores y disposición pensados para una experiencia agradable.
 - ✅ **Íconos 3D**: Integración de gráficos 3D para dar un aspecto visual distintivo.
 - ✅ Contenido en **Markdown enriquecido**: Los blogs se escriben en archivos `.md`, son leídos por la API implementada con `node:fs` y renderizados dinámicamente con un renderer de Markdown para una presentación bien formateada.
+- ✅ Integración con **GitHub API**: Se consume la API de GitHub para leer los README de los proyectos destacados y mostrar información actualizada de cada proyecto directamente desde el repositorio.
 - ✅ **Dark mode con React Context**: La aplicación incluye un modo oscuro configurable implementado mediante `createContext` de React para una mejor experiencia de usuario.
 - ✅ Envío automático de mails: Cuando alguien completa el formulario de contacto, se envía automáticamente un correo usando `nodemailer`.
 
@@ -65,6 +66,27 @@ pnpm dev
 ```
 
 El proyecto quedará disponible en tu navegador en: <strong>http://localhost:3000</strong>
+
+## 🔐 Variables de entorno necesarias
+
+Para que el proyecto funcione correctamente, asegurate de crear un archivo .env en la raíz del proyecto con las siguientes variables configuradas:
+
+```env
+# Token personal de GitHub para acceder a la API
+GITHUB_TOKEN=<TU_TOKEN>
+
+# URL de tu proyecto en Supabase
+SUPABASE_URL=<TU_SUPABASE_URL>
+
+# Clave pública anónima de Supabase
+SUPABASE_ANNON_KEY=<TU_SUPABASE_ANNON_KEY>
+
+# Usuario de Gmail (dirección de correo)
+GMAIL_USER=<TU_CORREO_GMAIL>
+
+# Contraseña de aplicación generada para Gmail
+GMAIL_USER_PASSWORD=<TU_GMAIL_PASS_APPLICATION>
+```
 
 ## 📝 Licencia
 
