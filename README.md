@@ -69,7 +69,7 @@ El proyecto quedará disponible en tu navegador en: <strong>http://localhost:300
 
 ## 🔐 Variables de entorno necesarias
 
-Para que el proyecto funcione correctamente, asegurate de crear un archivo .env en la raíz del proyecto con las siguientes variables configuradas:
+Para que el proyecto funcione correctamente, asegurate de crear un archivo `.env` en la raíz del proyecto con las siguientes variables configuradas:
 
 ```env
 # Token personal de GitHub para acceder a la API
