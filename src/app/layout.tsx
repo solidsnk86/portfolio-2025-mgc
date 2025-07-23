@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "solidSnk86 ✦ desarrollador front end",
+  title: "solidsnk86 ✦ desarrollador front end",
   description:
     "Técnico Universitario en Programación | Desarrollo Front End, Diseño UI/UX, Desarrollo de software",
 };
