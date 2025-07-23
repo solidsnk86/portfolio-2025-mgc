@@ -58,7 +58,7 @@ export const Footer = () => {
             so: system,
             browser,
             version,
-            emoji_flag: currentEmojiFlag
+            emoji_flag: currentEmojiFlag,
           }),
         }).catch((error) => console.log(error));
       }
@@ -78,25 +78,36 @@ export const Footer = () => {
     <footer
       className={`grid justify-center mx-auto py-10 space-y-3 ${styles.footer}`}
     >
-      <Image src="/dividier.svg" width={300} height={0} alt="SVG" className="flex justify-center mx-auto" />
+      <Image
+        src="/dividier.svg"
+        width={300}
+        height={0}
+        alt="SVG"
+        className="flex justify-center mx-auto"
+      />
       <p className="text-[var(--mutted-color)] flex gap-1 font-semibold items-center text-sm text-center mx-auto">
         &copy;2025 SolidSnk86 <Dots className="mx-2" /> Calcagni Gabriel{" "}
       </p>
       {isLoading ? (
-        <small className="text-center font-semibold h-12 animate-pulse">Cargando...</small>
+        <small className="text-center font-semibold h-[45px] animate-pulse">
+          Cargando...
+        </small>
       ) : (
         <>
-        <small className="flex items-center mx-auto gap-2 text-xs">
-          <span className="w-[9px] h-[9px] rounded-full bg-blue-500" />
-          Última visita desde {lastVisit?.city_name}, {lastVisit?.country_name}{" "}
-          {lastVisit?.emoji_flag} el{" "}
-          {Format.dateAndTime({ dateTime: lastVisit?.created_at as string })}
-        </small>
-        <small className="text-xs flex justify-center mx-auto">
-          Vistas al perfil: {lastVisit?.visits_count}
+          <small className="flex items-center mx-auto gap-2 text-xs">
+            <span className="w-[9px] h-[9px] rounded-full bg-blue-500" />
+            Última visita desde {lastVisit?.city_name},{" "}
+            {lastVisit?.country_name} {lastVisit?.emoji_flag} el{" "}
+            {Format.dateAndTime({ dateTime: lastVisit?.created_at as string })}
+          </small>
+          <small className="text-xs flex justify-center mx-auto">
+            Vistas al perfil: {lastVisit?.visits_count}
           </small>
         </>
       )}
+      <p className="flex justify-center mx-auto text-sm text-[var(--mutted-color)]">
+        100% código hecho con 💖 por un humano
+      </p>
     </footer>
   );
 };
