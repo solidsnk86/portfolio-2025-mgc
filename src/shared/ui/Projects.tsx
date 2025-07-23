@@ -72,7 +72,7 @@ export const Projects = () => {
               width={120}
               height={90}
               alt={name}
-              className="contrast-200 grayscale-75 group-hover:grayscale-0 transition-all duration-300 mx-auto mb-2 rounded-lg shadow-md hover:shadow-lg aspect-square object-cover"
+              className="group-hover:contrast-200 opacity-85 group-hover:opacity-100 group-hover:grayscale-0 group-hover:hue-rotate-60 transition-all duration-300 mx-auto mb-2 rounded-lg shadow-md hover:shadow-lg aspect-square object-cover"
             />
             </span>
             <h3 className="text-center font-bold">{name}</h3>
