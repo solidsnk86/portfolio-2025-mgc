@@ -11,7 +11,7 @@ El diseño es completamente **responsivo**, limpio y funcional, con un toque ele
 - ✅ Diseño **responsivo**: Se adapta perfectamente a cualquier dispositivo, desde móviles hasta pantallas grandes.
 - ✅ Estilo **elegante y moderno**: Tipografías, colores y disposición pensados para una experiencia agradable.
 - ✅ **Íconos 3D**: Integración de gráficos 3D para dar un aspecto visual distintivo.
-- ✅ Contenido en **Markdown enriquecido**: Posibilidad de escribir contenidos dinámicos y bien formateados.
+- ✅ Contenido en **Markdown enriquecido**: Posibilidad de escribir contenidos dinámicos como blogs y bien formateados.
 
 ---
 
@@ -67,7 +67,7 @@ El proyecto quedará disponible en tu navegador en: <strong>http://localhost:300
 ## 📝 Licencia
 
 Este proyecto es de uso personal y educativo.
-Los íconos 3D son cortesía de 3dicons bajo licencia gratuita y fueron cuidadosamente integrados para darle al sitio un aspecto moderno y atractivo.
+Los íconos 3D son cortesía de [3dicons](https://3dicons.co/) bajo licencia gratuita y fueron cuidadosamente integrados para darle al sitio un aspecto moderno y atractivo.
 
 ---
 
