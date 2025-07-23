@@ -7,8 +7,10 @@ export async function GET() {
       .select("*")
       .order("visits_count", { ascending: false })
       .limit(1)
+
     if (error) throw new Error(error.message)
-    return Response.json({ data, success: true });
+
+    return Response.json(data[0]);
   } catch (error) {
     return Response.json(
       {

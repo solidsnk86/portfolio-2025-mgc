@@ -14,7 +14,7 @@ import { Blogsito } from "@/shared/ui/Blogsito";
 
 export default function Home() {
   return (
-    <div className="flex flex-col md:max-w-3xl mx-auto">
+    <div className="flex flex-col md:max-w-3xl mx-auto px-3 md:px-0 relative">
       <Noise />
       <Header />
       <Hero />
@@ -24,10 +24,7 @@ export default function Home() {
       <Dots className="flex justify-center mx-auto my-16" />
       <Blogsito />
       <Dots className="flex justify-center mx-auto my-16" />
-      <Card
-        title="Tienes algo en mente?"
-        text="Lo hacemos realidad.."
-      >
+      <Card title="Tienes algo en mente?" text="Lo hacemos realidad..">
         <StarShipIcon width={40} height={40} fill="#fff" />
       </Card>
       <Dots className="flex justify-center mx-auto my-16" />

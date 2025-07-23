@@ -6,22 +6,19 @@ import styles from "@/shared/styles/footer.module.css";
 import Image from "next/image";
 import { Dots } from "./effects/Dots";
 import { usePathname } from "next/navigation";
-
+import { Format } from "../utils/Format";
 
 interface LocationProps {
-  ip: string;
-  city: {
-    name: string;
-  };
-  country: {
-    name: string;
-    emojiFlag: string;
-  };
-  sysInfo: { system: string };
+  ip?: string;
+  visits_count: number;
+  city_name: string;
+  country_name: string;
+  emoji_flag: string;
+  created_at: string | Date;
 }
 
 export const Footer = () => {
-  const [location, setLocation] = useState<LocationProps>();
+  const [lastVisit, setLastVisit] = useState<LocationProps>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const path = usePathname();
 
@@ -32,23 +29,24 @@ export const Footer = () => {
       const currentCity = await GetLocation.city();
       const currentCountry = await GetLocation.country();
       const currentEmojiFlag = await GetLocation.emojiFlag();
-      const currentOS = await GetLocation.os();
-      setLocation({
-        ip: currentIP,
-        city: { name: currentCity },
-        country: {
-          name: currentCountry,
-          emojiFlag: currentEmojiFlag,
-        },
-        sysInfo: {
-          system: currentOS,
-        },
-      });
-      const lastVisitResponse = await fetch("/api/supabase/get-visit", {
-        method: "GET",
-      }).then((res) => res.json());
-      const data = lastVisitResponse.data[0];
-      const lastIP = data.ip;
+      const { system, browser, version } = await GetLocation.os();
+
+      const lastVisitResponse: LocationProps = await fetch(
+        "/api/supabase/get-visit",
+        {
+          method: "GET",
+        }
+      ).then((res) => res.json());
+
+      const {
+        ip: lastIP,
+        visits_count,
+        city_name,
+        country_name,
+        emoji_flag,
+        created_at,
+      } = lastVisitResponse;
+
       if (currentIP !== lastIP) {
         await fetch("/api/supabase/send-visit", {
           method: "POST",
@@ -56,31 +54,48 @@ export const Footer = () => {
             ip: currentIP,
             city: currentCity,
             country: currentCountry,
-            page: path
+            page: path,
+            so: system,
+            browser,
+            version,
+            emoji_flag: currentEmojiFlag
           }),
         }).catch((error) => console.log(error));
       }
+      setLastVisit({
+        visits_count,
+        city_name,
+        country_name,
+        emoji_flag,
+        created_at,
+      });
       setIsLoading(false);
     };
     getCurrentIP();
   }, [path]);
+
   return (
     <footer
       className={`grid justify-center mx-auto py-10 space-y-3 ${styles.footer}`}
     >
-      <Image src="/dividier.svg" width={300} height={0} alt="" />
+      <Image src="/dividier.svg" width={300} height={0} alt="SVG" className="flex justify-center mx-auto" />
       <p className="text-[var(--mutted-color)] flex gap-1 font-semibold items-center text-sm text-center mx-auto">
         &copy;2025 SolidSnk86 <Dots className="mx-2" /> Calcagni Gabriel{" "}
       </p>
       {isLoading ? (
-        <small className="text-center font-semibold">Cargando...</small>
+        <small className="text-center font-semibold h-12 animate-pulse">Cargando...</small>
       ) : (
-        <small className="flex items-center mx-auto gap-2">
+        <>
+        <small className="flex items-center mx-auto gap-2 text-xs">
           <span className="w-[9px] h-[9px] rounded-full bg-blue-500" />
-          {location?.city.name || "No disponible"},{" "}
-          {location?.country.name || "No disponible"}{" "}
-          {location?.country.emojiFlag || "No disponible"} - De tu dispositivo
+          Última visita desde {lastVisit?.city_name}, {lastVisit?.country_name}{" "}
+          {lastVisit?.emoji_flag} el{" "}
+          {Format.dateAndTime({ dateTime: lastVisit?.created_at as string })}
         </small>
+        <small className="text-xs flex justify-center mx-auto">
+          Vistas al perfil: {lastVisit?.visits_count}
+          </small>
+        </>
       )}
     </footer>
   );

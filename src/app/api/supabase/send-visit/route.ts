@@ -1,11 +1,11 @@
 import { suapabase } from "@/lib/supabaseClient";
 
 export async function POST(req: Request) {
-  const { ip, city, country, page } = await req.json();
+  const { ip, city, country, page, so, browser, version, emoji_flag } = await req.json();
 
-  if (!ip || !city || !country || !page) {
+  if (!ip || !city || !country || !page || !so || !browser || !version || !emoji_flag) {
     return Response.json(
-      { message: "El cuerpo es necesario" },
+      { message: "Faltan parámetros" },
       { status: 400 }
     );
   }
@@ -16,7 +16,11 @@ export async function POST(req: Request) {
         ip,
         city_name: city,
         country_name: country,
-        page
+        page,
+        so,
+        browser,
+        version,
+        emoji_flag
       },
     ]);
     if (error) throw new Error(error.message);

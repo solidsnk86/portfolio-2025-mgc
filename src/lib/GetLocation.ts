@@ -17,17 +17,28 @@ export class GetLocation {
   }
 
   public static async country() {
-    const data = (await this.getData()) as Promise<{ country: { name: string } }>;
+    const data = (await this.getData()) as Promise<{
+      country: { name: string };
+    }>;
     return (await data).country.name;
   }
 
   public static async emojiFlag() {
-    const data = (await this.getData()) as Promise<{ country: { emojiFlag: string } }>;
+    const data = (await this.getData()) as Promise<{
+      country: { emojiFlag: string };
+    }>;
     return (await data).country.emojiFlag;
   }
 
   public static async os() {
-    const data = (await this.getData()) as Promise<{ sysInfo: { system: string } }>;
-    return (await data).sysInfo.system;
+    const data = (await this.getData()) as Promise<{
+      sysInfo: {
+        system: string;
+        webBrowser: { browser: string; version: string };
+      };
+    }>;
+    const { system, webBrowser } = (await data).sysInfo;
+    const { browser, version } = webBrowser;
+    return { system, browser, version };
   }
 }
