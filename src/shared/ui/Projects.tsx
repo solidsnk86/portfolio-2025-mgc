@@ -52,10 +52,10 @@ export const Projects = () => {
   return (
     <section className="grid p-4 max-w-3xl z-10" id="projects">
       <div className="flex justify-between items-center p-1">
-        <h3 className="text-[var(--mutted-color)] text-sm font-semibold tracking-[0.15em]">
+        <h3 className="text-[var(--mutted-color)] xl:text-sm text-[0.75em] font-semibold md:tracking-[0.15em] tracking-[0.12em]">
           PROYECTOS ACTUALES
         </h3>
-        <Link href="/all-projects" className="retro-gradient text-sm font-semibold">
+        <Link href="/all-projects" className="retro-gradient xl:text-sm text-[0.75em] font-semibold">
           Todos los proyectos ▸
         </Link>
       </div>
@@ -72,13 +72,13 @@ export const Projects = () => {
               width={120}
               height={90}
               alt={name}
-              className="grayscale-75 group-hover:grayscale-0 transition-all duration-300 mx-auto mb-2 rounded-lg shadow-md hover:shadow-lg aspect-square object-cover"
+              className="contrast-200 grayscale-75 group-hover:grayscale-0 transition-all duration-300 mx-auto mb-2 rounded-lg shadow-md hover:shadow-lg aspect-square object-cover"
             />
             </span>
             <h3 className="text-center font-bold">{name}</h3>
             <small className="text-center">{year}</small>
             <article
-              className={`absolute top-0 left-0 hidden group-hover:flex dark:bg-zinc-900/10 mx-auto backdrop-blur-md w-full h-full transition-all duration-300 ${styles.project}`}
+              className={`absolute top-0 left-0 hidden group-hover:flex dark:bg-zinc-900/10 mx-auto backdrop-blur-lg w-full h-full transition-all duration-300 ${styles.project}`}
             >
               <div className="flex flex-col mx-auto">
                 <h3 className="text-center font-semibold text-lg">{name}</h3>

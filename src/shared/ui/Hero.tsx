@@ -33,7 +33,7 @@ export const Hero = () => {
     <section
       className={`flex flex-col max-w-2xl text-wrap mt-16 justify-center mx-auto xl:p-0 md:p-0 p-4 ${styles.hero} ${fraunces.className}`}
     >
-      <h2 className="flex flex-wrap gap-2 items-center xl:text-[49px] lg:text-5xl md:text-5xl text-4xl leading-[1.2] text-balance w-full">
+      <h2 className="flex flex-wrap gap-2 items-center xl:text-[49px] lg:text-5xl md:text-5xl text-[2.20rem] leading-[1.2] text-balance w-full">
         Hola,
         <br />
         <span className="inline-flex gap-2 items-center whitespace-nowrap">
