@@ -12,7 +12,11 @@
     --mutted-color: #666;
     --card-project-color: #f4f4f5;
     --hover-color: #e3e3e3bf;
-    --button-bg-color-solid: #f4f4f5;
+    --button-bg-color-solid: linear-gradient(
+      to top,
+      #f4f4f4,
+      #e3e3e3ec
+    );
     --border-color: #ddd;
     --icon-bg: #eee;
     --colder: linear-gradient(45deg, #c0a4f3, #a4b6f5);
@@ -59,7 +63,7 @@
     --mutted-color: #666;
     --card-project-color: #27272a94;
     --hover-color: #27272a;
-    --button-bg-color-solid: #27272a;
+    --button-bg-color-solid: linear-gradient(to top, #27272a, #18181b);
     --border-color: #333;
     --icon-bg: #1c1c1ec8;
     --colder: linear-gradient(45deg, #0d0222, #01071c);
@@ -224,6 +228,10 @@ dialog {
   to {
     transform: scale(1);
   }
+}
+
+.submit-button {
+  background: var(--button-bg-color-solid);
 }
 
 .felix {

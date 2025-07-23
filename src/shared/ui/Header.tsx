@@ -39,7 +39,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="rounded-full w-full mt-6 bg-[var(--header-bg-color)] backdrop-blur-xl h-[74px] mx-auto relative z-50">
+      <header className="rounded-full w-full mt-6 bg-[var(--header-bg-color)] backdrop-blur-xl h-[74px] mx-auto relative z-50 shadow shadow-amber-50/10">
         <div className="flex items-center justify-between h-full px-6">
           {isDarkMode ? (
             <Link href="/">

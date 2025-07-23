@@ -160,7 +160,7 @@ export const ContactForm = () => {
           />
           <button
             type="submit"
-            className="bg-[var(--button-bg-color-solid)] border border-[var(--border-color)] rounded-md px-3 py-[10px] w-full cursor-pointer hover:shadow-2xl z-50 hover:brightness-110"
+            className="submit-button border border-[var(--border-color)] from-zinc-800 to-zinc-900 rounded-md px-3 py-[10px] w-full cursor-pointer hover:shadow-2xl z-50 hover:brightness-110"
             onMouseEnter={() => {
               const felix = document.getElementById("felix")!;
               felix.style.animation = "sliderIn 0.6s ease-out";
