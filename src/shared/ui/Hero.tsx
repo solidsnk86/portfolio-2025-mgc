@@ -64,7 +64,7 @@ export const Hero = () => {
       <p className={`font-semibold ${poppins.className} items-center z-10`}>
         Actualmente trabajo en el proyecto{" "}
         <a href="https://neo-wifi.vercel.app/" className="retro-gradient">
-          @neo-wifi
+          @neo-wifi.
         </a>
       </p>
     </section>
