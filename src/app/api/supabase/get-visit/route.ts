@@ -10,7 +10,7 @@ export async function GET() {
 
     if (error) throw new Error(error.message)
 
-    return Response.json(data[0]);
+    return Response.json(data[0], { status: 200 });
   } catch (error) {
     return Response.json(
       {

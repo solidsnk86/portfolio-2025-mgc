@@ -5,7 +5,7 @@ export async function POST(req: Request) {
 
   if (!ip || !city || !country || !page || !so || !browser || !version || !emoji_flag) {
     return Response.json(
-      { message: "Faltan parámetros" },
+      { message: "Faltan parámetros en la solicitud" },
       { status: 400 }
     );
   }
