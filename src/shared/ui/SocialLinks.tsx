@@ -32,11 +32,10 @@ export const SocialLinks = () => {
           <Link
             href={url}
             key={name}
-            className={`flex gap-2 items-center text-sm font-semibold relative text-zinc-500 ${styles.social}`}
+            className={`flex xl:gap-2 gap-1 items-center xl:text-sm text-xs font-semibold relative text-zinc-500 ${styles.social}`}
           >
             <Icon
-              size={18}
-              className={`${name === "LinkedIn" ? "-translate-y-[2px]" : ""}`}
+              className={`${name === "LinkedIn" ? "-translate-y-[2px]" : ""} xl:w-[18px] xl:h-[18px] w-4 h-4`}
             />
             <span>{name}</span>
           </Link>
