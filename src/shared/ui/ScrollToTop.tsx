@@ -27,7 +27,7 @@ export const ScrollToTopButton = () => {
     show && (
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-10 left-6 p-2 rounded-lg border border-[var(--border-color)] 
+        className={`fixed bottom-10 xl:left-6 left-3 p-2 rounded-lg border border-[var(--border-color)] 
             z-50 bg-[var(--header-bg-color)] cursor-pointer shadow-md ${styles.scroll}`}
       >
         <ArrowUpToLine size={20} />
