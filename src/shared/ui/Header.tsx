@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AlignCenter, MoonStar, Sun, X } from "lucide-react";
 import { useMatchMedia } from "@/hooks/useMatchMedia";
 import { useTheme } from "@/provider/theme-provider";
@@ -16,9 +16,9 @@ const links = [
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
   const { theme, setTheme } = useTheme();
   const preferesDark = useMatchMedia("(prefers-color-scheme: dark)", true);
+  const menuWrapperRef = useRef<HTMLDivElement>(null)
 
   const isDarkMode = theme === "dark" || (theme === "system" && preferesDark);
 
@@ -26,16 +26,24 @@ export const Header = () => {
     setIsMenuOpen(true);
     document.body.style.overflow = "hidden";
   };
+
   const closeMenu = () => {
     setIsMenuOpen(false);
     document.body.style.overflow = "auto";
   };
 
+  useEffect(() => {
+    if (menuWrapperRef.current) {
+      menuWrapperRef.current.addEventListener("click", () => console.log("Clickio tode"))
+    }
+  }, [])
+
+  
   const reproduceSound = () => {
-    const audio = new Audio('/assets/computer-click.mp3')
+    const audio = new Audio("/assets/computer-click.mp3");
     audio.volume = 0.5;
-    if (audio) audio.play().catch((error) => console.log(error))
-  }
+    if (audio) audio.play().catch((error) => console.log(error));
+  };
 
   return (
     <>
@@ -104,10 +112,9 @@ export const Header = () => {
       </header>
 
       {isMenuOpen && (
-        <div className="absolute top-0 left-0 inset-0 z-50 bg-opacity-50 backdrop-blur-[4px]">
+        <div className="absolute top-0 left-0 inset-0 z-50 bg-opacity-50 backdrop-blur-[4px]" ref={menuWrapperRef}>
           <div
-            ref={menuRef}
-            className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-[var(--dialog-bg)] shadow-xl transform transition-transform duration-300 ease-in-out ${
+            className={`fixed top-0 right-0 h-full w-full bg-[var(--dialog-bg)] shadow-xl transform transition-transform duration-500 ease-in-out ${
               isMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
