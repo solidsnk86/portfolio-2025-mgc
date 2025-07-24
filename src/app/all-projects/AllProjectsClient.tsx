@@ -1,5 +1,6 @@
 "use client";
 
+import { ScrollToTopButton } from "@/shared/ui/ScrollToTop";
 import { Format } from "@/shared/utils/Format";
 import { Loader2, MoveLeft } from "lucide-react";
 import { Fraunces } from "next/font/google";
@@ -97,6 +98,7 @@ export const ALlProjectsClient = () => {
           </div>
         </>
       )}
+      <ScrollToTopButton />
     </section>
   );
 };

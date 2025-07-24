@@ -11,6 +11,7 @@ import { StarShipIcon } from "@/shared/ui/Icons";
 import { Card } from "@/shared/ui/Card";
 import { Projects } from "@/shared/ui/Projects";
 import { Blogsito } from "@/shared/ui/Blogsito";
+import { ScrollToTopButton } from "@/shared/ui/ScrollToTop";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
       <Dots className="flex justify-center mx-auto my-16" />
       <ContactForm />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

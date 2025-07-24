@@ -1,6 +1,7 @@
 "use client";
 
 import MarkdownRenderer from "@/Components/MarkDownRenderer";
+import { ScrollToTopButton } from "@/shared/ui/ScrollToTop";
 import { Loader2, MoveLeft } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
@@ -44,6 +45,7 @@ export const BlogClient = ({ blog }: { blog: string }) => {
           <MarkdownRenderer content={blogContent} />
         </div>
       )}
+      <ScrollToTopButton />
     </section>
   );
 };
