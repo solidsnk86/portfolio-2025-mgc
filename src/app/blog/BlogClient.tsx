@@ -1,6 +1,6 @@
 "use client";
 
-import MarkdownRenderer from "@/Components/MarkDownRenderer";
+import MarkdownRenderer from "@/components/MarkDownRenderer";
 import { ScrollToTopButton } from "@/shared/ui/ScrollToTop";
 import { Loader2, MoveLeft } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";

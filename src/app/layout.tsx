@@ -36,7 +36,7 @@ export default function RootLayout({
             src="/header-gradient.svg"
             width={600}
             height={80}
-            className="absolute top-0 left-0 w-full"
+            className="absolute top-0 left-0 w-full -z-10"
             alt="Gradient BG"
             priority
           />
