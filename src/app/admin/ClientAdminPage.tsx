@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import styles from "./styles/table.module.css";
+import { ChevronUp } from "lucide-react";
 
 interface ViewsProps {
   id: string;
@@ -112,10 +113,11 @@ export const ClientAdminPage = () => {
             </button>
           ) : (
             <button
+              title="Contraer"
               onClick={() => setPayload(10)}
-              className="w-36 px-6 py-3 bg-[var(--dialog-bg)] rounded-lg hover:opacity-80 transition-colors"
+              className="flex mx-auto  justify-center w-36 px-6 py-3 bg-[var(--dialog-bg)] rounded-lg hover:opacity-80 transition-colors"
             >
-              Contraer
+              <ChevronUp />
             </button>
           )}
         </div>
