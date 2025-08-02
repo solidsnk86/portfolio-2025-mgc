@@ -27,6 +27,7 @@ export const BlogClient = ({ blog }: { blog: string }) => {
   useEffect(() => {
     readBlog();
   }, [readBlog]);
+  
   return (
     <section className="flex flex-col justify-center mx-auto md:max-w-3xl w-full p-6 bg-[var(--header-bg-color)] relative z-0 rounded-xl my-10">
       <button
