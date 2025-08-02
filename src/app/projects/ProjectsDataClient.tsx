@@ -1,6 +1,6 @@
 "use client";
 
-import MarkdownRenderer from "@/comp/MarkDownRenderer";
+import MarkdownRenderer from "@/components/MarkDownRenderer";
 import { GithubIcon } from "@/shared/ui/Icons";
 import { Format } from "@/shared/utils/Format";
 import { Loader2, MoveLeft } from "lucide-react";
