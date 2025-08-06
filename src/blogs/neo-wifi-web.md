@@ -33,6 +33,10 @@ Claro, siempre respetando la privacidad y solicitando el permiso de geolocalizac
 Actualmente cubre localidades de **San Luis**, **Buenos Aires**, **Córdoba**, **Mendoza**, **San Juan**, **Corrientes**, **Tucumán**, y otros puntos en universidades, hospitales y espacios públicos.  
 Neo-WiFi te muestra los **3 puntos más cercanos**, con la distancia exacta a cada uno.
 
+<div>
+<img src="/blog/neo-wifi.png" width="100%" height="auto" alt="Mapa Neo-WiFi" />
+</div>
+
 ### 🖥️ También en escritorio
 
 Neo-WiFi no es solo una app web: también desarrollé una **aplicación de escritorio para Windows**, pensada especialmente para automatizar la conexión en sistemas TP-LINK en las redes públicas de San Luis.

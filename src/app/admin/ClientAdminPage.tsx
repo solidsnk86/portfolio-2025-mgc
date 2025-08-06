@@ -56,7 +56,7 @@ export const ClientAdminPage = () => {
       <div className="flex-1 overflow-auto border border-[var(--border-color)] rounded-lg">
         <table className={`${styles.table} w-full`}>
           <thead className="sticky top-[-0.5px] z-10">
-            <tr>
+            <tr className="text-zinc-100">
               <th className="p-3 text-left border-b">Ciudad</th>
               <th className="p-3 text-left border-b">País</th>
               <th className="p-3 text-left border-b">IP</th>
