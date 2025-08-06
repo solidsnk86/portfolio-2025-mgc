@@ -34,7 +34,7 @@ Actualmente cubre localidades de **San Luis**, **Buenos Aires**, **Córdoba**, *
 Neo-WiFi te muestra los **3 puntos más cercanos**, con la distancia exacta a cada uno.
 
 <div>
-<img src="/blog/neo-wifi.png" width="100%" height="auto" alt="Mapa Neo-WiFi" />
+<img src="https://raw.githubusercontent.com/solidsnk86/portfolio-2025-mgc/refs/heads/master/public/blog/neo-wifi-map.png" width="100%" height="auto" alt="Mapa Neo-WiFi" />
 </div>
 
 ### 🖥️ También en escritorio
