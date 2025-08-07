@@ -7,7 +7,6 @@ import { Noise } from "@/shared/ui/effects/Noise";
 import { Footer } from "@/shared/ui/Footer";
 import { Header } from "@/shared/ui/Header";
 import { Hero } from "@/shared/ui/Hero";
-import { StarShipIcon } from "@/shared/ui/Icons";
 import { Card } from "@/shared/ui/Card";
 import { Projects } from "@/shared/ui/Projects";
 import { Blogsito } from "@/shared/ui/Blogsito";
@@ -25,8 +24,10 @@ export default function Home() {
       <Dots className="flex justify-center mx-auto my-16" />
       <Blogsito />
       <Dots className="flex justify-center mx-auto my-16" />
-      <Card title="Tienes algo en mente?" text="Lo hacemos realidad..">
-        <StarShipIcon width={40} height={40} fill="#fff" />
+      <Card title="Tenés algo en mente?" text="Lo hacemos realidad..">
+        <picture>
+          <img src="/assets/fireball.png" alt="Fireball draw" className="xl:w-[180px] xl:h-[120px] w-[80px] h-[60px]" />
+        </picture>
       </Card>
       <Dots className="flex justify-center mx-auto my-16" />
       <ContactForm />
