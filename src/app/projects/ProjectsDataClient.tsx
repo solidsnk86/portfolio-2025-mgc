@@ -95,7 +95,7 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
       ) : (
         <>
           <header className="mt-4 flex flex-col">
-            <time>
+            <time className="text-sm">
               Creado el{" "}
               {Format.date({
                 dateTime: repoData.created_at || "2025-02-26T08:33:15Z",
