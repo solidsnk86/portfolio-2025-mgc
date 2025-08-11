@@ -16,12 +16,14 @@ interface ViewsProps {
   browser: string;
   version: string;
   emoji_flag: string;
+  lat: number | string;
+  lon: number | string;
 }
 
 const SkelletonTable = () => {
   return Array.from({ length: 10 }).map((_, indexRow) => (
     <tr key={indexRow} className="animate-pulse bg-[var(--header-bg-color)]">
-      {Array.from({ length: 9 }).map((_, index) => (
+      {Array.from({ length: 11 }).map((_, index) => (
         <td key={index} className="w-32">
           &nbsp;
         </td>
@@ -61,6 +63,8 @@ export const ClientAdminPage = () => {
               <th className="p-3 text-left border-b">País</th>
               <th className="p-3 text-left border-b">IP</th>
               <th className="p-3 text-left border-b">Fecha</th>
+              <th className="p-3 text-left border-b">Latitud</th>
+              <th className="p-3 text-left border-b">Longitud</th>
               <th className="p-3 text-left border-b">Página</th>
               <th className="p-3 text-left border-b">SO</th>
               <th className="p-3 text-left border-b">Navegador</th>
@@ -83,6 +87,8 @@ export const ClientAdminPage = () => {
                   <td className="p-3 border-b">
                     {new Date(view.created_at).toLocaleDateString()}
                   </td>
+                  <td className="p-3 border-b">{view.lat}</td>
+                  <td className="p-3 border-b">{view.lon}</td>
                   <td className="p-3 border-b">{view.page}</td>
                   <td className="p-3 border-b">{view.so}</td>
                   <td className="p-3 border-b">{view.browser}</td>

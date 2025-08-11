@@ -30,6 +30,14 @@ export class GetLocation {
     return (await data).country.emojiFlag;
   }
 
+  public static async coords() {
+    const data = (await this.getData()) as Promise<{
+      coords: { latitude: number | string; longitude: number | string };
+    }>;
+    const { coords } = await data;
+    return coords;
+  }
+
   public static async os() {
     const data = (await this.getData()) as Promise<{
       sysInfo: {

@@ -1,7 +1,7 @@
 import { suapabase } from "@/lib/supabaseClient";
 
 export async function POST(req: Request) {
-  const { ip, city, country, page, so, browser, version, emoji_flag } = await req.json();
+  const { ip, city, country, page, so, browser, version, emoji_flag, lat, lon } = await req.json();
 
   if (!ip || !city || !country || !page || !so || !browser || !version || !emoji_flag) {
     return Response.json(
@@ -20,7 +20,9 @@ export async function POST(req: Request) {
         so,
         browser,
         version,
-        emoji_flag
+        emoji_flag,
+        lat,
+        lon
       },
     ]);
     if (error) throw new Error(error.message);

@@ -15,6 +15,8 @@ interface LocationProps {
   country_name: string;
   emoji_flag: string;
   created_at: string | Date;
+  latitude: number | string;
+  longitude: number | string;
 }
 
 export const Footer = () => {
@@ -30,6 +32,7 @@ export const Footer = () => {
       const currentCountry = await GetLocation.country();
       const currentEmojiFlag = await GetLocation.emojiFlag();
       const { system, browser, version } = await GetLocation.os();
+      const { latitude, longitude } = await GetLocation.coords()
 
       const lastVisitResponse: LocationProps = await fetch(
         "/api/supabase/get-visit",
@@ -59,6 +62,8 @@ export const Footer = () => {
             browser,
             version,
             emoji_flag: currentEmojiFlag,
+            lat: latitude,
+            lon: longitude,
           }),
         }).catch((error) => console.log(error));
       }
@@ -68,6 +73,8 @@ export const Footer = () => {
         country_name,
         emoji_flag,
         created_at,
+        latitude,
+        longitude,
       });
       setIsLoading(false);
     };

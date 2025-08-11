@@ -39,7 +39,7 @@ export const Header = () => {
   }, [])
 
   
-  const reproduceSound = () => {
+  const clickSound = () => {
     const audio = new Audio("/assets/computer-click.mp3");
     audio.volume = 0.5;
     if (audio) audio.play().catch((error) => console.log(error));
@@ -89,7 +89,7 @@ export const Header = () => {
             <span className="text-zinc-500 hidden md:flex">|</span>
             <button
               onClick={() => setTheme(isDarkMode ? "light" : "dark")}
-              onMouseDown={reproduceSound}
+              onMouseDown={clickSound}
               className="p-2 rounded-lg hidden md:inline-flex"
               aria-label="Cambiar tema"
               title="Cambiar tema"
@@ -124,7 +124,7 @@ export const Header = () => {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setTheme(isDarkMode ? "light" : "dark")}
-                  onMouseDown={reproduceSound}
+                  onMouseDown={clickSound}
                   className="p-2 rounded-lg hover:bg-[var(--hover-color)] transition-colors duration-200"
                   aria-label="Toggle theme"
                 >
