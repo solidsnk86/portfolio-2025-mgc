@@ -19,7 +19,7 @@ export default function NotFound() {
         <h3 className={`text-2xl font-semibold dark:text-zinc-900 ${fraunces.className}`}>
           Ooopps! No se encontró la página.
         </h3>
-        <Link href="/" className="flex justify-center mx-auto gap-2 items-center backdrop-blur-xl bg-zinc-100 w-fit rounded-xl px-3 py-2 hover:opacity-80 dark:text-zinc-900">
+        <Link href="/" className="flex justify-center mx-auto gap-2 items-center font-semibold bg-zinc-100 w-fit rounded-xl px-3 py-2 hover:opacity-80 dark:text-zinc-900">
         <HomeIcon size={18} />
         Volver al inicio
         </Link>
