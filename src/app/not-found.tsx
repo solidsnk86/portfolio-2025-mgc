@@ -11,7 +11,7 @@ const fraunces = Fraunces({
 export default function NotFound() {
   return (
     <section className="flex justify-center mx-auto h-[100dvh]">
-      <div className="flex flex-col gap-3 bg-[#fff] p-10 h-[480px] my-auto rounded-xl">
+      <div className="flex flex-col gap-3 bg-[#fff] p-10 h-[480px] my-auto rounded-2xl">
         <Image src="/assets/404.png" width={400} height={400} alt="404 image" />
         <h1 className={`text-6xl font-bold text-center dark:text-zinc-900 ${fraunces.className}`}>
           404

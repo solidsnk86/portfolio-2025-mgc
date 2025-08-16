@@ -52,7 +52,7 @@ export const Hero = () => {
         Técnico Universitario en Programación & entusiasta del desarrollo de
         software.
       </p>
-      <SocialLinks />
+      <SocialLinks className="text-zinc-500" />
       <p
         className={`font-semibold xl:text-lg my-4 text-pretty ${poppins.className}`}
       >

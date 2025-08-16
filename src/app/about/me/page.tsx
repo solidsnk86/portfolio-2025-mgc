@@ -58,7 +58,7 @@ export default function MePage() {
       </section>
       <Dots className="flex justify-center mx-auto my-10" />
       <Card title="" text="Conéctate Conmigo">
-        <SocialLinks />
+        <SocialLinks className="text-zinc-900" />
       </Card>
       <Footer />
     </div>

@@ -23,7 +23,7 @@ const socialLinks = [
   },
 ];
 
-export const SocialLinks = () => {
+export const SocialLinks = ({ className }: { className: string }) => {
   return (
     <div className={`flex my-6 gap-4 items-center ${poppins.className}`}>
       {socialLinks.map(({ name, url, icon }) => {
@@ -32,7 +32,7 @@ export const SocialLinks = () => {
           <Link
             href={url}
             key={name}
-            className={`flex xl:gap-2 gap-1 items-center xl:text-sm text-xs font-semibold relative text-zinc-500 ${styles.social}`}
+            className={`flex xl:gap-2 gap-1 items-center xl:text-sm text-xs font-semibold relative ${className} ${styles.social}`}
           >
             <Icon
               className={`${name === "LinkedIn" ? "-translate-y-[2px]" : ""} xl:w-[18px] xl:h-[18px] w-4 h-4`}
