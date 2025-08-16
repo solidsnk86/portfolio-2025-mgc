@@ -19,7 +19,7 @@ export const Card = ({
   button?: ReactNode
 }) => {
   return (
-    <div className={`xl:p-16 md:p-10 p-8 mx-2 text-center flex flex-col justify-center text-zinc-900 ${styles.gradient} ${poppins.className} relative`}>
+    <div className={`md:p-10 p-8 mx-2 text-center flex flex-col justify-center text-zinc-900 ${styles.gradient} ${poppins.className} relative`}>
       <h2 className="xl:text-4xl text-2xl font-semibold xl:flex flex flex-col mx-auto gap-2 items-center justify-center">
         {children}
         {title}
