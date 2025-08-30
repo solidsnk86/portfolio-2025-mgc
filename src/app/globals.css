@@ -238,6 +238,10 @@ dialog {
   animation: scaleIn 300ms ease-in-out;
 }
 
+.button-bg {
+  background: var(--warm);
+}
+
 .sello {
   display: flex;
   justify-content: center;

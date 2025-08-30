@@ -22,20 +22,25 @@ const fraunces = Fraunces({
 export const ALlProjectsClient = () => {
   const [repos, setRepos] = useState<GitHubApiProps[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [projects, SetProjects] = useState<number>(10);
 
   const fetchRepos = useCallback(async () => {
     setIsLoading(true);
-    await fetch("/api/repos", { method: "GET" }).then((res) => res.json()).then((repo) => {
-      setIsLoading(false)
-      setRepos(repo.allProjects)
-    }).catch((error) => console.log(error))
+    await fetch("/api/repos", { method: "GET" })
+      .then((res) => res.json())
+      .then((repo) => {
+        setIsLoading(false);
+        setRepos(repo.allProjects);
+      })
+      .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
     fetchRepos();
   }, [fetchRepos]);
-  
-  return (  
+
+  console.log({ repos: repos.length, proyectos: projects })
+  return (
     <section className="flex flex-col justify-center mx-auto md:max-w-3xl w-full p-6 bg-[var(--header-bg-color)] relative z-10 rounded-xl my-10">
       <Link
         href="/"
@@ -52,7 +57,8 @@ export const ALlProjectsClient = () => {
         <>
           <h1 className="text-2xl font-semibold my-4">Todos los Proyectos</h1>
           <div className="flex flex-col space-y-3">
-            {repos?.filter((repo) => {
+            {repos
+              ?.filter((repo) => {
                 const excluded = [
                   "doubleCommit.ts",
                   "background-remover",
@@ -70,7 +76,7 @@ export const ALlProjectsClient = () => {
                   "node-js-class",
                   "Electron-ServiciosElectricos",
                   "TP-Grupo-GitHub",
-                  "Tecnicatura_UTN"
+                  "Tecnicatura_UTN",
                 ];
                 return !excluded.includes(repo.name);
               })
@@ -79,6 +85,7 @@ export const ALlProjectsClient = () => {
                   new Date(b.created_at).getTime() -
                   new Date(a.created_at).getTime()
               )
+              .slice(0, projects)
               .map((repo, i) => (
                 <Link
                   href={`/projects/${repo.name}`}
@@ -95,6 +102,15 @@ export const ALlProjectsClient = () => {
                   </h3>
                 </Link>
               ))}
+            <div className="flex mx-auto">
+              <button
+                disabled={projects > repos.length}
+                onClick={() => SetProjects((project) => project + 10)}
+                className="flex items-center gap-2 relative px-3 py-1 button-bg rounded-full border border-[var(--border-color)] outline-1 outline-offset-1 outline-[var(--border-color)] hover:scale-105 transition-transform duration-300 hover:shadow-lg hover:bg-[var(--header-bg-color)] text-[var(--mutted-color)] font-semibold disabled:cursor-not-allowed"
+              >
+                Cargar más proyectos
+              </button>
+            </div>
           </div>
         </>
       )}
