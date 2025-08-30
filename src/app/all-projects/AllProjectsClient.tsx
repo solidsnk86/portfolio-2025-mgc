@@ -39,7 +39,7 @@ export const ALlProjectsClient = () => {
     fetchRepos();
   }, [fetchRepos]);
 
-  console.log({ repos: repos.length, proyectos: projects })
+  
   return (
     <section className="flex flex-col justify-center mx-auto md:max-w-3xl w-full p-6 bg-[var(--header-bg-color)] relative z-10 rounded-xl my-10">
       <Link
