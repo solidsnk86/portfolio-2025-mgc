@@ -164,6 +164,12 @@ dialog {
   }
 }
 
+@media (width <= 762px) {
+  dialog {
+    width: 100%;
+  }
+}
+
 .gradient-left,
 .gradient-right {
   pointer-events: none;
