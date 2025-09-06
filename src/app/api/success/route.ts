@@ -9,7 +9,7 @@ export async function GET(req: NextRequest) {
   if (!id_payment || !status || !payment_type) return Response.json({ message: "Faltan parámetros en la url" })
 
   try {
-    return Response.redirect(new URL("/success", req.url))
+    if (status === "approved") return Response.redirect(new URL("/success", req.url))
   } catch (error) {
     return Response.json({
       message: "Error en el servidor: " + (error as TypeError).message,
