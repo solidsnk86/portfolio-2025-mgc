@@ -33,7 +33,7 @@ export default function SuccessPage() {
           detalles de tu pedido.
         </p>
         <small className="text-black flex gap-1 justify-center mt-4">
-          Se redireccionará en{" "}
+          Se redireccionará a la tienda en{" "}
           <span className="font-bold w-[20px] text-center">{timer}</span>
         </small>
       </div>
