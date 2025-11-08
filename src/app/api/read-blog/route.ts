@@ -16,7 +16,6 @@ export async function GET(req: NextRequest) {
     );
     const blogTitle = blogContent.split("\r")[0];
     
-
     return Response.json({ blogTitle, blogContent }, { status: 200 });
   } catch (error) {
     return Response.json({ message: "Server " + error }, { status: 500 });

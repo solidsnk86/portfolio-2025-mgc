@@ -12,7 +12,7 @@ export default function SuccessPage() {
       setTimer((prev) => {
         if (prev <= 1) {
           clearInterval(interval);
-          router.push("http://localhost:3000");
+          router.push("http://localhost:5173/");
           return 0;
         }
         return prev - 1;
