@@ -23,8 +23,8 @@ export default function SuccessPage() {
   }, [router]);
 
   return (
-    <main className="flex h-[100dvh] items-center justify-center bg-gradient-to-br from-purple-500 to-indigo-600 p-6">
-      <div className="bg-white rounded-2xl shadow-2xl p-10 max-w-lg text-center">
+    <main className="flex h-[100dvh] items-center justify-center bg-gradient-to-br from-blue-500/20 to-indigo-600/20 p-6">
+      <div className="bg-white shadow-2xl p-10 max-w-lg text-center border-2 border-zinc-500">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">
           ¡Muchas gracias por tu compra!
         </h1>
@@ -36,6 +36,9 @@ export default function SuccessPage() {
           Se redireccionará a la tienda en{" "}
           <span className="font-bold w-[20px] text-center">{timer}</span>
         </small>
+        <footer>
+
+        </footer>
       </div>
     </main>
   );
