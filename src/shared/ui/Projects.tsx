@@ -7,7 +7,7 @@ const projects = [
   {
     name: "E-Retro Leyends",
     url: "frontend-e-retro-leyends",
-    imgUrl: "/assets/3dicons-bag-dynamic-color.png",
+    imgUrl: "/assets/3dicons-bag-dynamic-gradient.png",
     description: "Proyecto E-Commerce Full-Stack (PERN)",
     year: 2025,
   },
@@ -33,10 +33,10 @@ const projects = [
     year: 2024,
   },
   {
-    name: "Chat GPT Local",
-    url: "proyecto_python",
-    imgUrl: "/assets/3dicons-chat-bubble-dynamic-gradient.png",
-    description: "Chat GPT local con login de usuarios en PgAdmin",
+    name: "App de tareas (Full-Stack) PERN",
+    url: "taskApp-doubleCommit",
+    imgUrl: "/assets/3dicons-calender-dynamic-gradient.png",
+    description: "App con ingreso de usuarios, perfil, edición, descripción de tareas con IA.",
     year: 2025,
   },
   {
