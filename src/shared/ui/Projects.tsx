@@ -7,7 +7,7 @@ const projects = [
   {
     name: "E-Retro Leyends",
     url: "frontend-e-retro-leyends",
-    imgUrl: "/assets/3dicons-bag-dynamic-color",
+    imgUrl: "/assets/3dicons-bag-dynamic-color.png",
     description: "Proyecto E-Commerce Full-Stack (PERN)",
     year: 2025,
   },
