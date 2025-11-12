@@ -5,6 +5,13 @@ import styles from "@/shared/styles/projects.module.css";
 
 const projects = [
   {
+    name: "E-Retro Leyends",
+    url: "frontend-e-retro-leyends",
+    imgUrl: "/assets/3dicons-bag-dynamic-color",
+    description: "Proyecto E-Commerce Full-Stack (PERN)",
+    year: 2025,
+  },
+  {
     name: "Neo-WiFi App",
     url: "neo-wifi-desktop",
     imgUrl: "/assets/3dicons-tools-dynamic-gradient.png",
@@ -37,13 +44,6 @@ const projects = [
     url: "CV_GEC",
     imgUrl: "/assets/3dicons-folder-fav-dynamic-gradient.png",
     description: "Currículum Vitae editable desde Google Sheets",
-    year: 2024,
-  },
-  {
-    name: "Bloc de Notas",
-    url: "bloc-de-notas",
-    imgUrl: "/assets/3dicons-notebook-dynamic-gradient.png",
-    description: "Bloc de notas hecho en QT y C++",
     year: 2024,
   },
 ];
