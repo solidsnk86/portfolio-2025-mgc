@@ -2,11 +2,6 @@
 
 Un proyecto de e-commerce especializado en artículos deportivos retro y coleccionables, construido con el stack PERN (PostgreSQL, Express, React, Node.js).
 
-**Proyecto grupal desarrollado por:**
-- Cecilia Olejarczyk
-- Franco Morales
-- Gabriel Calcagni
-
 ## Descripción del Proyecto
 
 e-Retro Legends es una plataforma de comercio electrónico que rinde homenaje a la nostalgia del deporte, especializándose en la compra y venta de artículos deportivos retro y coleccionables. La plataforma conecta a compradores y vendedores en un ecosistema seguro y fácil de usar, permitiendo a los usuarios actuar en ambos roles según sus necesidades.
