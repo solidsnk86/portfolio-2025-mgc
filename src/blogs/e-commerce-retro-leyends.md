@@ -1,3 +1,5 @@
+Noviembre 11, 2025
+
 # e-Retro-Leyends: E-commerce de Coleccionables Deportivos Retro
 
 Un proyecto de e-commerce especializado en artículos deportivos retro y coleccionables, construido con el stack PERN (PostgreSQL, Express, React, Node.js).
