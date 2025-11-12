@@ -95,9 +95,9 @@ export const Header = () => {
               title="Cambiar tema"
             >
               {isDarkMode ? (
-                <Sun className="h-6 w-6 text-zinc-500" />
+                <span className="btn-animation"><Sun className="h-6 w-6 text-zinc-500 svg-animation" /></span>
               ) : (
-                <MoonStar className="h-6 w-6 text-zinc-500" />
+                <span className="btn-animation"><MoonStar className="h-6 w-6 text-zinc-500 svg-animation" /></span>
               )}
             </button>
           </aside>

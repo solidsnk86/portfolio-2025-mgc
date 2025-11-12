@@ -13,11 +13,7 @@
     --mutted-color: #666;
     --card-project-color: #f4f4f5;
     --hover-color: #e3e3e3bf;
-    --button-bg-color-solid: linear-gradient(
-      to top,
-      #f4f4f4,
-      #e3e3e3ec
-    );
+    --button-bg-color-solid: linear-gradient(to top, #f4f4f4, #e3e3e3ec);
     --border-color: #ddd;
     --icon-bg: #eee;
     --colder: linear-gradient(45deg, #c0a4f3, #a4b6f5);
@@ -325,5 +321,22 @@ dialog {
   }
   to {
     transform: translateX(50%) scale(0.4);
+  }
+}
+
+.btn-animation:hover .svg-animation {
+  stroke-dasharray: 1300;
+  stroke-dashoffset: 1300;
+  animation: dash 2s ease-in forwards;
+}
+
+@keyframes dash {
+  70% {
+    fill-opacity: 0;
+  }
+  100% {
+    fill-opacity: 100%;
+    stroke-dashoffset: 0;
+    stroke-width: 1;
   }
 }
