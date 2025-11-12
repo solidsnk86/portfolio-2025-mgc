@@ -10,6 +10,9 @@ e-Retro Legends es una plataforma de comercio electrónico que rinde homenaje a 
 
 El proyecto destaca por su diseño inspirado en la estética de eBay de principios de los 2000s, combinando la nostalgia visual con funcionalidades modernas y una arquitectura robusta.
 
+## Link del Proyecto:
+[Pueden ver el proyecto en línea aquí 👉](https://e-retro-legend.vercel.app/)
+
 ## Diseño y Estética Retro
 
 Para recrear auténticamente el estilo de eBay de los años 2000, se implementaron las siguientes características visuales:
