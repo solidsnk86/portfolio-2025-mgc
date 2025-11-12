@@ -33,7 +33,7 @@ const projects = [
     year: 2024,
   },
   {
-    name: "App de tareas (Full-Stack) PERN",
+    name: "App de tareas (PERN)",
     url: "taskApp-doubleCommit",
     imgUrl: "/assets/3dicons-calender-dynamic-gradient.png",
     description: "App con ingreso de usuarios, perfil, edición, descripción de tareas con IA.",
