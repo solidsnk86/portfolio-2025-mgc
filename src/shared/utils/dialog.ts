@@ -56,7 +56,6 @@ export const showDialog = ({
     (event: MouseEvent) => {
       const firstChildDialog = document.querySelector("dialog")?.children[0];
       if (dialog.open && !firstChildDialog?.contains(event.target as Node)) {
-        console.log("Me clickio tode")
         closeDialogWithAnimation();
       }
     },

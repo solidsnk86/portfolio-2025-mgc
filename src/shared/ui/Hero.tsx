@@ -17,7 +17,6 @@ const poppins = Poppins({
 });
 
 export const Hero = () => {
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
@@ -26,6 +25,10 @@ export const Hero = () => {
       if (imgAvatar) {
         imgAvatar.style.transform = `rotateY(${rotation}deg)`;
       }
+      if ("Traductor" in navigator) {
+        console.log("Esta la api dipsonible");
+      }
+      console.log("No está eia");
     });
   }, []);
 
@@ -58,12 +61,15 @@ export const Hero = () => {
       >
         Con más de 2 años de experiencia en proyectos personales, sigo
         explorando la magia <span className="text-xl">✨</span> del código y el
-        diseño mientras completo mi formación en la UTN-FRSR, donde he finalizado el
-        último año.
+        diseño mientras completo mi formación en la UTN-FRSR, donde he
+        finalizado el último año.
       </p>
       <p className={`font-semibold ${poppins.className} items-center z-10`}>
         Actualmente trabajo en el proyecto{" "}
-        <a href="https://e-retro-legend.vercel.app/" className="retro-gradient">
+        <a
+          href="https://comercio-prueba.vercel.app/"
+          className="retro-gradient"
+        >
           @e-retro-leyends.
         </a>
       </p>

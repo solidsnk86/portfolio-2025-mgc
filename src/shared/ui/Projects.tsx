@@ -64,7 +64,7 @@ export const Projects = () => {
           <Link
             key={name}
             href={`/projects/${url}`}
-            className="p-4 rounded-xl bg-[var(--card-project-color)] grid mx-auto w-full justify-center space-y-3 relative overflow-hidden group hover:scale-102 transition-transform duration-300 hover:shadow-2xl"
+            className="p-4 rounded-xl bg-[var(--card-project-color)] grid mx-auto w-full justify-center space-y-3 relative overflow-hidden group transition-transform duration-300 hover:shadow-2xl"
           >
             <span className="p-1 relative bg-[var(--icon-bg)] shadow-xl rounded-xl group-hover:scale-90 group-hover:translate-y-3 transition-transform duration-300">
             <Image
