@@ -25,10 +25,6 @@ export const Hero = () => {
       if (imgAvatar) {
         imgAvatar.style.transform = `rotateY(${rotation}deg)`;
       }
-      if ("Traductor" in navigator) {
-        console.log("Esta la api dipsonible");
-      }
-      console.log("No está eia");
     });
   }, []);
 
