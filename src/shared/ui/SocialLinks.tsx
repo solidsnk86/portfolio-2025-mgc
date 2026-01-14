@@ -35,7 +35,7 @@ export const SocialLinks = ({ className }: { className: string }) => {
             className={`flex xl:gap-2 gap-1 items-center xl:text-sm text-xs font-semibold relative ${className} ${styles.social} btn-animation`}
           >
             <Icon
-              className={`${name === "LinkedIn" ? "-translate-y-[2px]" : ""} xl:w-[18px] xl:h-[18px] w-4 h-4 svg-animation`}
+              className={`${name === "LinkedIn" ? "-translate-y-0.5" : ""} xl:w-[18px] xl:h-[18px] w-4 h-4 svg-animation`}
             />
             <span>{name}</span>
           </Link>

@@ -8,19 +8,19 @@ export class GetLocation {
 
   public static async ip() {
     const data = (await this.getData()) as Promise<{ ip: string }>;
-    return (await data).ip;
+    return (await data).ip || "N/A";
   }
 
   public static async city() {
     const data = (await this.getData()) as Promise<{ city: { name: string } }>;
-    return (await data).city.name;
+    return (await data).city.name || "N/A";
   }
 
   public static async country() {
     const data = (await this.getData()) as Promise<{
       country: { name: string };
     }>;
-    return (await data).country.name;
+    return (await data).country.name || "N/A";
   }
 
   public static async emojiFlag() {

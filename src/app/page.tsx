@@ -35,7 +35,7 @@ export default function Home() {
         title="Tenés algo en mente?"
         text="Lo hacemos realidad.."
         button={
-          <div className="flex justify-center mx-auto">
+          <div className="flex justify-center mx-auto z-50">
             <button onClick={handleContact} className="py-4 px-8 mt-4 text-zinc-50 bg-zinc-950 w-fit rounded-full cursor-pointer hover:opacity-85">
               Contactáme
             </button>

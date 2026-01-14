@@ -5,7 +5,7 @@ import styles from "@/shared/styles/projects.module.css";
 
 const projects = [
   {
-    name: "E-Retro Leyends",
+    name: "E-Commerce",
     url: "frontend-e-retro-leyends",
     imgUrl: "/assets/3dicons-bag-dynamic-gradient.png",
     description: "Proyecto E-Commerce Full-Stack (PERN)",

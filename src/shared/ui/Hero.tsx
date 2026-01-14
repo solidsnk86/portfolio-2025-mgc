@@ -55,18 +55,17 @@ export const Hero = () => {
       <p
         className={`font-semibold xl:text-lg my-4 text-pretty ${poppins.className}`}
       >
-        Con más de 2 años de experiencia en proyectos personales, sigo
-        explorando la magia <span className="text-xl">✨</span> del código y el
-        diseño mientras completo mi formación en la UTN-FRSR, donde he
-        finalizado el último año.
+        Con 3 años de experiencia, sigo explorando la magia{" "}
+        <span className="text-xl">✨</span> del código y el diseño. Egresado de
+        la UTN-FRSR, listo para nuevos desafíos.
       </p>
       <p className={`font-semibold ${poppins.className} items-center z-10`}>
-        Actualmente trabajo en el proyecto{" "}
+        Actualmente trabajo para un cliente en Chile en el proyecto de{" "}
         <a
-          href="https://comercio-prueba.vercel.app/"
+          href="https://cuidadorascalbuco.cl"
           className="retro-gradient"
         >
-          @e-retro-leyends.
+          @cuidadoras-calbuco.
         </a>
       </p>
     </section>

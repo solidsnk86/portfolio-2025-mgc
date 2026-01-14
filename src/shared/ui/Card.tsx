@@ -20,11 +20,11 @@ export const Card = ({
 }) => {
   return (
     <div className={`md:p-10 p-8 mx-2 text-center flex flex-col justify-center text-zinc-950 ${styles.gradient} ${poppins.className} relative`}>
-      <h2 className="xl:text-4xl text-2xl font-semibold xl:flex flex flex-col mx-auto gap-2 items-center justify-center">
+      <h2 className="xl:text-4xl text-2xl font-semibold xl:flex flex flex-col mx-auto gap-2 items-center justify-center z-50">
         {children}
         {title}
       </h2>
-      <h3 className="font-semibold text-lg mt-2">{text}</h3>
+      <h3 className="font-semibold text-lg mt-2 z-50">{text}</h3>
       {button}
     </div>
   );
