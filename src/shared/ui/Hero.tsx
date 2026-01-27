@@ -62,10 +62,10 @@ export const Hero = () => {
       <p className={`font-semibold ${poppins.className} items-center z-10`}>
         Actualmente trabajo para un cliente en Chile en el proyecto de{" "}
         <a
-          href="https://cuidadorascalbuco.cl"
+          href="https://pascale-closet.vercel.app/"
           className="retro-gradient"
         >
-          @cuidadoras-calbuco.
+          @pascale-closet.
         </a>
       </p>
     </section>
