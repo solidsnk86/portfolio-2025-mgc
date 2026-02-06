@@ -55,6 +55,7 @@ Para hacer realidad Neo-WiFi, combiné varias herramientas y frameworks modernos
 - 📐 **Fórmula de Haversine** para los cálculos geográficos.
 - 🌐 **API REST propia**, alimentada por un mapeo JSON de provincias y antenas.
 - ⚛️ **Next.js** para el frontend web.
+- 🟠 **Node.js** para el backend de cálculo.
 - 🖥️ **Electron.js** para la versión de escritorio.
 - 🤖 **Cohere AI** para el asistente inteligente.
 
