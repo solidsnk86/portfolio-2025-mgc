@@ -7,7 +7,7 @@ export async function POST(req: Request) {
 
     if (req.method !== "POST") return Response.json({ message: "Método no permitido" }, { status: 405 })
 
-    const myGmail = process.env.GAMIL_APP_USER || "calcagni.gabriel86@gmail.com";
+    const myGmail = "calcagni.gabriel86@gmail.com";
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
