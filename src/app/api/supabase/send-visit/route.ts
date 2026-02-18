@@ -21,8 +21,8 @@ export async function POST(req: Request) {
         browser,
         version,
         emoji_flag,
-        lat,
-        lon
+        lat: parseFloat(lat),
+        lon: parseFloat(lon)
       },
     ]);
     if (error) throw new Error(error.message);

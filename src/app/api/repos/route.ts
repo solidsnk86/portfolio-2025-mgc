@@ -24,11 +24,11 @@ export async function GET() {
 
         page++;
         if (!headerLink?.[1].includes('rel="next"')) {
-          return Response.json({ allProjects }, { status: 200 })
+          return Response.json({ allProjects }, { status: 200 });
         }
         
       }
     } catch (error) {
-      return Response.json({ message: error });
+      return Response.json({ message: error }, { status: 500 });
     }
 }

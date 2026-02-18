@@ -1,3 +1,5 @@
+"use client";
+
 import { Noise } from "@/shared/ui/effects/Noise";
 import { Footer } from "@/shared/ui/Footer";
 import { Header } from "@/shared/ui/Header";
@@ -23,11 +25,11 @@ export default function MePage() {
       <Noise />
       <Header />
       <section className={`flex flex-col`}>
-        <h1
+        <h2
           className={`text-5xl font-bold mt-16 text-center ${fraunces.className}`}
         >
           Acerca
-        </h1>
+        </h2>
         <Image
           src="/dividier.svg"
           width={300}

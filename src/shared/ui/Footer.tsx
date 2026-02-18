@@ -1,12 +1,12 @@
 "use client";
 
-import { GetLocation } from "@/lib/GetLocation";
 import { useEffect, useState } from "react";
 import styles from "@/shared/styles/footer.module.css";
 import Image from "next/image";
 import { Dots } from "./effects/Dots";
 import { usePathname } from "next/navigation";
 import { Format } from "../utils/Format";
+import { useLocation } from "@/provider/location-provider";
 
 interface LocationProps {
   ip?: string;
@@ -22,17 +22,18 @@ interface LocationProps {
 export const Footer = () => {
   const [lastVisit, setLastVisit] = useState<LocationProps>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { ip, city, country, sysInfo, coords, error } = useLocation();
   const path = usePathname();
 
   useEffect(() => {
     const getCurrentIP = async () => {
       setIsLoading(true);
-      const currentIP = await GetLocation.ip();
-      const currentCity = await GetLocation.city();
-      const currentCountry = await GetLocation.country();
-      const currentEmojiFlag = await GetLocation.emojiFlag();
-      const { system, browser, version } = await GetLocation.os();
-      const { latitude, longitude } = await GetLocation.coords()
+      const currentIP = ip;
+      const currentCity = city.name;
+      const currentCountry = country.name;
+      const currentEmojiFlag = country.emojiFlag;
+      const { system, webBrowser } = sysInfo;
+      const { latitude, longitude } = coords;
 
       const lastVisitResponse: LocationProps = await fetch(
         "/api/supabase/get-visit",
@@ -59,8 +60,8 @@ export const Footer = () => {
             country: currentCountry,
             page: path,
             so: system,
-            browser,
-            version,
+            browser: webBrowser.browser,
+            version: webBrowser.version,
             emoji_flag: currentEmojiFlag,
             lat: latitude,
             lon: longitude,
@@ -115,6 +116,10 @@ export const Footer = () => {
       <p className="flex justify-center mx-auto text-sm text-[var(--mutted-color)]">
         100% código hecho con 💖 por un humano
       </p>
+
+      {error && (
+        <small>{error.message}</small>
+      )}
     </footer>
   );
 };

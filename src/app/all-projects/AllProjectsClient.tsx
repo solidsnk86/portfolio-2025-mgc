@@ -104,7 +104,7 @@ export const ALlProjectsClient = () => {
               ))}
             <div className="flex mx-auto">
               <button
-                disabled={projects > repos.length}
+                disabled={repos && projects > repos.length}
                 onClick={() => SetProjects((project) => project + 10)}
                 className="flex items-center gap-2 relative px-3 py-1 button-bg rounded-full border border-[var(--border-color)] outline-1 outline-offset-1 outline-[var(--border-color)] hover:scale-105 transition-transform duration-300 hover:shadow-lg hover:bg-[var(--header-bg-color)] text-[var(--mutted-color)] font-semibold disabled:cursor-not-allowed"
               >

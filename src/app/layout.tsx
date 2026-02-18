@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
-import ThemeWrapper from "@/provider/ThemeWrapper";
+import WrapperProvider from "@/provider/Wrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -95,7 +95,7 @@ export default function RootLayout({
         />
         <link rel="canonical" href={domainURL} />
       </head>
-      <ThemeWrapper>
+      <WrapperProvider>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
         >
@@ -117,7 +117,7 @@ export default function RootLayout({
             priority
           />
         </body>
-      </ThemeWrapper>
+      </WrapperProvider>
     </html>
   );
 }
