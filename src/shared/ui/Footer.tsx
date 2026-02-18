@@ -22,25 +22,28 @@ interface LocationProps {
 export const Footer = () => {
   const [lastVisit, setLastVisit] = useState<LocationProps>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const { ip, city, country, sysInfo, coords, error } = useLocation();
+  const { ip, city, country, sysInfo, coords, error, isLoading: isLocationLoading } =
+    useLocation();
   const path = usePathname();
+  const { latitude, longitude } = coords;
+  const { system } = sysInfo;
+  const { browser, version } = sysInfo.webBrowser;
 
   useEffect(() => {
     const getCurrentIP = async () => {
+      if (isLocationLoading) return;
+      if (ip === "N/A") return;
       setIsLoading(true);
       const currentIP = ip;
       const currentCity = city.name;
       const currentCountry = country.name;
       const currentEmojiFlag = country.emojiFlag;
-      const { system, webBrowser } = sysInfo;
-      const { latitude, longitude } = coords;
+      const currentSystem = system;
+      const currentBrowser = browser;
+      const currentBrowserVersion = version;
 
       const lastVisitResponse: LocationProps = await fetch(
-        "/api/supabase/get-visit",
-        {
-          method: "GET",
-        }
-      ).then((res) => res.json());
+        "/api/supabase/get-visit").then((res) => res.json());
 
       const {
         ip: lastIP,
@@ -59,9 +62,9 @@ export const Footer = () => {
             city: currentCity,
             country: currentCountry,
             page: path,
-            so: system,
-            browser: webBrowser.browser,
-            version: webBrowser.version,
+            so: currentSystem,
+            browser: currentBrowser,
+            version: currentBrowserVersion,
             emoji_flag: currentEmojiFlag,
             lat: latitude,
             lon: longitude,
@@ -80,7 +83,19 @@ export const Footer = () => {
       setIsLoading(false);
     };
     getCurrentIP();
-  }, [path]);
+  }, [
+    path,
+    ip,
+    city.name,
+    country.name,
+    country.emojiFlag,
+    latitude,
+    longitude,
+    system,
+    browser,
+    version,
+    isLocationLoading,
+  ]);
 
   return (
     <footer

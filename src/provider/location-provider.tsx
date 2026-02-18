@@ -11,6 +11,7 @@ import {
 
 interface LocationProviderProps {
   ip: string;
+  isLoading: boolean;
   city: {
     name: string;
     postalCode: string;
@@ -42,26 +43,31 @@ export const LocationContext = createContext<LocationProviderProps | null>(
 export const LocationProvider = ({ children }: { children: ReactNode }) => {
   const [location, setLocation] = useState<LocationProviderProps>();
   const [error, setError] = useState<TypeError | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const getLocation = useCallback(async () => {
     try {
+      setIsLoading(true);
       const response = await fetch(
         "https://solid-geolocation.vercel.app/location",
       );
       const data = await response.json();
       if (!response.ok) throw new Error(data.message);
       setLocation(data);
+      setIsLoading(false);
     } catch (error) {
       setError(error as TypeError);
+      setIsLoading(false);
     }
   }, []);
 
   useEffect(() => {
     getLocation();
-  }, []);
+  }, [getLocation]);
 
   const values = {
     ip: location ? location.ip : "N/A",
+    isLoading,
     city: location ? location.city : { name: "N/A", postalCode: "N/A" },
     coords: {
       latitude: location ? location.coords.latitude : "N/A",
@@ -85,7 +91,11 @@ export const LocationProvider = ({ children }: { children: ReactNode }) => {
     error,
   };
 
-  return <LocationContext value={values}>{children}</LocationContext>;
+  return (
+    <LocationContext.Provider value={values}>
+      {children}
+    </LocationContext.Provider>
+  );
 };
 
 export const useLocation = () => {
