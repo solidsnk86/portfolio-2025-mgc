@@ -47,7 +47,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="rounded-full w-full mt-6 bg-[var(--header-bg-color)] backdrop-blur-xl h-[74px] mx-auto relative z-50 shadow shadow-amber-50/10">
+      <header className="sticky top-6 right-10 left-10 rounded-xl w-full mt-6 bg-[var(--header-bg-color)] backdrop-blur-lg h-[74px] mx-auto z-999 border border-[var(--color-border)]">
         <div className="flex items-center justify-between h-full px-6">
           {isDarkMode ? (
             <Link href="/">
@@ -74,13 +74,13 @@ export const Header = () => {
           )}
           {/* Links del menú */}
           <aside className="flex items-center">
-            <nav className="md:flex hidden items-center gap-3 p-6">
+            <nav className="md:flex hidden items-center gap-4 p-6 group">
               {links.map(({ name, url }) => (
                 <Link
                   key={name}
                   href={url}
                   onClick={closeMenu}
-                  className="font-semibold hover:opacity-80 capitalize"
+                  className="font-semibold hover:opacity-80 capitalize overflow-x-hidden nav-links"
                 >
                   {name}
                 </Link>
@@ -112,7 +112,7 @@ export const Header = () => {
       </header>
 
       {isMenuOpen && (
-        <div className="absolute top-0 left-0 inset-0 z-50 bg-opacity-50 backdrop-blur-[4px]" ref={menuWrapperRef}>
+        <div className="absolute top-0 left-0 inset-0 bg-opacity-50 backdrop-blur-[4px] z-9999" ref={menuWrapperRef}>
           <div
             className={`fixed top-0 right-0 h-full w-full bg-[var(--dialog-bg)] shadow-xl transform transition-transform duration-500 ease-in-out ${
               isMenuOpen ? "translate-x-0" : "translate-x-full"

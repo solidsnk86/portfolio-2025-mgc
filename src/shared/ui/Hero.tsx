@@ -43,7 +43,7 @@ export const Hero = () => {
             alt="Gabriel avatar"
             className="rounded-full w-[1em] md:w-[1.2em] xl:w-[1.4em] h-auto align-middle"
           />
-          Gabriel Calcagni,
+          Gabriel,
         </span>
       </h2>
 
@@ -53,14 +53,14 @@ export const Hero = () => {
       </p>
       <SocialLinks className="text-zinc-500" />
       <p
-        className={`font-semibold xl:text-lg my-4 text-pretty ${poppins.className}`}
+        className={`xl:text-lg my-4 text-pretty ${poppins.className}`}
       >
         Con 3 años de experiencia, sigo explorando la magia{" "}
         <span className="text-xl">✨</span> del código y el diseño. Egresado de
         la UTN-FRSR, listo para nuevos desafíos.
       </p>
-      <p className={`font-semibold ${poppins.className} items-center z-10`}>
-        Actualmente trabajo para un cliente en Chile en el proyecto de{" "}
+      <p className={`${poppins.className} items-center z-10`}>
+        Actualmente trabajo para un cliente en Chile en el proyecto{" "}
         <a
           href="https://pascale-closet.vercel.app/"
           className="retro-gradient"

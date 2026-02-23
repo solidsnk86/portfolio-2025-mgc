@@ -7,6 +7,7 @@ import { Dots } from "./effects/Dots";
 import { usePathname } from "next/navigation";
 import { Format } from "../utils/Format";
 import { useLocation } from "@/provider/location-provider";
+import { Loader2 } from "lucide-react";
 
 interface LocationProps {
   ip?: string;
@@ -22,8 +23,15 @@ interface LocationProps {
 export const Footer = () => {
   const [lastVisit, setLastVisit] = useState<LocationProps>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const { ip, city, country, sysInfo, coords, error, isLoading: isLocationLoading } =
-    useLocation();
+  const {
+    ip,
+    city,
+    country,
+    sysInfo,
+    coords,
+    error,
+    isLoading: isLocationLoading,
+  } = useLocation();
   const path = usePathname();
   const { latitude, longitude } = coords;
   const { system } = sysInfo;
@@ -43,7 +51,8 @@ export const Footer = () => {
       const currentBrowserVersion = version;
 
       const lastVisitResponse: LocationProps = await fetch(
-        "/api/supabase/get-visit").then((res) => res.json());
+        "/api/supabase/get-visit",
+      ).then((res) => res.json());
 
       const {
         ip: lastIP,
@@ -99,7 +108,7 @@ export const Footer = () => {
 
   return (
     <footer
-      className={`grid justify-center mx-auto py-10 space-y-3 ${styles.footer}`}
+      className={`grid py-10 space-y-3 ${styles.footer} w-full`}
     >
       <Image
         src="/dividier.svg"
@@ -111,30 +120,33 @@ export const Footer = () => {
       <p className="text-[var(--mutted-color)] flex gap-1 font-semibold items-center text-sm text-center mx-auto">
         &copy;2025 SolidSnk86 <Dots className="mx-2" /> Calcagni Gabriel{" "}
       </p>
-      {isLoading ? (
-        <small className="text-center font-semibold h-[45px] animate-pulse">
-          Cargando...
-        </small>
-      ) : (
-        <>
-          <small className="flex items-center mx-auto gap-2 xl:text-xs text-[11px]">
-            <span className="w-[9px] h-[9px] hidden md:flex rounded-full bg-blue-500" />
-            Última visita desde {lastVisit?.city_name},{" "}
-            {lastVisit?.country_name} {lastVisit?.emoji_flag} el{" "}
-            {Format.dateAndTime({ dateTime: lastVisit?.created_at as string })}
+      <article className="mt-4 grid gap-3 justify-center border border-[var(--color-border)] p-6 rounded-xl bg-[var(--header-bg-color)] backdrop-blur-lg">
+        {isLoading ? (
+          <small className="text-center font-semibold h-[45px] animate-pulse flex items-center gap-2 mx-auto">
+            <Loader2 className="animate-spin" size={20} />
+            Cargando...
           </small>
-          <small className="text-xs flex justify-center mx-auto">
-            Vistas al perfil: {lastVisit?.visits_count}
-          </small>
-        </>
-      )}
-      <p className="flex justify-center mx-auto text-sm text-[var(--mutted-color)]">
-        100% código hecho con 💖 por un humano
-      </p>
+        ) : (
+          <>
+            <small className="flex items-center mx-auto gap-2 xl:text-xs text-[11px] text-center">
+              <span className="w-[9px] h-[9px] hidden md:flex rounded-full bg-blue-500 -translate-y-[1px]" />
+              Última visita desde {lastVisit?.city_name},{" "}
+              {lastVisit?.country_name} {lastVisit?.emoji_flag} el{" "}
+              {Format.dateAndTime({
+                dateTime: lastVisit?.created_at as string,
+              })}
+            </small>
+            <small className="text-xs flex justify-center mx-auto">
+              Vistas al perfil: {lastVisit?.visits_count}
+            </small>
+          </>
+        )}
+        <p className="flex justify-center mx-auto text-sm text-[var(--mutted-color)]">
+          100% código hecho con 💖 por un humano
+        </p>
+      </article>
 
-      {error && (
-        <small>{error.message}</small>
-      )}
+      {error && <small>{error.message}</small>}
     </footer>
   );
 };
