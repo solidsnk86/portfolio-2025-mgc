@@ -1,36 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
 import { Fraunces } from "next/font/google";
 import { Loader2 } from "lucide-react";
 import { Format } from "../utils/Format";
+import { useBlog } from "@/provider/blog-provider";
 
 const fraunces = Fraunces({
   weight: ["400"],
   subsets: ["latin"],
 });
 
-interface BlogsitoProps {
-  name: string;
-  title: string;
-  date: string;
-}
-
 export const Blogsito = () => {
-  const [allBlogs, setAllBlogs] = useState<BlogsitoProps[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-
-  const getAllBlogs = useCallback(async () => {
-    setIsLoading(true);
-    await fetch("api/all-blogs")
-      .then((res) => res.json())
-      .then((data) => {setAllBlogs(data.blog); setIsLoading(false);});
-  }, []);
-
-  useEffect(() => {
-    getAllBlogs();
-  }, [getAllBlogs]);
+  const { allBlogs, isLoading } = useBlog();
 
   return (
     <section className="flex flex-col p-4 max-w-3xl z-10" id="blog">

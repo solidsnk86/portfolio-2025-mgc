@@ -8,6 +8,7 @@ import { useCallback, useEffect, useState } from "react";
 export const BlogClient = ({ blog }: { blog: string }) => {
   const [blogContent, setBlogContent] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error,setError] = useState<TypeError | Error | undefined>(undefined);
 
   const readBlog = useCallback(async () => {
     setIsLoading(true);
@@ -20,7 +21,7 @@ export const BlogClient = ({ blog }: { blog: string }) => {
         });
     } catch (error) {
       setIsLoading(false);
-      console.log(error);
+      setError(error as TypeError)
     }
   }, [blog]);
 
@@ -47,6 +48,9 @@ export const BlogClient = ({ blog }: { blog: string }) => {
         </div>
       )}
       <ScrollToTopButton />
+      {error && (
+        <small className="px-2 py-0.5 border-red-300/50 bg-red-500/80 text-white rounded">{error.message}</small>
+      )}
     </section>
   );
 };
