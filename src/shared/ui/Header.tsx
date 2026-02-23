@@ -112,11 +112,9 @@ export const Header = () => {
       </header>
 
       {isMenuOpen && (
-        <div className="absolute top-0 left-0 inset-0 bg-opacity-50 backdrop-blur-[4px] z-9999" ref={menuWrapperRef}>
+        <div className="fixed top-0 left-0 inset-0 bg-opacity-50 backdrop-blur-[4px] z-9999" ref={menuWrapperRef}>
           <div
-            className={`fixed top-0 right-0 h-full w-full bg-[var(--dialog-bg)] shadow-xl transform transition-transform duration-500 ease-in-out ${
-              isMenuOpen ? "translate-x-0" : "translate-x-full"
-            }`}
+            className={`fixed top-0 h-dvh w-full bg-[var(--dialog-bg)] shadow-xl transform transition-transform duration-500 ease-in-out`}
           >
             {/* Header del menú */}
             <div className="flex justify-between items-center p-6 border-b border-[var(--color-border)] text-[var(--foreground)]">

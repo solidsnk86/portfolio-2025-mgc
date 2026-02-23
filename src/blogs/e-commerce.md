@@ -2,7 +2,7 @@ Noviembre 11, 2025
 
 # Pascale Clothes: Digitalizando la Moda en Santiago
 
-**Pascale Clothes** no es solo una tienda de ropa en un mall de Santiago; es una marca con identidad propia que necesitaba romper las barreras físicas para crecer. Este proyecto nació con un objetivo claro: llevar la experiencia personalizada de la tienda física al mundo digital, permitiendo a la marca vender 24/7 sin fronteras geográficas.
+**Pascale Clothes** no es solo una tienda de ropa en un mall de Santiago; es una marca con identidad propia que necesitaba romper las barreras físicas para crecer. Este proyecto nació con un objetivo claro: llevar la experiencia personalizada de la tienda física al mundo digital, permitiendo a la marca vender 24/7.
 
 ## El Desafío: Expandir Horizontes
 
