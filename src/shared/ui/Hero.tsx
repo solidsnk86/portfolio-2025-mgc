@@ -52,12 +52,10 @@ export const Hero = () => {
         software.
       </p>
       <SocialLinks className="text-zinc-500" />
-      <p
-        className={`xl:text-lg my-4 text-pretty ${poppins.className}`}
-      >
-        Con 3 años de experiencia, sigo explorando la magia{" "}
-        <span className="text-xl">✨</span> del código y el diseño. Egresado de
-        la UTN-FRSR, listo para nuevos desafíos.
+      <p className={`xl:text-lg my-4 text-pretty ${poppins.className}`}>
+        Desarrollador web con 3 años de experiencia, egresado de la UTN-FRSR.
+        Enfocado en crear soluciones simples, eficientes y bien diseñadas. 
+        Con ganas constantes de seguir aprendiendo y creciendo.
       </p>
       <p className={`${poppins.className} items-center z-10`}>
         Actualmente trabajo para un cliente en Chile en el proyecto{" "}
