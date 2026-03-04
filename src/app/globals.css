@@ -101,12 +101,15 @@ body {
   background-image: var(--stripes), var(--rainbow);
   height: inherit;
   -webkit-perspective: 1000px;
+  perspective: 1000px;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   filter: invert();
   pointer-events: none;
   background-position: 50%, 50%;
   background-size: 300%, 200%;
   -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   -webkit-mask-image: radial-gradient(at 100% 0, #000 40%, #0000 70%);
   mask-image: radial-gradient(at 100% 0, #000 40%, #0000 70%)
 }
@@ -169,6 +172,17 @@ body {
 .gradient {
   background: var(--rainbow-1);
   opacity: 0.4;
+  rotate: 180deg;
+}
+
+.gradient-2 {
+  --rainbow: repeating-linear-gradient(100deg, #60a5fa 0%, #e879f9 15%, #5eead4 30%, #4ab1f1 45%,
+      #566cec 60%,
+      #d749af 75%,
+      #ff7c51 90%,
+      #60a5fa 100%);
+  background: var(--rainbow);
+  opacity: 0.1;
   rotate: 180deg;
 }
 

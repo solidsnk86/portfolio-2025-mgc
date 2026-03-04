@@ -40,11 +40,12 @@ export default function MePage() {
         <article className={`text-pretty space-y-4 ${poppins.className} my-4`}>
           <p>
             Técnico Universitario en Programación con 3 años de experiencia
-            desarrollando aplicaciones con React, Next.js, TailwindCSS, Supabase
-            y PostgreSQL. Me enfoco en crear interfaces responsivas y backends
-            eficientes, siempre pensando en código limpio y escalable. Cometo
-            errores como cualquier humano, pero siempre estoy dispuesto a
-            aprender de ellos.
+            en el desarrollo de aplicaciones web utilizando React, Next.js, TailwindCSS, Supabase
+            y PostgreSQL. Mi enfoque principal es la creación de interfaces responsivas y
+            backends eficientes, priorizando siempre la escalabilidad del código. Poseo
+            una fuerte orientación al aprendizaje continuo frente a los desafíos y aprovecho
+            las herramientas de inteligencia artificial para optimizar mi flujo de trabajo
+            y potenciar mi productividad.
           </p>
           <p>
             Mis proyectos personales son laboratorios donde experimento,
@@ -55,9 +56,14 @@ export default function MePage() {
         </article>
       </section>
       <Dots className="flex justify-center mx-auto my-10" />
-      <Card title="" text="Conéctate Conmigo">
-        <SocialLinks className="text-zinc-900" />
-      </Card>
+        <section className="bg-[var(--header-bg-color)] grid border border-[var(--color-border)] backdrop-blur-lg rounded-xl p-8 overflow-hidden">
+              <aside className="items-center justify-center mx-auto relative">
+                <div className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] w-156 h-156 gradient-2 rounded-full blur-2xl -z-10" />
+              </aside>
+              <article className="grid justify-center items-center gap-3 md:gap-2 text-center">
+                <SocialLinks className="" />
+              </article>
+            </section>
       <Footer />
     </div>
   );
