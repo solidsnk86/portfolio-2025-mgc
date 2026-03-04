@@ -19,35 +19,29 @@
     --icon-bg: #eee;
     --colder: linear-gradient(45deg, #c0a4f3, #a4b6f5);
     --warm: linear-gradient(45deg, #f3bfd742, #cfbbf544, #b9c6f540);
-    --sunset-2: linear-gradient(
-      45deg,
-      #f06844 0%,
-      #ee4c54 25%,
-      #d45e95 50%,
-      #9c6ca6 75%,
-      #6583c1 100%
-    );
-    --rainbow-1: linear-gradient(
-      45deg,
-      #00daf4 0%,
-      #5edc99 10%,
-      #3861bc 20%,
-      #5606ef 30%,
-      #d400a5 40%,
-      #ee4c54 50%,
-      #ff7800 60%,
-      #ffaf00 70%,
-      #ffc800 80%,
-      #bada6d 100%
-    );
+    --sunset-2: linear-gradient(45deg,
+        #f06844 0%,
+        #ee4c54 25%,
+        #d45e95 50%,
+        #9c6ca6 75%,
+        #6583c1 100%);
+    --rainbow-1: linear-gradient(45deg,
+        #00daf4 0%,
+        #5edc99 10%,
+        #3861bc 20%,
+        #5606ef 30%,
+        #d400a5 40%,
+        #ee4c54 50%,
+        #ff7800 60%,
+        #ffaf00 70%,
+        #ffc800 80%,
+        #bada6d 100%);
 
-    --retro-2: linear-gradient(
-      45deg,
-      #4ab1f1 0.58%,
-      #566cec 37.22%,
-      #d749af 73.87%,
-      #ff7c51 112.26%
-    );
+    --retro-2: linear-gradient(45deg,
+        #4ab1f1 0.58%,
+        #566cec 37.22%,
+        #d749af 73.87%,
+        #ff7c51 112.26%);
   }
 
   .dark {
@@ -86,6 +80,61 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   transition: background 260ms;
   overflow-x: hidden;
+}
+
+@keyframes ray-bf23a8df {
+  0% {
+    background-position: 50%, 50%
+  }
+
+  to {
+    background-position: 350%, 350%
+  }
+}
+
+.ray {
+  --stripes: repeating-linear-gradient(100deg, #fff 0%, #fff 7%, transparent 10%, transparent 12%, #fff 16%);
+  --stripesDark: repeating-linear-gradient(100deg, #000 0%, #000 7%, transparent 10%, transparent 12%, #000 16%);
+  --rainbow: repeating-linear-gradient(100deg, #60a5fa 10%, #e879f9 16%, #5eead4 22%, #60a5fa 30%);
+  contain: strict;
+  contain-intrinsic-size: 100vw 40vh;
+  background-image: var(--stripes), var(--rainbow);
+  height: inherit;
+  -webkit-perspective: 1000px;
+  -webkit-backface-visibility: hidden;
+  filter: invert();
+  pointer-events: none;
+  background-position: 50%, 50%;
+  background-size: 300%, 200%;
+  -webkit-transform: translateZ(0);
+  -webkit-mask-image: radial-gradient(at 100% 0, #000 40%, #0000 70%);
+  mask-image: radial-gradient(at 100% 0, #000 40%, #0000 70%)
+}
+
+.ray:after {
+  content: "";
+  background-image: var(--stripes), var(--rainbow);
+  mix-blend-mode: difference;
+  background-size: 200%, 100%;
+  position: absolute;
+  inset: 0
+}
+
+.-animate.ray:after {
+  animation: 90s linear infinite ray-bf23a8df;
+}
+
+.-static.ray:after {
+  animation: unset !important
+}
+
+.dark .ray {
+  background-image: var(--stripesDark), var(--rainbow);
+  filter: opacity(50%) saturate(200%)
+}
+
+.dark .ray:after {
+  background-image: var(--stripesDark), var(--rainbow)
 }
 
 .sunset-gradient {
@@ -145,6 +194,7 @@ dialog::backdrop {
   backdrop-filter: blur(3px);
   cursor: alias;
 }
+
 dialog {
   position: absolute;
   top: 50%;
@@ -164,7 +214,7 @@ dialog {
   font-weight: 600;
   animation: 300ms slideEffect ease-in-out;
 
-  & > div {
+  &>div {
     display: flex;
     margin: 0 auto;
     justify-content: center;
@@ -182,7 +232,7 @@ dialog {
   }
 }
 
-@media (width <= 762px) {
+@media (width <=762px) {
   dialog {
     width: 100%;
   }
@@ -197,22 +247,18 @@ dialog {
   width: 4rem;
   z-index: 40;
   filter: blur(4px);
-  background-image: linear-gradient(
-    to right,
-    rgba(233, 233, 233, 0.9),
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background-image: linear-gradient(to right,
+      rgba(233, 233, 233, 0.9),
+      rgba(255, 255, 255, 0.2),
+      transparent);
 }
 
 .gradient-right {
   right: -0.5rem;
-  background-image: linear-gradient(
-    to left,
-    rgba(233, 233, 233, 0.9),
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background-image: linear-gradient(to left,
+      rgba(233, 233, 233, 0.9),
+      rgba(255, 255, 255, 0.2),
+      transparent);
 }
 
 .gradient-left {
@@ -220,21 +266,17 @@ dialog {
 }
 
 .dark .gradient-left {
-  background-image: linear-gradient(
-    to right,
-    rgba(28, 28, 28, 0.9),
-    rgba(28, 28, 28, 0.8),
-    transparent
-  );
+  background-image: linear-gradient(to right,
+      rgba(28, 28, 28, 0.9),
+      rgba(28, 28, 28, 0.8),
+      transparent);
 }
 
 .dark .gradient-right {
-  background-image: linear-gradient(
-    to left,
-    rgba(28, 28, 28, 0.9),
-    rgba(28, 28, 28, 0.8),
-    transparent
-  );
+  background-image: linear-gradient(to left,
+      rgba(28, 28, 28, 0.9),
+      rgba(28, 28, 28, 0.8),
+      transparent);
 }
 
 .zoom {
@@ -246,6 +288,7 @@ dialog {
     transform: scale(0.8);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
@@ -293,6 +336,7 @@ dialog {
   from {
     transform: scale(0.85);
   }
+
   to {
     transform: scale(1);
   }
@@ -312,6 +356,7 @@ dialog {
     transform: translateY(500%);
     opacity: 0;
   }
+
   to {
     transform: translate(0);
     opacity: 1;
@@ -323,6 +368,7 @@ dialog {
     transform: translate(0);
     opacity: 1;
   }
+
   to {
     transform: translateY(500%);
     opacity: 0;
@@ -333,14 +379,17 @@ dialog {
   from {
     transform: translateX(50%) scale(0.4);
   }
+
   to {
     transform: translateX(0) scale(1);
   }
 }
+
 @keyframes sliderOut {
   from {
     transform: translateX(0) scale(1);
   }
+
   to {
     transform: translateX(50%) scale(0.4);
   }
@@ -356,6 +405,7 @@ dialog {
   70% {
     fill-opacity: 0;
   }
+
   100% {
     fill-opacity: 100%;
     stroke-dashoffset: 0;
