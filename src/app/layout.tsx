@@ -99,7 +99,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
         >
-          <div className="absolute -z-20 top-0 left-0 ray -animate w-full h-[500px] rounded-xl overflow-hidden opacity-30" />
+          <div className="absolute -z-20 top-0 left-0 ray -animate w-full h-[500px] rounded-xl overflow-hidden dark:opacity-25 opacity-30" />
           {/* <Image
             src="/header-gradient.svg"
             width={600}

@@ -181,9 +181,10 @@ body {
       #d749af 75%,
       #ff7c51 90%,
       #60a5fa 100%);
-  background: var(--rainbow);
+  background-image: var(--rainbow);
   opacity: 0.1;
   rotate: 180deg;
+  animation: 1s linear infinite ray-bf23a8df;
 }
 
 @keyframes rotate {
