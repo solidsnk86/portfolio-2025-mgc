@@ -33,9 +33,9 @@ const technologies = [
 
 export const Marquee = () => {
   return (
-    <div className="flex justify-center mx-auto overflow-x-hidden xl:max-w-2xl w-full relative my-10">
-      <div className="gradient-left" />
-      <div className="gradient-right" />
+    <div className="flex justify-center mx-auto mask-r-from-[70%] mask-l-from-[70%] overflow-x-hidden xl:max-w-2xl w-full relative my-10">
+      {/* <div className="gradient-left" />
+      <div className="gradient-right" /> */}
       <section className={`flex items-center gap-10 ${styles.marquee}`}>
         {[...technologies, ...technologies].map(({ name, icon }, index) => {
           const Icon = icon;
