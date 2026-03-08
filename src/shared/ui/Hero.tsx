@@ -60,7 +60,7 @@ export const Hero = () => {
       <p className={`${poppins.className} items-center z-10`}>
         Actualmente trabajo para un cliente en Chile en el proyecto{" "}
         <a
-          href="https://pascale-closet.vercel.app/"
+          href="https://pascalecloset.com/"
           className="retro-gradient"
         >
           @pascale-closet.
