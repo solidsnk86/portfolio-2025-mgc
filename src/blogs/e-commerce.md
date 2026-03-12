@@ -65,6 +65,6 @@ Eso hace que Pascale Closet se sienta más como una **boutique digital** que com
 
 Pascale Closet ofrece una tienda online de moda femenina con identidad de marca, compra simple y operación ordenada, resolviendo tanto la experiencia de la clienta como la gestión diaria del negocio.
 
-
+---
 
 👉 [Visitar Tienda](https://pascaleclotset.com/)
