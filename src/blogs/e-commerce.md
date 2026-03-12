@@ -1,33 +1,70 @@
 Noviembre 11, 2025
 
-# Pascale Clothes: Digitalizando la Moda en Santiago
+# Pascale Closet, explicado en simple
 
-**Pascale Clothes** no es solo una tienda de ropa en un mall de Santiago; es una marca con identidad propia que necesitaba romper las barreras físicas para crecer. Este proyecto nació con un objetivo claro: llevar la experiencia personalizada de la tienda física al mundo digital, permitiendo a la marca vender 24/7.
+Pascale Closet no se siente como un e-commerce genérico. Por cómo está armado, lo que ofrece va bastante más allá de “subir productos y cobrarlos”. La propuesta está pensada como una tienda de moda femenina con identidad propia, donde la experiencia de compra busca ser más cercana, más curada y más confiable.
 
-## El Desafío: Expandir Horizontes
+## Qué ofrece realmente
 
-La tienda tenía un gran producto y una base de clientes leal, pero su alcance estaba limitado al horario del mall y a la afluencia de público local. El desafío era crear un canal de ventas online que fuera:
-*   **Visualmente atractivo:** Que reflejara la elegancia de la marca.
-*   **Fácil de gestionar:** Para que la dueña pudiera controlar el stock sin complicaciones.
-*   **Seguro y confiable:** Especialmente en los pagos y la gestión de datos.
+Pascale Closet ofrece una experiencia de compra centrada en ropa femenina seleccionada, con foco en estilo, calidad y facilidad para comprar.
 
-## La Solución
+En la práctica, la tienda ofrece:
 
-Desarrollé una plataforma a medida que transforma la gestión del negocio. No es una plantilla genérica; es una herramienta diseñada para las necesidades específicas de Pascale Clothes.
+- una **colección de moda femenina** organizada por categorías;
+- una home pensada para **destacar ingresos nuevos, productos más vendidos y promociones**;
+- una experiencia de compra con **carrito, checkout y pago integrado con Mercado Pago**;
+- beneficios visibles para la clienta como **envíos/retiros**, descuentos y acceso rápido a contacto por **WhatsApp**;
+- una presencia de marca fuerte, apoyada por **Instagram**, contenido visual y una narrativa más boutique que catálogo frío;
+- una capa interna de gestión para el negocio: **autenticación, perfil de usuario, administración de productos, seguimiento de pedidos y contenido editable**.
 
-### Experiencia de Compra Fluida
-Los clientes ahora pueden explorar colecciones completas filtrando por talla, color o categoría desde sus móviles. La integración con **Mercado Pago** en pesos chilenos (CLP) hace que finalizar la compra sea cuestión de segundos, eliminando fricciones y aumentando la conversión.
+## Qué problema resuelve
 
-### Gestión Inteligente de Stock
-Uno de los mayores dolores de cabeza del retail es el inventario. Implementé un sistema de control de stock en tiempo real que distingue tallas y variantes. Si una prenda se vende online, el stock se actualiza instantáneamente, evitando sobreventas y frustraciones.
+Si lo miro desde el negocio, Pascale Closet resuelve dos problemas al mismo tiempo.
 
-### Logística Flexible
-La plataforma ofrece a los compradores la libertad de elegir: envío a domicilio para comodidad total o retiro en tienda para ahorrar costos. Esta flexibilidad mejora la satisfacción del cliente y optimiza la logística de entrega.
+### 1. Le resuelve la compra a la clienta
+Muchas tiendas de ropa venden, pero no siempre ayudan a decidir rápido ni a comprar con confianza. Acá la app intenta resolver eso con:
 
-## El Resultado
+- una entrada visual clara desde el inicio;
+- productos destacados para acelerar el descubrimiento;
+- categorías simples para encontrar lo que una busca sin perder tiempo;
+- carrito persistente, para no obligar a empezar de cero;
+- checkout guiado, que ordena el proceso de compra;
+- medios de pago conocidos;
 
-Hoy, Pascale Clothes opera de manera híbrida. La tienda online funciona como un escaparate siempre abierto, captando ventas incluso cuando el mall está cerrado. La dueña cuenta con un panel de administración intuitivo donde puede ver métricas, gestionar pedidos y subir nuevos productos en minutos.
+### 2. Le resuelve operación al negocio
+También se nota que no está pensada solo para mostrar prendas, sino para ayudar a operar la tienda.
 
-Más que un sitio web, entregué una herramienta de crecimiento comercial. Tecnológicamente robusto (construido sobre React, Node.js y PostgreSQL), pero humanamente diseñado para conectar con las personas.
+Resuelve tareas como:
 
-👉 [Visitar Tienda](https://pascale-clotset.vercel.app/)
+- cargar y actualizar productos;
+- manejar stock;
+- ver pedidos;
+- separar experiencias según tipo de usuario;
+- editar partes clave del contenido comercial, como el hero principal, promociones o bloques visuales de la tienda.
+
+O sea, no solo vende: **también ordena la parte interna del e-commerce**.
+
+## La propuesta de valor que transmite
+
+Lo que transmite la plataforma es esto: 
+
+> “Te ayudamos a encontrar prendas con estilo, de forma simple, confiable y con una experiencia más cercana que la de una tienda online común.”
+
+## Qué hace que se sienta distinta
+
+Hay varios detalles que empujan esa idea de marca:
+
+- la home no está pensada como una grilla sin alma, sino como una **vidriera**;
+- la tienda mezcla lo digital con lo humano: **WhatsApp, redes, ubicación física y narrativa de marca**;
+- el contenido principal parece editable, lo que permite mantener la tienda viva según campaña, temporada o colección;
+- el flujo completo acompaña desde el descubrimiento hasta el pago y el seguimiento del pedido.
+
+Eso hace que Pascale Closet se sienta más como una **boutique digital** que como un e-commerce genérico.
+
+## En una frase
+
+Pascale Closet ofrece una tienda online de moda femenina con identidad de marca, compra simple y operación ordenada, resolviendo tanto la experiencia de la clienta como la gestión diaria del negocio.
+
+
+
+👉 [Visitar Tienda](https://pascaleclotset.com/)
