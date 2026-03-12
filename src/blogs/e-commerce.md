@@ -22,6 +22,7 @@ En la práctica, la tienda ofrece:
 Si lo miro desde el negocio, Pascale Closet resuelve dos problemas al mismo tiempo.
 
 ### 1. Le resuelve la compra a la clienta
+
 Muchas tiendas de ropa venden, pero no siempre ayudan a decidir rápido ni a comprar con confianza. Acá la app intenta resolver eso con:
 
 - una entrada visual clara desde el inicio;
@@ -40,7 +41,7 @@ Resuelve tareas como:
 - manejar stock;
 - ver pedidos;
 - separar experiencias según tipo de usuario;
-- editar partes clave del contenido comercial, como el hero principal, promociones o bloques visuales de la tienda.
+- editar partes clave del contenido comercial, como el hero principal con la imagen, promociones (cupón con porcentaje de descuento activado/desactivado) y bloques visuales de la tienda.
 
 O sea, no solo vende: **también ordena la parte interna del e-commerce**.
 
