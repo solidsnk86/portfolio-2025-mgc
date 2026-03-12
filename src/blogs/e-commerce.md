@@ -1,4 +1,4 @@
-Noviembre 11, 2025
+Noviembre 12, 2025
 
 # Pascale Closet, explicado en simple
 
