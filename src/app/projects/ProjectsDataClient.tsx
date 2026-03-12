@@ -6,7 +6,6 @@ import { Format } from "@/shared/utils/Format";
 import { Loader2, MoveLeft } from "lucide-react";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import NotFound from "../not-found";
 import { Card } from "@/shared/ui/Card";
 
 interface ReleaseAPI {
