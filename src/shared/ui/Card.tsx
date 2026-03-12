@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import { Poppins } from "next/font/google";
-import styles from "../styles/card.module.css"
 
 const poppins = Poppins({
     weight: ["100", "200", "300"],
@@ -24,7 +23,7 @@ export const Card = ({
         {children}
         {title}
       </h2>
-      <h3 className="font-semibold text-lg mt-2 z-50">{text}</h3>
+      <h3 className="text-lg mt-2 z-50">{text}</h3>
       {button}
     </div>
   );

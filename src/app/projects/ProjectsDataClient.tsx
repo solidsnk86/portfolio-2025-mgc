@@ -96,14 +96,13 @@ export const ProjectDataClient = ({ repo }: { repo: string }) => {
               <MoveLeft className="group-hover:-translate-x-1 transition-transform duration-300" />
               <span>Volver</span>
             </button>
-            <Card title="Proyecto no encontrado" text="No se encontró el < README.md > de este proyecto.">
+            <Card title="Proyecto no encontrado" text="No se encontró el <README.md> de este proyecto.">
               <span className="uppercase tracking-widest text-sm px-4 py-2 rounded-2xl border border-[var(--border-color)]">
                 {repo}
               </span>
             </Card>
           </>
         )}
-
       </section>
 
     )

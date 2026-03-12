@@ -2,7 +2,6 @@ import { Noise } from "@/shared/ui/effects/Noise";
 import { ProjectDataClient } from "../ProjectsDataClient";
 import { Header } from "@/shared/ui/Header";
 import { Footer } from "@/shared/ui/Footer";
-import NotFound from "@/app/not-found";
 
 export default async function ProjectsPage({
   params,

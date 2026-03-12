@@ -14,7 +14,7 @@ El diseño es completamente **responsivo**, limpio y funcional, con un toque ele
 - ✅ Contenido en **Markdown enriquecido**: Los blogs se escriben en archivos `.md`, son leídos por la API implementada con `node:fs` y renderizados dinámicamente con un renderer de Markdown para una presentación bien formateada.
 - ✅ Integración con **GitHub API**: Se consume la API de GitHub para leer los README de los proyectos destacados y mostrar información actualizada de cada proyecto directamente desde el repositorio.
 - ✅ **Dark mode con React Context**: La aplicación incluye un modo oscuro configurable implementado mediante `createContext` de React para una mejor experiencia de usuario.
-- ✅ Envío automático de mails: Cuando alguien completa el formulario de contacto, se envía automáticamente un correo usando `nodemailer`.
+- ✅ Envío automático de emails: Cuando alguien completa el formulario de contacto, se envía automáticamente un correo usando `nodemailer`.
 - ✅ **Arquitectura Screaming**: Estructura de carpetas clara y entendible siguiendo el patrón *Screaming Architecture*, con todo el código altamente **componetizado** para facilitar mantenimiento y escalabilidad.
 
 ---
