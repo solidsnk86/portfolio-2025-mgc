@@ -122,7 +122,7 @@ export const ContactForm = () => {
               setError("");
               setNameValue(e.target.value);
             }}
-            className="border border-[var(--border-color)] rounded p-2 w-full"
+            className="border border-[var(--border-color)] rounded p-2 w-full outline-none focus:ring-4 focus:ring-indigo-500/30"
             placeholder="Tú nombre"
           />
         </div>
@@ -134,7 +134,7 @@ export const ContactForm = () => {
               setError("");
               setEmailValue(e.target.value);
             }}
-            className="border border-[var(--border-color)] rounded p-2 w-full"
+            className="border border-[var(--border-color)] rounded p-2 w-full outline-none focus:ring-4 focus:ring-indigo-500/30"
             placeholder="Tú email"
           />
         </div>
@@ -145,7 +145,7 @@ export const ContactForm = () => {
               setError("");
               setMessageValue(e.target.value);
             }}
-            className="border border-[var(--border-color)] rounded p-2 w-full"
+            className="border border-[var(--border-color)] rounded p-2 w-full outline-none focus:ring-4 focus:ring-indigo-500/30"
             placeholder="Tú próximo desafío.."
           />
         </div>

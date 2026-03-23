@@ -3,7 +3,7 @@ Julio 12, 2025
 # Solid Geolocation: una API para programadores
 
 En el desarrollo web moderno, muchas veces nos olvidamos del enorme potencial que tiene la **geolocalización** para crear experiencias más personalizadas y útiles.  
-Por eso decidí crear **Solid Geolocation**, una API sencilla pero poderosa para obtener información de ubicación basada en tu dirección IP o en tus coordenadas GPS.  
+Por eso decidí crear **Solid Geolocation**, una API sencilla pero poderosa para obtener información de ubicación basada en tu dirección IP o en tus coordenadas GPS.
 
 Hoy te cuento un poco sobre cómo surgió la idea, cómo funciona y qué la hace especial.
 
@@ -23,7 +23,7 @@ una API REST construida con **Node.js** y **Express**, que devuelve información
 
 En esencia, la API ofrece dos formas de consultar:
 
-- Por **IP pública**: simplemente accediendo al endpoint `/location`, la API detecta tu dirección IP y devuelve un objeto con ciudad, país, coordenadas, idioma del sistema, navegador que usás… incluso con el emoji de la bandera.  
+- Por **IP pública**: simplemente accediendo al endpoint `/location`, la API detecta tu dirección IP y devuelve un objeto con ciudad, país, coordenadas, idioma del sistema, navegador que usás… incluso con el emoji de la bandera.
 - Por **coordenadas GPS**: si tu aplicación ya obtiene la latitud y longitud (por ejemplo, usando la API de geolocalización del navegador), podés consultar al endpoint `/geolocation` con esos parámetros y recibir información enriquecida de esa posición exacta.
 
 En ambos casos, la respuesta es clara y amigable, ideal para integrarla en un frontend o en una aplicación móvil.
@@ -58,14 +58,6 @@ La API está desplegada y lista para usarse en cualquier proyecto. Podés probar
 👉 [https://solid-geolocation.vercel.app/location](https://solid-geolocation.vercel.app/location)
 
 O, si ya tenés tus propias coordenadas GPS, podés probar con el endpoint `/geolocation`.
-
----
-
-## 👨‍💻 ¿Qué sigue?
-
-Queda mucho por explorar: más cobertura internacional, formatos adicionales de respuesta, e integración con bases de datos externas para enriquecer aún más los datos devueltos.
-
-Mi objetivo es mantenerla simple pero flexible, para que cualquiera que necesite geolocalización rápida la pueda usar sin dolores de cabeza.
 
 ---
 

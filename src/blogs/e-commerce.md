@@ -1,6 +1,6 @@
 Marzo 12, 2026
 
-# Pascale Closet, explicado en simple
+# Pascale Closet, tienda virtual
 
 Pascale Closet no se siente como un e-commerce genérico. Por cómo está armado, lo que ofrece va bastante más allá de “subir productos y cobrarlos”. La propuesta está pensada como una tienda de moda femenina con identidad propia, donde la experiencia de compra busca ser más cercana, más curada y más confiable.
 
@@ -33,6 +33,7 @@ Muchas tiendas de ropa venden, pero no siempre ayudan a decidir rápido ni a com
 - medios de pago conocidos;
 
 ### 2. Le resuelve operación al negocio
+
 También se nota que no está pensada solo para mostrar prendas, sino para ayudar a operar la tienda.
 
 Resuelve tareas como:
@@ -47,7 +48,7 @@ O sea, no solo vende: **también ordena la parte interna del e-commerce**.
 
 ## La propuesta de valor que transmite
 
-Lo que transmite la plataforma es esto: 
+Lo que transmite la plataforma es esto:
 
 > “Te ayudamos a encontrar prendas con estilo, de forma simple, confiable y con una experiencia más cercana que la de una tienda online común.”
 

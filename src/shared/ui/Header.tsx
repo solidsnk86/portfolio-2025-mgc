@@ -38,7 +38,7 @@ export const Header = () => {
     }
   }, [])
 
-  
+
   const clickSound = () => {
     const audio = new Audio("/assets/computer-click.mp3");
     audio.volume = 0.5;
@@ -80,7 +80,7 @@ export const Header = () => {
                   key={name}
                   href={url}
                   onClick={closeMenu}
-                  className="font-semibold hover:opacity-80 capitalize overflow-x-hidden nav-links"
+                  className="font-semibold hover:opacity-75 capitalize overflow-x-hidden"
                 >
                   {name}
                 </Link>

@@ -55,7 +55,7 @@ export const Projects = () => {
         <h3 className="text-[var(--mutted-color)] xl:text-sm text-[0.75em] font-semibold md:tracking-[0.15em] tracking-[0.12em]">
           PROYECTOS ACTUALES
         </h3>
-        <Link href="/all-projects" className="retro-gradient xl:text-sm text-[0.75em] font-semibold">
+        <Link href="/all-projects" title="Ver todos los proyectos" className="retro-gradient xl:text-sm text-[0.75em] font-semibold hover:opacity-75">
           Todos los proyectos ▸
         </Link>
       </div>
@@ -67,13 +67,13 @@ export const Projects = () => {
             className="p-4 rounded-xl bg-[var(--card-project-color)] grid mx-auto w-full justify-center space-y-3 relative overflow-hidden group transition-transform duration-300 hover:shadow-2xl"
           >
             <span className="p-1 relative bg-[var(--icon-bg)] shadow-xl rounded-xl group-hover:scale-90 group-hover:translate-y-3 transition-transform duration-300">
-            <Image
-              src={imgUrl}
-              width={120}
-              height={90}
-              alt={name}
-              className="group-hover:contrast-200 opacity-85 group-hover:opacity-100 transition-all duration-300 mx-auto mb-2 rounded-lg aspect-square object-cover"
-            />
+              <Image
+                src={imgUrl}
+                width={120}
+                height={90}
+                alt={name}
+                className="group-hover:contrast-200 opacity-85 group-hover:opacity-100 transition-all duration-300 mx-auto mb-2 rounded-lg aspect-square object-cover"
+              />
             </span>
             <h3 className="text-center font-bold">{name}</h3>
             <small className="text-center group-hover:-translate-y-12 hover:scale-150 transition-transform duration-500">{year}</small>
@@ -87,7 +87,7 @@ export const Projects = () => {
                 </p>
                 <time className="text-center text-sm zoom">{year}</time>
                 <span className="p-1 rounded bg-[var(--header-bg-color)] w-fit flex mx-auto mt-2">
-                <ArrowUpRightFromSquareIcon size={14} />
+                  <ArrowUpRightFromSquareIcon size={14} />
                 </span>
               </div>
             </article>
