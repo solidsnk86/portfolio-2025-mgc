@@ -57,7 +57,48 @@ La API está desplegada y lista para usarse en cualquier proyecto. Podés probar
 
 👉 [https://solid-geolocation.vercel.app/location](https://solid-geolocation.vercel.app/location)
 
-O, si ya tenés tus propias coordenadas GPS, podés probar con el endpoint `/geolocation`.
+O, si ya tenés tus propias coordenadas GPS, podés probar con el endpoint `/geolocation` de la siguiente manera.
+
+```javascript
+async function getCurrentLocation() {
+  return await new Promise((resolve, reject) => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const coords = {
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        };
+        resolve(coords);
+      });
+    } else {
+      reject(new Error("Navigator doesn't allowed geolocation"));
+    }
+  });
+}
+
+async function getApiDataLocation({ latitude, longitude }) {
+  return await fetch(
+    `https://solid-geolocation.vercel.app/geolocation?lat=${latitude}&lon=${longitude}`,
+  )
+    .then((res) => res.json())
+    .then((data) => data)
+    .catch((error) => console.log(error.message));
+}
+
+const coords = await getCurrentLocation();
+const data = await getApiDataLocation({
+  latitude: coords.latitude,
+  longitude: coords.longitude,
+});
+
+console.log(JSON.stringify(data, null, 2));
+```
+
+## 👀 Vista de la web API
+
+<div>
+    <img src="https://raw.githubusercontent.com/solidsnk86/portfolio-2025-mgc/refs/heads/master/public/geo-location.png" width="100%" height="600px" alt="" />
+</div>
 
 ---
 
