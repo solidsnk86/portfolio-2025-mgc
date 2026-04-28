@@ -26,23 +26,29 @@ export const Blogsito = () => {
           <Loader2 className="animate-spin h-[250px]" />
         </div>
       ) : (
-        allBlogs.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-        .map((blog, i) => (
-          <Link
-            href={`/blog/${blog.name}`}
-            key={`${blog.name}-${i}`}
-            className="flex flex-col mb-2 relative py-5 px-4"
-          >
-            <div className="absolute top-0 left-0 w-full h-full rounded-2xl project-item" />
-            <div className="flex gap-4 text-[var(--mutted-color)]">
-              <time>{Format.date({ dateTime: blog.date })} • {Format.timeAgo(blog.date)}</time>
-              <strong>{blog.name}</strong>
-            </div>
-            <h3 className={`${fraunces.className} text-xl font-semibold`}>
-              {blog.title}
-            </h3>
-          </Link>
-        ))
+        allBlogs
+          .sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+          )
+          .map((blog, i) => (
+            <Link
+              href={`/blog/${blog.name}`}
+              key={`${blog.name}-${i}`}
+              className="flex flex-col mb-2 relative py-5 px-4"
+            >
+              <div className="absolute top-0 left-0 w-full h-full rounded-2xl project-item" />
+              <div className="flex gap-4 text-[var(--mutted-color)] justify-between md:text-[13px] text-[10px]">
+                <div className="flex gap-2 items-center">
+                  <time>{Format.date({ dateTime: blog.date })}</time>{" · "}
+                  <strong className="hidden md:flex">{blog.name}</strong>
+                </div>
+                <time>{Format.timeAgo(blog.date)}</time>
+              </div>
+              <h3 className={`${fraunces.className} text-xl font-semibold`}>
+                {blog.title}
+              </h3>
+            </Link>
+          ))
       )}
     </section>
   );

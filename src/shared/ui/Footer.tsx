@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { Format } from "../utils/Format";
 import { useLocation } from "@/provider/location-provider";
 import { Loader2 } from "lucide-react";
+import Link from "next/link";
 
 interface LocationProps {
   ip?: string;
@@ -129,12 +130,9 @@ export const Footer = () => {
         ) : (
           <>
             <small className="flex items-center mx-auto gap-2 xl:text-xs text-[11px] text-center">
-              <span className="w-[9px] h-[9px] hidden md:flex rounded-full bg-blue-500 -translate-y-[1px]" />
+              <span className="w-[9px] h-[9px] hidden md:flex rounded-full bg-blue-500/80 -translate-y-[1px]" />
               Última visita {Format.timeAgo(lastVisit?.created_at as string)} desde {lastVisit?.city_name},{" "}
               {lastVisit?.country_name} {lastVisit?.emoji_flag} el{" "}
-              {Format.dateAndTime({
-                dateTime: lastVisit?.created_at as string,
-              })}
             </small>
             <small className="text-xs flex justify-center mx-auto">
               Vistas al perfil: {lastVisit?.visits_count}
@@ -142,7 +140,7 @@ export const Footer = () => {
           </>
         )}
         <p className="flex justify-center mx-auto text-sm text-[var(--mutted-color)]">
-          100% código hecho con 💖 por un humano
+          Hecho con 💖 por <Link href="https://github.com/solidsnk86/" className="hover:underline mx-1">@SolidSnk86</Link>
         </p>
       </article>
 
