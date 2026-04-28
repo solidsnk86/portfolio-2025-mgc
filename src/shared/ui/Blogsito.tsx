@@ -35,7 +35,7 @@ export const Blogsito = () => {
           >
             <div className="absolute top-0 left-0 w-full h-full rounded-2xl project-item" />
             <div className="flex gap-4 text-[var(--mutted-color)]">
-              <time>{Format.date({ dateTime: blog.date })}</time>
+              <time>{Format.date({ dateTime: blog.date })} • {Format.timeAgo(blog.date)}</time>
               <strong>{blog.name}</strong>
             </div>
             <h3 className={`${fraunces.className} text-xl font-semibold`}>

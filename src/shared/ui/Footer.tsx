@@ -130,7 +130,7 @@ export const Footer = () => {
           <>
             <small className="flex items-center mx-auto gap-2 xl:text-xs text-[11px] text-center">
               <span className="w-[9px] h-[9px] hidden md:flex rounded-full bg-blue-500 -translate-y-[1px]" />
-              Última visita desde {lastVisit?.city_name},{" "}
+              Última visita {Format.timeAgo(lastVisit?.created_at as string)} desde {lastVisit?.city_name},{" "}
               {lastVisit?.country_name} {lastVisit?.emoji_flag} el{" "}
               {Format.dateAndTime({
                 dateTime: lastVisit?.created_at as string,

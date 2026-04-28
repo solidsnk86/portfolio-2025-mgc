@@ -30,7 +30,7 @@ Muchas tiendas de ropa venden, pero no siempre ayudan a decidir rápido ni a com
 - categorías simples para encontrar lo que una busca sin perder tiempo;
 - carrito persistente, para no obligar a empezar de cero;
 - checkout guiado, que ordena el proceso de compra;
-- medios de pago conocidos;
+- medios de pago se le integró MercadoPago;
 
 ### 2. Le resuelve operación al negocio
 
@@ -62,6 +62,22 @@ Hay varios detalles que empujan esa idea de marca:
 - el flujo completo acompaña desde el descubrimiento hasta el pago y el seguimiento del pedido.
 
 Eso hace que Pascale Closet se sienta más como una **boutique digital** que como un e-commerce genérico.
+
+## Vistas de la tienda
+
+<div align="left" style="display: grid; grid-template-columns: repeat(auto-fill, minamax(400px, 1fr));">
+<div style="display: flex; gap: 4px;">
+<a href="https://raw.githubusercontent.com/solidsnk86/portfolio-2025-mgc/refs/heads/master/public/geo-location.png">
+    <img src="https://raw.githubusercontent.com/solidsnk86/portfolio-2025-mgc/refs/heads/master/public/geo-location.png" width="400px" height="400px" alt="" />
+</a>
+<a href="https://raw.githubusercontent.com/solidsnk86/portfolio-2025-mgc/refs/heads/master/public/geo-location.png">
+    <img src="https://raw.githubusercontent.com/solidsnk86/portfolio-2025-mgc/refs/heads/master/public/geo-location.png" width="400px" height="400px" alt="" />
+</a> 
+<a href="https://raw.githubusercontent.com/solidsnk86/portfolio-2025-mgc/refs/heads/master/public/geo-location.png">
+    <img src="https://raw.githubusercontent.com/solidsnk86/portfolio-2025-mgc/refs/heads/master/public/geo-location.png" width="400px" height="400px" alt="" />
+</a>
+</div> 
+</div>
 
 ## En una frase
 
