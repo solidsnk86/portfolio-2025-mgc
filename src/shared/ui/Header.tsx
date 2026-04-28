@@ -3,22 +3,33 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { AlignCenter, MoonStar, Sun, X } from "lucide-react";
+import {
+  AlignCenter,
+  BriefcaseBusiness,
+  CircleUser,
+  InfoIcon,
+  MoonStar,
+  Rss,
+  Sun,
+  Text,
+  X,
+} from "lucide-react";
 import { useMatchMedia } from "@/hooks/useMatchMedia";
 import { useTheme } from "@/provider/theme-provider";
+import { SocialLinks } from "./SocialLinks";
 
 const links = [
-  { name: "acerca", url: "/about/me" },
-  { name: "blog", url: "/#blog" },
-  { name: "contacto", url: "/#contact" },
-  { name: "proyectos", url: "/#projects" },
+  { name: "acerca", url: "/about/me", icon: InfoIcon },
+  { name: "blog", url: "/#blog", icon: Rss },
+  { name: "contacto", url: "/#contact", icon: CircleUser },
+  { name: "proyectos", url: "/#projects", icon: BriefcaseBusiness },
 ];
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const preferesDark = useMatchMedia("(prefers-color-scheme: dark)", true);
-  const menuWrapperRef = useRef<HTMLDivElement>(null)
+  const menuWrapperRef = useRef<HTMLDivElement>(null);
 
   const isDarkMode = theme === "dark" || (theme === "system" && preferesDark);
 
@@ -34,10 +45,11 @@ export const Header = () => {
 
   useEffect(() => {
     if (menuWrapperRef.current) {
-      menuWrapperRef.current.addEventListener("click", () => console.log("Clickio tode"))
+      menuWrapperRef.current.addEventListener("click", () =>
+        console.log("Clickio tode"),
+      );
     }
-  }, [])
-
+  }, []);
 
   const clickSound = () => {
     const audio = new Audio("/assets/computer-click.mp3");
@@ -95,9 +107,13 @@ export const Header = () => {
               title="Cambiar tema"
             >
               {isDarkMode ? (
-                <span className="btn-animation"><Sun className="h-6 w-6 text-zinc-500 svg-animation" /></span>
+                <span className="btn-animation">
+                  <Sun className="h-6 w-6 text-zinc-500 svg-animation" />
+                </span>
               ) : (
-                <span className="btn-animation"><MoonStar className="h-6 w-6 text-zinc-500 svg-animation" /></span>
+                <span className="btn-animation">
+                  <MoonStar className="h-6 w-6 text-zinc-500 svg-animation" />
+                </span>
               )}
             </button>
           </aside>
@@ -112,13 +128,39 @@ export const Header = () => {
       </header>
 
       {isMenuOpen && (
-        <div className="fixed top-0 left-0 inset-0 bg-opacity-50 backdrop-blur-[4px] z-9999" ref={menuWrapperRef}>
+        <div
+          className="fixed top-0 left-0 inset-0 bg-opacity-50 backdrop-blur-[4px] z-9999"
+          ref={menuWrapperRef}
+        >
           <div
-            className={`fixed top-0 h-dvh w-full bg-[var(--dialog-bg)] shadow-xl transform transition-transform duration-500 ease-in-out`}
+            className={`fixed top-0 h-dvh w-full bg-[var(--background)] shadow-xl transform transition-transform duration-500 ease-in-out`}
           >
             {/* Header del menú */}
             <div className="flex justify-between items-center p-6 border-b border-[var(--color-border)] text-[var(--foreground)]">
-              <h2 className="text-lg font-semibold">Menú</h2>
+              {isDarkMode ? (
+                <Link href="/">
+                  <Image
+                    src="/assets/solid-dark-mode.png"
+                    width={90}
+                    height={55}
+                    alt="SolidSnk86"
+                    loading="eager"
+                    className="rotate-3 translate-y-1"
+                  />
+                </Link>
+              ) : (
+                <Link href="/">
+                  <Image
+                    src="/assets/solid-light-mode.png"
+                    width={90}
+                    height={55}
+                    alt="SolidSnk86"
+                    loading="eager"
+                    className="rotate-3 translate-y-1"
+                  />
+                </Link>
+              )}
+
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setTheme(isDarkMode ? "light" : "dark")}
@@ -126,11 +168,7 @@ export const Header = () => {
                   className="p-2 rounded-lg hover:bg-[var(--hover-color)] transition-colors duration-200"
                   aria-label="Toggle theme"
                 >
-                  {isDarkMode ? (
-                    <Sun className="h-6 w-6" />
-                  ) : (
-                    <MoonStar className="h-6 w-6" />
-                  )}
+                  {isDarkMode ? <Sun size={20} /> : <MoonStar size={20} />}
                 </button>
                 <button
                   onClick={closeMenu}
@@ -144,17 +182,23 @@ export const Header = () => {
 
             {/* Links del menú */}
             <nav className="flex flex-col p-6">
-              {links.map(({ name, url }) => (
+              {links.map(({ name, url, icon: Icon }) => (
                 <Link
                   key={name}
                   href={url}
                   onClick={closeMenu}
-                  className="font-semibold text-lg transition-colors duration-200 capitalize py-4 border-b border-[var(--border-color)] last:border-b-0"
+                  className="flex gap-4 items-center font-semibold text-lg transition-colors duration-200 capitalize py-4"
                 >
+                  <Icon size={19} />
                   {name}
                 </Link>
               ))}
             </nav>
+            <div className="absolute bottom-0 left-0 right-0">
+              <article className="w-full flex mx-auto justify-center border-t-1 border-[var(--border-color)] px-2">
+                <SocialLinks className="flex" />
+              </article>
+            </div>
           </div>
         </div>
       )}
