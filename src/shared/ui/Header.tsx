@@ -11,7 +11,6 @@ import {
   MoonStar,
   Rss,
   Sun,
-  Text,
   X,
 } from "lucide-react";
 import { useMatchMedia } from "@/hooks/useMatchMedia";
