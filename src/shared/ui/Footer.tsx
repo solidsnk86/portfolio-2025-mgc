@@ -122,21 +122,24 @@ export const Footer = () => {
         &copy;2025 SolidSnk86 <Dots className="mx-2" /> Calcagni Gabriel{" "}
       </p>
       <article className="mt-4 grid gap-3 justify-center border border-[var(--color-border)] p-6 rounded-xl bg-[var(--header-bg-color)] backdrop-blur-lg">
-        {isLoading ? (
-          <small className="text-center font-semibold h-[45px] animate-pulse flex items-center gap-2 mx-auto">
-            <Loader2 className="animate-spin" size={20} />
-            Cargando...
-          </small>
-        ) : (
+        {!isLoading ? (
           <>
             <small className="flex items-center mx-auto gap-2 xl:text-xs text-[11px] text-center">
-              <span className="w-[9px] h-[9px] hidden md:flex rounded-full bg-blue-500/50 -translate-y-[1px]" />
+              <span className="w-[8px] h-[8px] hidden md:flex rounded-full bg-blue-500/50 -translate-y-[1px]" />
               Última visita {Format.timeAgo(lastVisit?.created_at as string)} desde {lastVisit?.city_name},{" "}
               {lastVisit?.country_name} {lastVisit?.emoji_flag}
             </small>
             <small className="text-xs flex justify-center mx-auto">
               Vistas al perfil: {lastVisit?.visits_count}
             </small>
+          </>
+        ) : (
+          <>
+            <div className="flex w-[286px] h-4 bg-zinc-200/60 dark:bg-zinc-700/60 rounded-sm relative animate-pulse">
+              <span className="absolute top-1 -left-4 w-[9px] h-[9px] hidden md:flex rounded-full bg-zinc-500/50 -translate-y-[1px] " />
+            </div>
+            <div className="w-[100px] h-4 flex justify-center mx-auto rounded-sm bg-zinc-200/60 dark:bg-zinc-700/60 animate-pulse">            
+            </div>
           </>
         )}
         <p className="flex justify-center mx-auto text-sm text-[var(--mutted-color)]">
