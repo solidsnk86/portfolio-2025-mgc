@@ -56,7 +56,7 @@ export default function MePage() {
         </article>
       </section>
       <Dots className="flex justify-center mx-auto my-10" />
-      <section className="bg-[var(--header-bg-color)] grid border border-[var(--color-border)] backdrop-blur-lg rounded-xl p-8 overflow-hidden">
+      <section className="bg-[var(--header-bg-color)] grid border border-[var(--color-border)] backdrop-blur-lg rounded-xl p-8 overflow-hidden visit_card">
         <aside className="items-center justify-center mx-auto relative">
           <div className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] w-156 h-156 gradient-2 rounded-full blur-2xl -z-10" />
         </aside>
@@ -68,3 +68,5 @@ export default function MePage() {
     </div>
   );
 }
+
+MePage.title = "Acerca de Gabriel Calcagni"
