@@ -14,7 +14,7 @@ const fraunces = Fraunces({
 });
 
 const poppins = Poppins({
-  weight: ["100", "200", "300"],
+  weight: ["100", "200", "300", "400"],
   subsets: ["latin"],
 });
 
@@ -25,7 +25,7 @@ export default function MePage() {
       <Header />
       <section className={`flex flex-col`}>
         <h2
-          className={`text-5xl font-bold mt-16 text-center ${fraunces.className}`}
+          className={`md:text-5xl text-4xl font-bold mt-16 text-center ${fraunces.className}`}
         >
           Acerca
         </h2>

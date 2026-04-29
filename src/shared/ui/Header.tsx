@@ -71,22 +71,22 @@ export const Header = () => {
             <Link href="/">
               <Image
                 src="/assets/solid-dark-mode.png"
-                width={105}
+                width={95}
                 height={55}
                 alt="SolidSnk86"
                 loading="eager"
-                className="rotate-3 translate-y-1"
+                className="rotate-3 translate-y-0.5"
               />
             </Link>
           ) : (
             <Link href="/">
               <Image
                 src="/assets/solid-light-mode.png"
-                width={105}
+                width={95}
                 height={55}
                 alt="SolidSnk86"
                 loading="eager"
-                className="rotate-3 translate-y-1"
+                className="rotate-3 translate-y-0.5"
               />
             </Link>
           )}
