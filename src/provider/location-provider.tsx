@@ -9,7 +9,8 @@ import {
   useState,
 } from "react";
 
-interface LocationProviderProps {
+export interface LocationProviderProps {
+  id?: string;
   ip: string;
   isLoading: boolean;
   city: {
@@ -34,6 +35,8 @@ interface LocationProviderProps {
     };
   };
   error: TypeError | null | undefined;
+  cvViewsCount: number;
+  sendCvView: () => Promise<void>
 }
 
 export const LocationContext = createContext<LocationProviderProps | null>(
@@ -44,6 +47,7 @@ export const LocationProvider = ({ children }: { children: ReactNode }) => {
   const [location, setLocation] = useState<LocationProviderProps>();
   const [error, setError] = useState<TypeError | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [cvViewsCount, setCvViews] = useState<number>(0);
 
   const getLocation = useCallback(async () => {
     try {
@@ -61,9 +65,44 @@ export const LocationProvider = ({ children }: { children: ReactNode }) => {
     }
   }, []);
 
+  const getCvViews = useCallback(async () => {
+    try {
+      const response = await fetch("/api/supabase/cv-views/get-views");
+      const views = await response.json();
+      setCvViews(views.count);
+    } catch (error) {
+      setError(error as TypeError);
+    }
+  }, []);
+
   useEffect(() => {
     getLocation();
   }, [getLocation]);
+
+  useEffect(() => {
+    getCvViews();
+  }, [getCvViews]);
+
+  const sendCvView = async () => {
+    if (!location) return;
+    const { city, country } = location;
+    try {
+      const lastVisitResponse = await fetch("/api/supabase/get-visit");
+      const lastVisit = await lastVisitResponse.json();
+      if (!lastVisit) return;
+      await fetch("/api/supabase/cv-views/send-view", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          visitId: lastVisit.id,
+          from: `Desde ${city?.name}, ${country?.name} - ${country?.timezone}`,
+        }),
+      });
+      await getCvViews();
+    } catch (error) {
+      setError(error as TypeError);
+    }
+  };
 
   const values = {
     ip: location ? location.ip : "N/A",
@@ -89,6 +128,8 @@ export const LocationProvider = ({ children }: { children: ReactNode }) => {
       },
     },
     error,
+    cvViewsCount,
+    sendCvView
   };
 
   return (

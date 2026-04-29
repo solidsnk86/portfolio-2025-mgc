@@ -7,7 +7,6 @@ import { Dots } from "./effects/Dots";
 import { usePathname } from "next/navigation";
 import { Format } from "../utils/Format";
 import { useLocation } from "@/provider/location-provider";
-import { Loader2 } from "lucide-react";
 import Link from "next/link";
 
 interface LocationProps {
@@ -30,8 +29,8 @@ export const Footer = () => {
     country,
     sysInfo,
     coords,
-    error,
     isLoading: isLocationLoading,
+    cvViewsCount,
   } = useLocation();
   const path = usePathname();
   const { latitude, longitude } = coords;
@@ -108,9 +107,7 @@ export const Footer = () => {
   ]);
 
   return (
-    <footer
-      className={`grid py-10 space-y-3 ${styles.footer} w-full`}
-    >
+    <footer className={`grid py-10 space-y-3 ${styles.footer} w-full`}>
       <Image
         src="/dividier.svg"
         width={300}
@@ -121,29 +118,39 @@ export const Footer = () => {
       <p className="text-[var(--mutted-color)] flex gap-1 font-semibold items-center text-sm text-center mx-auto">
         &copy;2025 SolidSnk86 <Dots className="mx-2" /> Calcagni Gabriel{" "}
       </p>
-      <article className={`mt-4 grid gap-3 justify-center border border-[var(--color-border)] visit_card p-6 rounded-xl bg-[var(--header-bg-color)] backdrop-blur-lg`}>
+      <article
+        className={`mt-4 grid gap-3 justify-center border border-[var(--color-border)] visit_card p-6 rounded-xl bg-[var(--header-bg-color)] backdrop-blur-lg`}
+      >
         {!isLoading ? (
           <>
             <small className="flex items-center mx-auto gap-2 xl:text-xs text-[11px] text-center">
-              <span className="w-[8px] h-[8px] hidden md:flex rounded-full bg-blue-500/50 -translate-y-[1px]" />
-              Última visita {Format.timeAgo(lastVisit?.created_at as string)} desde {lastVisit?.city_name},{" "}
-              {lastVisit?.country_name} {lastVisit?.emoji_flag}
+              <span className="w-[6px] h-[6px] hidden md:flex rounded-full bg-blue-500/50" />
+              Última visita {Format.timeAgo(lastVisit?.created_at as string)}{" "}
+              desde {lastVisit?.city_name}, {lastVisit?.country_name}{" "}
+              {lastVisit?.emoji_flag}
             </small>
             <small className="text-xs flex justify-center mx-auto">
-              Vistas al perfil: {lastVisit?.visits_count}
+              Vistas al perfil: {lastVisit?.visits_count}{" "}
+              ·{" "}
+              CV Visto: {cvViewsCount}
             </small>
           </>
         ) : (
           <>
-            <div className="flex w-[286px] h-4 bg-zinc-200/60 dark:bg-zinc-700/60 rounded-sm relative animate-pulse">
-              <span className="absolute top-1 -left-4 w-[9px] h-[9px] hidden md:flex rounded-full bg-zinc-500/50 -translate-y-[1px] " />
+            <div className="flex w-[285px] h-4 bg-zinc-200/60 dark:bg-zinc-700/60 rounded-sm relative animate-pulse">
+              <span className="absolute top-1 -left-4 w-[6px] h-[6px] hidden md:flex rounded-full bg-zinc-500/50 " />
             </div>
-            <div className="w-[100px] h-4 flex justify-center mx-auto rounded-sm bg-zinc-200/60 dark:bg-zinc-700/60 animate-pulse">            
-            </div>
+            <div className="w-[170px] h-4 flex justify-center mx-auto rounded-sm bg-zinc-200/60 dark:bg-zinc-700/60 animate-pulse"></div>
           </>
         )}
         <p className="flex justify-center mx-auto text-sm text-[var(--mutted-color)]">
-          Hecho con 💖 por <Link href="https://github.com/solidsnk86/" className="hover:underline mx-1">@SolidSnk86</Link>
+          Hecho con 💖 por{" "}
+          <Link
+            href="https://github.com/solidsnk86/"
+            className="hover:underline mx-1"
+          >
+            @SolidSnk86
+          </Link>
         </p>
       </article>
     </footer>

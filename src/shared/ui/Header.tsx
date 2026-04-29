@@ -7,6 +7,7 @@ import {
   AlignCenter,
   BriefcaseBusiness,
   CircleUser,
+  FileBadge,
   InfoIcon,
   MoonStar,
   Rss,
@@ -16,21 +17,27 @@ import {
 import { useMatchMedia } from "@/hooks/useMatchMedia";
 import { useTheme } from "@/provider/theme-provider";
 import { SocialLinks } from "./SocialLinks";
-
-const links = [
-  { name: "acerca", url: "/about/me", icon: InfoIcon },
-  { name: "blog", url: "/#blog", icon: Rss },
-  { name: "contacto", url: "/#contact", icon: CircleUser },
-  { name: "proyectos", url: "/#projects", icon: BriefcaseBusiness },
-];
+import { useLocation } from "@/provider/location-provider";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { sendCvView } = useLocation();
   const preferesDark = useMatchMedia("(prefers-color-scheme: dark)", true);
   const menuWrapperRef = useRef<HTMLDivElement>(null);
-
   const isDarkMode = theme === "dark" || (theme === "system" && preferesDark);
+  const links = [
+    { name: "acerca", url: "/about/me", icon: InfoIcon },
+    { name: "blog", url: "/#blog", icon: Rss },
+    { name: "contacto", url: "/#contact", icon: CircleUser },
+    { name: "proyectos", url: "/#projects", icon: BriefcaseBusiness },
+    {
+      name: "cv",
+      url: "https://docs.google.com/document/d/1npjJQOyls-A1fhNPE6j58W1xNdDH8BvzG3sX8OkjZbw/edit?usp=sharing",
+      icon: FileBadge,
+      fx: async () => await sendCvView(),
+    },
+  ];
 
   const openMenu = () => {
     setIsMenuOpen(true);
@@ -86,12 +93,18 @@ export const Header = () => {
           {/* Links del menú */}
           <aside className="flex items-center">
             <nav className="md:flex hidden items-center gap-4 p-6 group">
-              {links.map(({ name, url }) => (
+              {links.map(({ name, url, fx }) => (
                 <Link
                   key={name}
                   href={url}
-                  onClick={closeMenu}
-                  className="font-semibold hover:opacity-75 capitalize overflow-x-hidden"
+                  onClick={async () => {
+                    if (name.toLowerCase() === "cv" && fx) {
+                      await fx();
+                    }
+                    closeMenu();
+                  }}
+                  className="font-semibold hover:opacity-75 capitalize relative"
+                  target={name.toLowerCase() === "cv" ? "_blank" : "_self"}
                 >
                   {name}
                 </Link>
@@ -181,12 +194,18 @@ export const Header = () => {
 
             {/* Links del menú */}
             <nav className="flex flex-col p-6">
-              {links.map(({ name, url, icon: Icon }) => (
+              {links.map(({ name, url, icon: Icon, fx }) => (
                 <Link
                   key={name}
                   href={url}
-                  onClick={closeMenu}
-                  className="flex gap-4 items-center font-semibold text-lg transition-colors duration-200 capitalize py-4"
+                  onClick={async () => {
+                    if (name.toLowerCase() === "cv" && fx) {
+                      await fx();
+                    }
+                    closeMenu();
+                  }}
+                  target={name.toLowerCase() === "cv" ? "_blank" : "_self"}
+                  className="flex gap-4 items-center tracking-widest font-semibold text-lg transition-colors duration-200 capitalize py-4"
                 >
                   <Icon size={19} />
                   {name}
