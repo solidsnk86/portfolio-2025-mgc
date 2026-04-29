@@ -121,7 +121,14 @@ export const Footer = () => {
       <article
         className={`mt-4 grid gap-3 justify-center border border-[var(--color-border)] visit_card p-6 rounded-xl bg-[var(--header-bg-color)] backdrop-blur-lg`}
       >
-        {!isLoading ? (
+        {isLoading ? (
+          <>
+            <div className="flex w-[285px] h-4 bg-zinc-200/60 dark:bg-zinc-700/60 rounded-sm relative animate-pulse">
+              <span className="absolute top-1 -left-4 w-[6px] h-[6px] hidden md:flex rounded-full bg-zinc-500/50 " />
+            </div>
+            <div className="w-[170px] h-4 flex justify-center mx-auto rounded-sm bg-zinc-200/60 dark:bg-zinc-700/60 animate-pulse"></div>
+          </>
+        ) : (
           <>
             <small className="flex items-center mx-auto gap-2 xl:text-xs text-[11px] text-center">
               <span className="w-[6px] h-[6px] hidden md:flex rounded-full bg-blue-500/50" />
@@ -130,17 +137,9 @@ export const Footer = () => {
               {lastVisit?.emoji_flag}
             </small>
             <small className="text-xs flex justify-center mx-auto">
-              Vistas al perfil: {lastVisit?.visits_count}{" "}
-              ·{" "}
-              CV Visto: {cvViewsCount}
+              Vistas al perfil: {lastVisit?.visits_count} · CV Visto:{" "}
+              {cvViewsCount}
             </small>
-          </>
-        ) : (
-          <>
-            <div className="flex w-[285px] h-4 bg-zinc-200/60 dark:bg-zinc-700/60 rounded-sm relative animate-pulse">
-              <span className="absolute top-1 -left-4 w-[6px] h-[6px] hidden md:flex rounded-full bg-zinc-500/50 " />
-            </div>
-            <div className="w-[170px] h-4 flex justify-center mx-auto rounded-sm bg-zinc-200/60 dark:bg-zinc-700/60 animate-pulse"></div>
           </>
         )}
         <p className="flex justify-center mx-auto text-sm text-[var(--mutted-color)]">
