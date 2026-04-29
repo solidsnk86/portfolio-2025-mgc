@@ -427,3 +427,13 @@ dialog {
     stroke-width: 1;
   }
 }
+
+.visit_card {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.04) 0px,
+    rgba(0, 0, 0, 0.04) 4px,
+    transparent 4px,
+    transparent 12px
+  );
+}

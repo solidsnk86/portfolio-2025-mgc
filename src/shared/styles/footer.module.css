@@ -1,6 +1,6 @@
 .footer {
-    & span {
-        filter: drop-shadow(0 0 6px rgb(65, 65, 231));
-        border: 1px solid rgba(86, 86, 216, 0.415);
-    }
+  & span {
+    filter: drop-shadow(0 0 6px rgb(65, 65, 231));
+    border: 1px solid rgba(86, 86, 216, 0.415);
+  }
 }

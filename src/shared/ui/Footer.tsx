@@ -121,7 +121,7 @@ export const Footer = () => {
       <p className="text-[var(--mutted-color)] flex gap-1 font-semibold items-center text-sm text-center mx-auto">
         &copy;2025 SolidSnk86 <Dots className="mx-2" /> Calcagni Gabriel{" "}
       </p>
-      <article className="mt-4 grid gap-3 justify-center border border-[var(--color-border)] p-6 rounded-xl bg-[var(--header-bg-color)] backdrop-blur-lg">
+      <article className={`mt-4 grid gap-3 justify-center border border-[var(--color-border)] visit_card p-6 rounded-xl bg-[var(--header-bg-color)] backdrop-blur-lg`}>
         {!isLoading ? (
           <>
             <small className="flex items-center mx-auto gap-2 xl:text-xs text-[11px] text-center">
@@ -146,8 +146,6 @@ export const Footer = () => {
           Hecho con 💖 por <Link href="https://github.com/solidsnk86/" className="hover:underline mx-1">@SolidSnk86</Link>
         </p>
       </article>
-
-      {error && <small>{error.message}</small>}
     </footer>
   );
 };
