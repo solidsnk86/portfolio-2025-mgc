@@ -37,7 +37,7 @@ export const Blogsito = () => {
               className="flex flex-col mb-2 relative py-5 px-4"
             >
               <div className="absolute top-0 left-0 w-full h-full rounded-2xl project-item" />
-              <div className="flex gap-4 text-[var(--mutted-color)] justify-between md:text-[13px] text-[10px]">
+              <div className="flex gap-4 text-[var(--mutted-color)] justify-between md:text-[13px] text-[11px]">
                 <div className="flex gap-2 items-center">
                   <time>{Format.date({ dateTime: blog.date })}</time>{" · "}
                   <strong className="hidden md:flex">{blog.name}</strong>
