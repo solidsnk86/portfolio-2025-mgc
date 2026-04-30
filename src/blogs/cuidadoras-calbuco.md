@@ -42,3 +42,7 @@ A nivel técnico, el proyecto se construyó sobre una arquitectura sólida:
 El resultado es mucho más que una web; es una herramienta de empoderamiento. La Agrupación de Cuidadoras de Calbuco ahora cuenta con una plataforma soberana donde pueden difundir sus actividades, compartir recursos y hacer oír su voz, todo gestionado por ellas mismas.
 
 Este proyecto reafirma mi convicción de que la tecnología, cuando se diseña con empatía y foco en el usuario, es un poderoso catalizador para el cambio social.
+
+---
+
+👉 [Visitar Blog](https://www.cuidadorascalbuco.cl/)

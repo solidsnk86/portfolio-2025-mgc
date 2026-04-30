@@ -21,14 +21,21 @@ export async function GET() {
       for (const file of files) {
         const allBlogContent = await fs.readFile(
           path.join(process.cwd(), "src", "blogs", file),
-          { encoding: "utf-8" }
+          { encoding: "utf-8" },
         );
-        
+
         if (allBlogContent) {
           const titles = allBlogContent.split(/\r?\n/)[2].replace("#", "");
           const dates = allBlogContent.split(/\r?\n/)[0];
           const fileName = file.replace(".md", "");
-          blogArray.push({ name: fileName, title: titles, date: dates });
+          const url = allBlogContent
+            .split(/\r?\n/)
+            .find(
+              (txt) =>
+                txt.includes("(https://") &&
+                !txt.includes("https://raw.githubusercontent.com"),
+            );
+          blogArray.push({ name: fileName, title: titles, date: dates, url });
         }
       }
 
