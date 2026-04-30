@@ -35,7 +35,16 @@ export async function GET() {
                 txt.includes("(https://") &&
                 !txt.includes("https://raw.githubusercontent.com"),
             );
-          blogArray.push({ name: fileName, title: titles, date: dates, url });
+          const result = url?.replace(/\[(https?:\/\/[^\]\s]+)\]/g, "") || "";
+          blogArray.push({
+            name: fileName,
+            title: titles,
+            date: dates,
+            url:
+              result && result.split(" ").length > 2
+                ? result?.split(" ").slice(2).join("").replace(/[\[\]\(\)]/g, "").replace("Blog", "").replace("Tienda", "")
+                : result?.split(" ").slice(1).join("").replace(/[\[\]\(\)]/g, "").replace("Blog", "").replace("Tienda", ""),
+          });
         }
       }
 
