@@ -52,7 +52,10 @@ export const LocationProvider = ({ children }: { children: ReactNode }) => {
   const getLocation = useCallback(async () => {
     try {
       setIsLoading(true);
-      const response = await fetch("/api/location");
+      const response = await fetch("https://solid-geolocation.vercel.app/location", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" }
+      });
       const data = await response.json();
       if (!response.ok) throw new Error(data.message);
       setLocation(data);
