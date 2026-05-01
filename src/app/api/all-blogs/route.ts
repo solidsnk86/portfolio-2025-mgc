@@ -1,17 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-export async function OPTIONS() {
-  return new Response(null, {
-    status: 204,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type",
-    },
-  });
-}
-
 export async function GET() {
   try {
     const files = await fs.readdir(path.join(process.cwd(), "src", "blogs"));
