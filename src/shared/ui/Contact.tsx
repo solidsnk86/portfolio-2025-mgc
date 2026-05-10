@@ -5,7 +5,7 @@ import { showDialog } from "../utils/dialog";
 import { Loader2 } from "lucide-react";
 import { Fraunces } from "next/font/google";
 import Image from "next/image";
-import { validateEmailWithDomain } from "../utils/validateMail";
+import { contactSchema } from "../utils/contactSchema";
 
 const fraunces = Fraunces({
   weight: ["700"],
@@ -40,18 +40,14 @@ export const ContactForm = () => {
   const sendFormData = async (event: React.FormEvent) => {
     event.preventDefault();
     setIsLoading(true);
-    if (!namevalue) {
-      setError("* El nombre es requerido");
-      setIsLoading(false);
-      return;
-    }
-    if (!emailValue) {
-      setError("* El email es requerido");
-      setIsLoading(false);
-      return;
-    }
-    if (!validateEmailWithDomain(emailValue)) {
-      setError("Escribe un dominio de email válido");
+    const validation = contactSchema.safeParse({
+      name: namevalue,
+      email: emailValue,
+      challenge: messageValue,
+    });
+
+    if (!validation.success) {
+      setError(validation.error.issues[0]?.message ?? "Datos invalidos");
       setIsLoading(false);
       return;
     }
@@ -59,9 +55,9 @@ export const ContactForm = () => {
       const response = await fetch("/api/mailer", {
         method: "POST",
         body: JSON.stringify({
-          name: namevalue,
-          email: emailValue,
-          challenge: messageValue,
+          name: validation.data.name,
+          email: validation.data.email,
+          challenge: validation.data.challenge,
         }),
       });
 

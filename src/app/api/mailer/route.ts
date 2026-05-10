@@ -1,9 +1,20 @@
 import nodemailer from "nodemailer";
 import { HTMLTemplate } from "./template/HTMLTemplate";
+import { contactSchema } from "@/shared/utils/contactSchema";
 
 export async function POST(req: Request) {
   try {
-    const { name, email, challenge } = await req.json();
+    const payload = await req.json();
+    const validation = contactSchema.safeParse(payload);
+
+    if (!validation.success) {
+      return Response.json(
+        { message: "Datos invalidos", success: false },
+        { status: 400 }
+      );
+    }
+
+    const { name, email, challenge } = validation.data;
 
     if (req.method !== "POST") return Response.json({ message: "Método no permitido" }, { status: 405 })
 

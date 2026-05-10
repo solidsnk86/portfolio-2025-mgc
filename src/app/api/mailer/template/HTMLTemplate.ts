@@ -2,6 +2,8 @@ const number = "+5492665290020";
 const message =
   "👋 ¡Hola, Gabriel! Me interesa conocer más sobre tus servicios. ¿Podrías contactarme para ayudarme con mi proyecto? 😊...Gracias!";
 
+import { escapeHtml } from "@/shared/utils/contactSchema";
+
 export const HTMLTemplate = ({
   name,
   email,
@@ -10,7 +12,10 @@ export const HTMLTemplate = ({
   name: string;
   email: string;
   challenge: string;
-}) => `
+}) => {
+  const safeName = escapeHtml(name);
+
+  return `
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -22,7 +27,7 @@ export const HTMLTemplate = ({
     <div style="background-color: #fff; max-width: 600px; margin: 40px auto; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
       <h2 style="text-align: center; color: #2c3e50; margin-bottom: 24px; font-size: 22px; font-weight: 600;">¡Gracias por tu mensaje!</h2>
       <div style="color: #4a4a4a; line-height: 1.7; font-size: 15px;">
-        <p>Hola <strong>${name}</strong>,</p>
+        <p>Hola <strong>${safeName}</strong>,</p>
         <p>Gracias por escribirme desde mi portafolio web.</p>
         <p>
           Si querés enviarme los detalles, he adjuntado tu mensaje para Whatsapp o Gmail! No dudes en escribirme directamente
@@ -56,3 +61,4 @@ export const HTMLTemplate = ({
   </body>
 </html>
 `;
+};
